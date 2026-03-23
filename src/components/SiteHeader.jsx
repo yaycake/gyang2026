@@ -1,4 +1,4 @@
-export default function SiteHeader() {
+export default function SiteHeader({ onContact }) {
   return (
     <header className="hero">
       <h1>Hey! I'm Grace</h1>
@@ -20,13 +20,13 @@ export default function SiteHeader() {
           Resume
         </a>
         <span className="hero-nav-pipe">|</span>
-        <a href="mailto:grace@example.com" className="hero-nav-link">
+        <button className="hero-nav-link hero-nav-btn" onClick={onContact}>
           <span className="hero-nav-icon-swap">
             <img src="/assets/email icon.png" alt="" className="hero-nav-img default" />
             <img src="/assets/email icon-purple.png" alt="" className="hero-nav-img hover" />
           </span>
-          Email
-        </a>
+          Contact
+        </button>
         <span className="hero-nav-pipe">|</span>
       </nav>
     </header>

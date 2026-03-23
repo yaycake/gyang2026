@@ -5,6 +5,7 @@ import FadeIn from '../components/FadeIn'
 import { useNavTo } from '../context/nav'
 import SiteFooter from '../components/SiteFooter'
 import CirclePreview from '../components/CirclePreview'
+import ContactModal from '../components/ContactModal'
 
 const personalImages = {
   hikes: [
@@ -75,6 +76,7 @@ export default function Home() {
   const [activeTestimonial, setActiveTestimonial] = useState(0)
   const [fading, setFading] = useState(false)
   const [expandedTile, setExpandedTile] = useState(null)
+  const [contactOpen, setContactOpen] = useState(false)
   const [hoveredWord, setHoveredWord] = useState(null)
   const [tappedWord, setTappedWord] = useState(null)
   const [expandedProject, setExpandedProject] = useState(null)
@@ -157,7 +159,7 @@ export default function Home() {
 
       {/* ── Hero ── stagger 0 */}
       <FadeIn delay={0}>
-        <SiteHeader />
+        <SiteHeader onContact={() => setContactOpen(true)} />
       </FadeIn>
 
       <main>
@@ -373,11 +375,12 @@ export default function Home() {
           <section className="section">
             <h2 className="section-heading">Contact Me</h2>
             <p className="body-text">If you think we would have a great time collaborating, send me a message.</p>
-            <button className="cta-button">Say Hello</button>
+            <button className="cta-button" onClick={() => setContactOpen(true)}>Say Hello</button>
           </section>
         </FadeIn>
 
       </main>
+      {contactOpen && <ContactModal onClose={() => setContactOpen(false)} />}
       {hoveredWord && <CirclePreview key={hoveredWord} images={personalImages[hoveredWord]} />}
       {tappedWord && (
         <div
