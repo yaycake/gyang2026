@@ -323,6 +323,21 @@
   margin-bottom: 22px;
 }
 
+.testimonial-body {
+  position: relative;
+}
+
+.testimonial-slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.testimonial-slide:first-child {
+  position: relative;
+}
+
 .quote {
   font-size: 14.5px;
   font-weight: 300;
@@ -360,6 +375,39 @@
 
 .dot:hover:not(.active) {
   background: rgba(255, 255, 255, 0.35);
+}
+
+/* ── Personally hover words ── */
+.hover-word {
+  text-decoration: underline;
+  text-decoration-style: dotted;
+  text-underline-offset: 3px;
+  text-decoration-color: rgba(255, 255, 255, 0.3);
+  cursor: default;
+}
+
+.tap-preview-circle {
+  position: fixed;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 9999;
+  animation: tapPreview 3.2s cubic-bezier(0.4, 0, 0.6, 1) forwards;
+}
+
+.tap-preview-circle img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+@keyframes tapPreview {
+  0%   { opacity: 0; }
+  20%  { opacity: 1; }
+  100% { opacity: 0; }
 }
 
 /* ── Personally ── */
@@ -503,7 +551,7 @@
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
-  margin-bottom: 10px;
+  margin-bottom: 24px;
   gap: 20px;
 }
 
@@ -612,10 +660,10 @@
 .resume-bullets {
   list-style: none;
   padding: 0;
-  margin: 0;
+  margin: 8px 0 0;
   display: flex;
   flex-direction: column;
-  gap: 2px;
+  gap: 8px;
 }
 
 .resume-bullets li {
@@ -623,15 +671,8 @@
   font-weight: 300;
   line-height: 1.55;
   color: #444;
-  padding-left: 12px;
-  position: relative;
-}
-
-.resume-bullets li::before {
-  content: '–';
-  position: absolute;
-  left: 0;
-  color: #ccc;
+  padding-left: 8px;
+  border-left: 1.5px solid #ddd;
 }
 
 .resume-skill-lines {
@@ -675,6 +716,86 @@
 /* ══ Work tile — internal nav cursor ══ */
 .entry-item--linked {
   cursor: pointer;
+  user-select: none;
+}
+
+.entry-item--linked * {
+  cursor: pointer;
+}
+
+/* ══ Mobile tile expand ══ */
+.entry-item--expanded .entry-description {
+  grid-template-rows: 1fr;
+  margin-top: 9px;
+}
+
+.entry-item--expanded .entry-role {
+  color: var(--role-color);
+}
+
+.entry-item--expanded .entry-link-icon {
+  opacity: 1;
+}
+
+.entry-cta-mobile {
+  display: none;
+}
+
+@media (hover: none) and (pointer: coarse) {
+  .entry-cta-mobile {
+    display: inline-block;
+    margin-top: 14px;
+    padding: 7px 18px;
+    background: transparent;
+    color: var(--text-muted);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: 0.3px;
+    cursor: pointer;
+    transition: opacity 0.2s ease;
+  }
+
+  .entry-cta-mobile:active {
+    opacity: 0.6;
+  }
+
+  .entry-arrow {
+    display: none;
+  }
+
+  .entry-link-icon {
+    pointer-events: none;
+  }
+
+  .entry-item--expanded .entry-link-icon {
+    pointer-events: auto;
+  }
+}
+
+/* ══ View Transitions (mobile tile → page) ══ */
+@media (prefers-reduced-motion: no-preference) {
+  ::view-transition-old(root),
+  ::view-transition-new(root) {
+    animation-duration: 0s;
+  }
+
+  ::view-transition-group(active-tile) {
+    animation-duration: 480ms;
+    animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  ::view-transition-old(active-tile) {
+    animation-duration: 240ms;
+    animation-timing-function: ease-out;
+  }
+
+  ::view-transition-new(active-tile) {
+    animation-duration: 240ms;
+    animation-delay: 240ms;
+    animation-timing-function: ease-in;
+  }
 }
 
 /* ══ Case study — back nav ══ */

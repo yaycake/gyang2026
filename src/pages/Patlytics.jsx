@@ -71,13 +71,11 @@ export default function Patlytics() {
       <main>
 
         {/* ── Back nav ── stagger 1 */}
-        <FadeIn delay={100}>
-          <div className="case-back-nav">
-            <button className="back-btn" onClick={() => navTo('/')} aria-label="Back">←</button>
-            <span className="case-company">At Patlytics</span>
-            <span className="case-period">2024 – 2026</span>
-          </div>
-        </FadeIn>
+        <div className="case-back-nav" style={{ viewTransitionName: 'active-tile' }}>
+          <button className="back-btn" onClick={() => navTo('/')} aria-label="Back">←</button>
+          <span className="case-company">At Patlytics</span>
+          <span className="case-period">2024 – 2026</span>
+        </div>
 
         {/* ── Intro ── stagger 2 */}
         <FadeIn delay={200}>

@@ -34,7 +34,7 @@ export default function Resume() {
           </div>
           <div className="resume-header-right">
             <a href="mailto:im@thegraceyang.com" className="resume-contact-link">im@thegraceyang.com</a>
-            <a href="https://linkedin.com/in/graceyang" target="_blank" rel="noreferrer" className="resume-contact-link">linkedin.com/in/graceyang</a>
+            <a href="https://linkedin.com/in/ygrace/" target="_blank" rel="noreferrer" className="resume-contact-link">linkedin.com/in/ygrace</a>
             <a href="https://thegraceyang.com" target="_blank" rel="noreferrer" className="resume-contact-link">thegraceyang.com</a>
           </div>
         </header>
@@ -43,7 +43,7 @@ export default function Resume() {
 
         {/* ── Summary ── */}
         <p className="resume-summary">
-          Twice a founding designer at venture-backed startups — most recently from seed to $40M+ Series B. End-to-end across research, systems, and front-end; work best where design decisions move the business directly.
+          Twice a founding designer at venture-backed startups — most recently from seed to $40M+ Series B. End-to-end across research, systems, and front-end. I'm an AI-builder who designs human-centered products with innovative agentic workflows.
         </p>
 
         <div className="resume-rule-light" />

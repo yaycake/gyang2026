@@ -54,13 +54,11 @@ export default function Skyrock() {
       <main>
 
         {/* ── Back nav ── stagger 1 */}
-        <FadeIn delay={100}>
-          <div className="case-back-nav">
-            <button className="back-btn" onClick={() => navTo('/')} aria-label="Back">←</button>
-            <span className="case-company">At Skyrock Projects</span>
-            <span className="case-period">2020–2022</span>
-          </div>
-        </FadeIn>
+        <div className="case-back-nav" style={{ viewTransitionName: 'active-tile' }}>
+          <button className="back-btn" onClick={() => navTo('/')} aria-label="Back">←</button>
+          <span className="case-company">At Skyrock Projects</span>
+          <span className="case-period">2020–2022</span>
+        </div>
 
         {/* ── Intro ── stagger 2 */}
         <FadeIn delay={200}>

@@ -4,6 +4,35 @@ import InlineWidget from '../components/InlineWidget'
 import FadeIn from '../components/FadeIn'
 import { useNavTo } from '../context/nav'
 import SiteFooter from '../components/SiteFooter'
+import CirclePreview from '../components/CirclePreview'
+
+const personalImages = {
+  hikes: [
+    '/assets/images/hikes/IMG_0215.jpeg',
+    '/assets/images/hikes/IMG_0227.jpeg',
+    '/assets/images/hikes/IMG_0229.jpeg',
+    '/assets/images/hikes/IMG_0242.jpeg',
+    '/assets/images/hikes/IMG_0246.jpeg',
+    '/assets/images/hikes/IMG_0274.jpeg',
+    '/assets/images/hikes/IMG_2842.jpeg',
+    '/assets/images/hikes/negative-0-0-4.jpeg',
+  ],
+  dogs: [
+    '/assets/images/dogs/IMG_1223.jpeg',
+    '/assets/images/dogs/IMG_2056.jpeg',
+    '/assets/images/dogs/IMG_2177.jpeg',
+    '/assets/images/dogs/IMG_2200.jpeg',
+    '/assets/images/dogs/IMG_2861.jpeg',
+    '/assets/images/dogs/IMG_3086.jpeg',
+    '/assets/images/dogs/negative-0-0-6.jpeg',
+  ],
+  arts: [
+    '/assets/images/arts/Untitled_Artwork (1).jpeg',
+    '/assets/images/arts/Untitled_Artwork (2).jpeg',
+    '/assets/images/arts/Untitled_Artwork (3).jpeg',
+    '/assets/images/arts/Untitled_Artwork.jpeg',
+  ],
+}
 
 const testimonials = [
   {
@@ -45,8 +74,64 @@ const ExternalLinkIcon = () => (
 export default function Home() {
   const [activeTestimonial, setActiveTestimonial] = useState(0)
   const [fading, setFading] = useState(false)
+  const [expandedTile, setExpandedTile] = useState(null)
+  const [hoveredWord, setHoveredWord] = useState(null)
+  const [tappedWord, setTappedWord] = useState(null)
+  const [expandedProject, setExpandedProject] = useState(null)
   const timerRef = useRef(null)
   const navTo = useNavTo()
+
+  const isMobile = () => window.matchMedia('(hover: none) and (pointer: coarse)').matches
+  const tappedImageRef = useRef(null)
+  const personallySectionRef = useRef(null)
+  const [tapCirclePos, setTapCirclePos] = useState({ top: 0, left: 0 })
+  const tapKeyRef = useRef(0)
+  const lastZone = useRef({ side: 'right', vert: 'bottom' })
+
+  const CIRCLE_SIZE = 80
+  const OVERFLOW = CIRCLE_SIZE * 0.6 // how much the circle can hang off section edges
+
+  const handleWordTap = (e, word) => {
+    e.stopPropagation()
+    const imgs = personalImages[word]
+    tappedImageRef.current = imgs[Math.floor(Math.random() * imgs.length)]
+    if (personallySectionRef.current) {
+      const rect = personallySectionRef.current.getBoundingClientRect()
+      const touchX = e.touches[0].clientX
+      const touchY = e.touches[0].clientY
+
+      // Alternate sides; vary vertical with 75% chance to flip
+      const side = lastZone.current.side === 'left' ? 'right' : 'left'
+      const vert = Math.random() < 0.75
+        ? (lastZone.current.vert === 'top' ? 'bottom' : 'top')
+        : lastZone.current.vert
+      lastZone.current = { side, vert }
+
+      // Build a range for each zone, allowing circle to hang off edges
+      const xRange = side === 'left'
+        ? [rect.left - OVERFLOW, rect.left + rect.width * 0.5 - CIRCLE_SIZE]
+        : [rect.right - rect.width * 0.5, rect.right + OVERFLOW - CIRCLE_SIZE]
+
+      const yRange = vert === 'top'
+        ? [rect.top - OVERFLOW, rect.top + rect.height * 0.5 - CIRCLE_SIZE]
+        : [rect.bottom - rect.height * 0.5, rect.bottom + OVERFLOW - CIRCLE_SIZE]
+
+      const rand = (min, max) => min + Math.random() * (max - min)
+
+      // Generate candidates in the zone, pick farthest from touch
+      const candidates = Array.from({ length: 8 }, () => ({
+        top:  rand(yRange[0], yRange[1]),
+        left: rand(xRange[0], xRange[1]),
+      }))
+      const best = candidates.reduce((a, b) =>
+        Math.hypot(b.left - touchX, b.top - touchY) >
+        Math.hypot(a.left - touchX, a.top - touchY) ? b : a
+      )
+      setTapCirclePos(best)
+    }
+    tapKeyRef.current += 1
+    setTappedWord(word)
+  }
 
   const goTo = (index) => {
     setFading(true)
@@ -118,31 +203,56 @@ export default function Home() {
           <section className="section">
             <h2 className="section-heading">Work Experiences</h2>
             <ul className="entry-list">
-              {workExperiences.map((exp, i) => (
-                <li
-                  key={i}
-                  className={`entry-item${exp.detailPath ? ' entry-item--linked' : ''}`}
-                  style={{ '--role-color': exp.roleColor }}
-                  onClick={exp.detailPath ? () => navTo(exp.detailPath) : undefined}
-                >
-                  <div className="entry-role">{exp.role}</div>
-                  <div className="entry-row">
-                    <div className="entry-company">
-                      <img src={exp.logo} alt="" className="entry-logo" />
-                      <span className="entry-name">{exp.company}</span>
-                      {exp.url && (
-                        <a href={exp.url} target="_blank" rel="noreferrer" className="entry-link-icon" onClick={e => e.stopPropagation()}>
-                          <ExternalLinkIcon />
-                        </a>
-                      )}
+              {workExperiences.map((exp, i) => {
+                const isExpanded = expandedTile === i
+                return (
+                  <li
+                    key={i}
+                    className={`entry-item${(exp.detailPath || exp.url) ? ' entry-item--linked' : ''}${isExpanded ? ' entry-item--expanded' : ''}`}
+                    style={{
+                      '--role-color': exp.roleColor,
+                      ...(isExpanded ? { viewTransitionName: 'active-tile' } : {}),
+                    }}
+                    onClick={() => {
+                      if (isMobile()) {
+                        if (!isExpanded) setExpandedTile(i)
+                      } else {
+                        if (exp.detailPath) navTo(exp.detailPath)
+                        else if (exp.url) window.open(exp.url, '_blank', 'noreferrer')
+                      }
+                    }}
+                  >
+                    <div className="entry-role">{exp.role}</div>
+                    <div className="entry-row">
+                      <div className="entry-company">
+                        <img src={exp.logo} alt="" className="entry-logo" />
+                        <span className="entry-name">{exp.company}</span>
+                        {exp.url && (
+                          <a href={exp.url} target="_blank" rel="noreferrer" className="entry-link-icon" onClick={e => e.stopPropagation()}>
+                            <ExternalLinkIcon />
+                          </a>
+                        )}
+                      </div>
+                      <span className="entry-meta">{exp.period}<span className="entry-arrow"> →</span></span>
                     </div>
-                    <span className="entry-meta">{exp.period} →</span>
-                  </div>
-                  <div className="entry-description">
-                    <p className="entry-description-inner">{exp.description}</p>
-                  </div>
-                </li>
-              ))}
+                    <div className="entry-description">
+                      <p className="entry-description-inner">{exp.description}</p>
+                    </div>
+                    {isExpanded && (exp.detailPath || exp.url) && (
+                      <button
+                        className="entry-cta-mobile"
+                        onClick={e => {
+                          e.stopPropagation()
+                          if (exp.detailPath) navTo(exp.detailPath, { useTransition: true })
+                          else window.open(exp.url, '_blank', 'noreferrer')
+                        }}
+                      >
+                        {exp.detailPath ? 'View case study →' : 'Visit site →'}
+                      </button>
+                    )}
+                  </li>
+                )
+              })}
             </ul>
           </section>
         </FadeIn>
@@ -152,23 +262,45 @@ export default function Home() {
           <section className="section">
             <h2 className="section-heading">Projects</h2>
             <ul className="entry-list">
-              {projects.map((proj, i) => (
-                <li key={i} className="entry-item entry-item--linked" style={{ '--role-color': proj.roleColor }} onClick={() => window.open(proj.url, '_blank', 'noreferrer')}>
-                  <div className="entry-role">{proj.role}</div>
-                  <div className="entry-row">
-                    <div className="entry-company">
-                      <span className="project-name">{proj.name}</span>
-                      <a href={proj.url} target="_blank" rel="noreferrer" className="entry-link-icon" onClick={e => e.stopPropagation()}>
-                        <ExternalLinkIcon />
-                      </a>
+              {projects.map((proj, i) => {
+                const isProjExpanded = expandedProject === i
+                return (
+                  <li
+                    key={i}
+                    className={`entry-item entry-item--linked${isProjExpanded ? ' entry-item--expanded' : ''}`}
+                    style={{ '--role-color': proj.roleColor }}
+                    onClick={() => {
+                      if (isMobile()) {
+                        if (!isProjExpanded) setExpandedProject(i)
+                      } else {
+                        window.open(proj.url, '_blank', 'noreferrer')
+                      }
+                    }}
+                  >
+                    <div className="entry-role">{proj.role}</div>
+                    <div className="entry-row">
+                      <div className="entry-company">
+                        <span className="project-name">{proj.name}</span>
+                        <a href={proj.url} target="_blank" rel="noreferrer" className="entry-link-icon" onClick={e => e.stopPropagation()}>
+                          <ExternalLinkIcon />
+                        </a>
+                      </div>
+                      <span className="entry-meta">{proj.year}<span className="entry-arrow"> →</span></span>
                     </div>
-                    <span className="entry-meta">{proj.year} →</span>
-                  </div>
-                  <div className="entry-description">
-                    <p className="entry-description-inner">{proj.description}</p>
-                  </div>
-                </li>
-              ))}
+                    <div className="entry-description">
+                      <p className="entry-description-inner">{proj.description}</p>
+                    </div>
+                    {isProjExpanded && (
+                      <button
+                        className="entry-cta-mobile"
+                        onClick={e => { e.stopPropagation(); window.open(proj.url, '_blank', 'noreferrer') }}
+                      >
+                        View project →
+                      </button>
+                    )}
+                  </li>
+                )
+              })}
             </ul>
           </section>
         </FadeIn>
@@ -177,9 +309,21 @@ export default function Home() {
         <FadeIn>
           <section className="section">
             <h2 className="testimonial-heading">Good Times With Good People</h2>
-            <div style={{ opacity: fading ? 0 : 1, transition: 'opacity 0.5s ease' }}>
-              <p className="quote">"{testimonials[activeTestimonial].quote}"</p>
-              <p className="attribution">{testimonials[activeTestimonial].attribution}</p>
+            <div className="testimonial-body">
+              {testimonials.map((t, i) => (
+                <div
+                  key={i}
+                  className="testimonial-slide"
+                  style={{
+                    opacity: i === activeTestimonial ? (fading ? 0 : 1) : 0,
+                    transition: 'opacity 0.5s ease',
+                    pointerEvents: i === activeTestimonial ? 'auto' : 'none',
+                  }}
+                >
+                  <p className="quote">"{t.quote}"</p>
+                  <p className="attribution">{t.attribution}</p>
+                </div>
+              ))}
             </div>
             <div className="dots">
               {testimonials.map((_, i) => (
@@ -196,11 +340,26 @@ export default function Home() {
 
         {/* ── Personally ── scroll-triggered */}
         <FadeIn>
-          <section className="section">
+          <section className="section" ref={personallySectionRef}>
             <h2 className="section-heading">Personally,</h2>
             <div className="personally-body">
               <p className="body-text">
-                My weekends are full of hikes, dogs, rock climbing, and various experimental arts &amp; crafts.
+                My weekends are full of{' '}
+                <span className="hover-word"
+                  onMouseEnter={() => setHoveredWord('hikes')} onMouseLeave={() => setHoveredWord(null)}
+                  onTouchStart={e => handleWordTap(e, 'hikes')}
+                >hikes</span>
+                ,{' '}
+                <span className="hover-word"
+                  onMouseEnter={() => setHoveredWord('dogs')} onMouseLeave={() => setHoveredWord(null)}
+                  onTouchStart={e => handleWordTap(e, 'dogs')}
+                >dogs</span>
+                , rock climbing, and various experimental{' '}
+                <span className="hover-word"
+                  onMouseEnter={() => setHoveredWord('arts')} onMouseLeave={() => setHoveredWord(null)}
+                  onTouchStart={e => handleWordTap(e, 'arts')}
+                >arts &amp; crafts</span>
+                .
               </p>
               <p className="body-text">
                 I also enjoy event planning, collecting and shaping soundscapes, reading science-fiction, and making really bad techno.
@@ -219,6 +378,17 @@ export default function Home() {
         </FadeIn>
 
       </main>
+      {hoveredWord && <CirclePreview key={hoveredWord} images={personalImages[hoveredWord]} />}
+      {tappedWord && (
+        <div
+          key={tapKeyRef.current}
+          className="tap-preview-circle"
+          style={{ top: tapCirclePos.top, left: tapCirclePos.left }}
+          onAnimationEnd={() => setTappedWord(null)}
+        >
+          <img src={tappedImageRef.current} alt="" />
+        </div>
+      )}
       <SiteFooter />
     </div>
   )

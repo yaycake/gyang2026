@@ -7,7 +7,7 @@ export default function SiteHeader() {
         <a href="#" className="hero-link">new agentic world.</a>
       </p>
       <nav className="hero-nav">
-        <a href="https://linkedin.com" target="_blank" rel="noreferrer" className="hero-nav-link">
+        <a href="https://linkedin.com/in/ygrace/" target="_blank" rel="noreferrer" className="hero-nav-link">
           <img src="/assets/linkedin-app-icon.webp" alt="" className="hero-nav-img" />
           LinkedIn
         </a>
