@@ -17,11 +17,14 @@ export default function Resume() {
     <div className="resume-page">
 
       <div className="resume-actions">
-        <a href={mailtoHref} className="resume-share-btn" aria-label="Share via email">
-          <ShareIcon />
-          Share
-        </a>
-        <button className="resume-print-btn" onClick={() => window.print()}>Print / Save PDF</button>
+        <a href="/" className="resume-back-btn" aria-label="Back to home">← Back</a>
+        <div className="resume-actions-right">
+          <a href={mailtoHref} className="resume-share-btn" aria-label="Share via email">
+            <ShareIcon />
+            Share
+          </a>
+          <button className="resume-print-btn" onClick={() => window.print()}>Print / Save PDF</button>
+        </div>
       </div>
 
       <div className="resume-doc">

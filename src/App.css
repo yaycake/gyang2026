@@ -500,8 +500,30 @@
   max-width: 700px;
   margin: 0 auto 20px;
   display: flex;
-  justify-content: flex-end;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.resume-actions-right {
+  display: flex;
+  align-items: center;
   gap: 8px;
+}
+
+.resume-back-btn {
+  background: none;
+  border: none;
+  color: #888;
+  font-family: var(--sans);
+  font-size: 11px;
+  font-weight: 400;
+  text-decoration: none;
+  cursor: pointer;
+  transition: color 0.15s;
+}
+
+.resume-back-btn:hover {
+  color: #111;
 }
 
 .resume-share-btn {
@@ -560,7 +582,7 @@
   font-size: 28px;
   font-weight: 400;
   letter-spacing: -0.3px;
-  color: #111;
+  color: #5b6ef5;
   margin-bottom: 3px;
   line-height: 1;
 }
@@ -569,7 +591,7 @@
   font-family: var(--sans);
   font-size: 11.5px;
   font-weight: 300;
-  color: #666;
+  color: #444;
 }
 
 .resume-header-right {
@@ -583,7 +605,7 @@
 .resume-contact-link {
   font-size: 11px;
   font-weight: 300;
-  color: #777;
+  color: #555;
   text-decoration: none;
   transition: color 0.15s;
 }
@@ -592,7 +614,7 @@
 
 .resume-rule {
   border: none;
-  border-top: 1.5px solid #5b6ef5;
+  border-top: 1px solid #e8e8e8;
   margin-bottom: 10px;
 }
 
@@ -606,7 +628,7 @@
   font-size: 12px;
   font-weight: 300;
   line-height: 1.6;
-  color: #444;
+  color: #222;
   margin-bottom: 0;
 }
 
@@ -620,7 +642,7 @@
   font-weight: 500;
   letter-spacing: 1.2px;
   text-transform: uppercase;
-  color: #777;
+  color: #555;
   margin-bottom: 8px;
   margin-top: 10px;
 }
@@ -646,13 +668,13 @@
 .resume-role {
   font-size: 12px;
   font-weight: 300;
-  color: #444;
+  color: #222;
 }
 
 .resume-period {
   font-size: 11px;
   font-weight: 300;
-  color: #777;
+  color: #555;
   white-space: nowrap;
   flex-shrink: 0;
 }
@@ -670,7 +692,7 @@
   font-size: 11.5px;
   font-weight: 300;
   line-height: 1.55;
-  color: #444;
+  color: #222;
   padding-left: 8px;
   border-left: 1.5px solid #ddd;
 }
@@ -684,7 +706,7 @@
 .resume-skill-line {
   font-size: 11.5px;
   font-weight: 300;
-  color: #333;
+  color: #222;
   line-height: 1.55;
 }
 
