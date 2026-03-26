@@ -148,7 +148,6 @@ export default function ORM() {
             <p className="body-text">
               ORM was a genuinely cross-functional project — healthcare content, cross-cultural UX, and platform-specific engineering all in one. I'd love to tell you more about it.
             </p>
-            <button className="cta-button" style={{ marginTop: '20px' }}>Contact Me for a Case Study</button>
           </section>
         </FadeIn>
 

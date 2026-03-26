@@ -190,7 +190,6 @@ export default function Viewabo() {
             <p className="body-text">
               Building Viewabo's visual support layer was a lesson in designing under real constraints — bandwidth, privacy law, field stress, and the very human moment of a customer who just needs help. I'd love to talk through the details.
             </p>
-            <button className="cta-button" style={{ marginTop: '20px' }}>Contact Me for a Case Study</button>
           </section>
         </FadeIn>
 

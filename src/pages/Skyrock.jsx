@@ -181,7 +181,6 @@ export default function Skyrock() {
             <p className="body-text">
               Skyrock was a full-stack service design challenge — from the marketing site to the moment a kid logs into their first class. Happy to walk through the process.
             </p>
-            <button className="cta-button" style={{ marginTop: '20px' }}>Contact Me for a Case Study</button>
           </section>
         </FadeIn>
 

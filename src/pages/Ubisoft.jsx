@@ -157,7 +157,6 @@ export default function Ubisoft() {
             <p className="body-text">
               Designing for a live event inside a platform with strict constraints was a sharp lesson in speed, clarity, and cross-functional trust. I'd be happy to share more.
             </p>
-            <button className="cta-button" style={{ marginTop: '20px' }}>Contact Me for a Case Study</button>
           </section>
         </FadeIn>
 

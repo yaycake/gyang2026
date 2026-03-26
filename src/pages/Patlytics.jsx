@@ -12,24 +12,32 @@ const testimonials = [
   },
 ]
 
-const painPoints = [
-  { heading: 'Fragmented Workflows', body: 'In-house or law firms contract outside search firms, which takes weeks of management and variable returns.' },
-  { heading: 'Context Friction', body: 'Separating the search + strategy uses up time and loses context for potential discovery & strategy exploration.' },
+const detectionReport = [
+  {
+    heading: 'Detection Report',
+    body: "I designed the Detection Report — Patlytics' flagship infringement output. The feature automatically surfaces potentially infringing products, generates element-by-element claim mappings, and presents visual evidence paths attorneys can act on immediately.\n\nA key design decision I drove was Flexible Evidence Paths: rather than forcing a single AI-generated evidence trail, I designed the interface to let attorneys layer in their own independently-obtained product information alongside Patlytics' search results. This gave legal teams multiple investigative paths toward the same infringement theory.\n\nThe result: what previously took days or months now takes hours. Enterprise clients report saving $1,000–$5,000 per detection report in research costs — and in large-scale portfolio reviews, attorneys cut billable time from 100 hours to 20, generating $38,000 in margin improvement on a single engagement.",
+  },
 ]
 
-const experimentation = [
-  { heading: 'Find Everything', body: 'Users spend so much time discovering products, patents, and overlap— we can do it for them.' },
-  { heading: 'Streamline to the Extreme', body: 'Get the user as quickly to the magic analysis moment as possible.' },
+const infringementCheck = [
+  {
+    heading: 'Infringement Check',
+    body: 'I designed the Infringement Check workflow to bridge patent language and real-world product terminology — the core translation problem in infringement analysis. The output is a color-coded, claim-by-claim mapping that helps attorneys quickly assess the strength of a read and prioritize where to focus.\n\nIP litigation firms use this as their first step in case preparation. At firms handling district court, PTAB, and ITC matters across software, electronics, and chemical engineering, the workflow reduced case review time by 1–2 days per matter.',
+  },
 ]
 
-const lessons = [
-  { heading: 'Everything is A Lot', body: 'While our reports surfaced many overlapping contexts with in-depth analysis, it was overwhelming for users to get it all at once.' },
-  { heading: 'One-shot is two steps backwards', body: "Users don't mind spending a little more time during set up to better understand what each report surfaces— and to feel in control." },
+const priorArtInvalidity = [
+  {
+    heading: 'Prior Art Search & Invalidity Analysis',
+    body: 'I designed the prior art search and invalidity workflows to surface results that traditional patent database tools miss — a meaningful bar to clear, since those tools are deeply embedded in attorney workflows.\n\nFor IP-intensive companies running 15–30 patent applications per year, the time savings compound quickly: each prior art search saves 10–15 hours of attorney time, translating to $5,000–$7,500 in avoided outside counsel costs per application at standard billing rates. Invalidity reports have eliminated over 120 hours of search and analysis time on single-matter engagements at Am Law 100 firms.',
+  },
 ]
 
-const iteration = [
-  { heading: 'Empower Users With Strategic Decisions', body: 'Show why and how they can override auto-populated parameters to find and discover evidence. This also teaches them the tool.' },
-  { heading: 'Allow users to "opt in" to more detail', body: "Assume a high-level strategic approach and anticipate when and where users want more information so they don't feel overwhelmed." },
+const patentDraftingIdf = [
+  {
+    heading: 'Patent Drafting & Invention Disclosure',
+    body: "I designed the drafting and invention disclosure workflows used by Rivian's in-house IP team — an automotive and EV company managing a fast-growing patent portfolio across mechanical and software innovations.\n\nThe challenge wasn't just speed — it was structured consistency. Comparative reviews required locating sources, placing citations, and assembling structured tables before any attorney could apply judgment. I designed workflows that turn raw inputs into organized, review-ready drafts, infer the core inventive concept from limited inventor descriptions, and propose legally structured outlines attorneys can refine rather than rebuild from scratch.\n\nThe outcome shifted Rivian's IP team from mechanical document assembly to higher-value judgment calls — a deliberate design goal, not a side effect.",
+  },
 ]
 
 function CaseItems({ items }) {
@@ -81,25 +89,12 @@ export default function Patlytics() {
         <FadeIn delay={200}>
           <section className="section case-intro">
             <p className="body-text">
-              As founding designer, I helped build and design new workflows for a highly technical and complex b2b industry.
+              I led design for the litigation intelligence suite at Patlytics — an AI-powered patent platform that grew from $0 to $4.4M ARR in its first two years, backed by $14M Series A funding. My work spanned infringement detection, invalidity analysis, prior art search, and Freedom to Operate — building the workflows that enterprise IP teams now use to compress months of attorney research into hours.
             </p>
             <p className="body-text">
-              I also helped grow a company from a scrappy troupe of 4 to a (still scrappy) power-house EPD team spanning many time-zones.
+              Patent litigation work is extraordinarily time-intensive. Before tools like Patlytics, IP attorneys spent days or months manually cross-referencing patents, products, and technical disclosures to build an infringement case. Invalidity searches required combing through prior art databases that returned incomplete results. Drafting structured legal documents meant hours of mechanical assembly before any strategic judgment could happen.
             </p>
           </section>
-        </FadeIn>
-
-        {/* ── Pull quote ── stagger 3 */}
-        <FadeIn delay={300}>
-          <div className="pull-quote-card">
-            <div className="pull-quote-text">
-              <p className="pull-quote-body">
-                "What the IP industry needs is a shorter path to our most valuable assets. Many assets, fewer resources, and more pressure on patents make developing and qualifying those most valuable patents more important—and more challenging—than ever. Patlytics finds that shorter path."
-              </p>
-              <p className="pull-quote-attr">— Seth Fiermontes, Head of IP Strategy</p>
-            </div>
-            <div className="pull-quote-headshot" aria-hidden="true" />
-          </div>
         </FadeIn>
 
         {/* ── Product UI ── scroll-triggered */}
@@ -110,19 +105,51 @@ export default function Patlytics() {
         {/* ── Innovating on IP ── scroll-triggered */}
         <FadeIn>
           <section className="section">
-            <h2 className="section-heading">Innovating on IP</h2>
+            <h2 className="section-heading">Outcomes</h2>
             <p className="body-text">
-              In two years, we built an idea into a leading disrupter in the IP space. By the end of the MVP design &amp; development, we raised 4.5 million; at the end of the first year, a 14 million Series A. Now into our second year, Patlytics closes the Series B at 40 million in funding, and featured on{' '}
-              <InlineWidget
-                text="Business Insider's top 30 early stage startups most likely to become unicorns"
-                url="https://www.businessinsider.com/startups-most-likely-become-unicorns-2024"
-                domain="businessinsider.com"
-                title="30 startups most likely to become unicorns"
-                description="Business Insider identified 30 early-stage startups that investors think have what it takes to reach a $1 billion valuation."
-                placement="top"
-              />
-              .
+              Across the litigation suite I designed:
             </p>
+            <ul className="body-text" style={{ marginTop: '12px' }}>
+              <li>
+                Enterprise clients save <strong>$1,000–$5,000</strong> per infringement detection report (
+                <InlineWidget
+                  text="Asahi Kasei"
+                  url="https://www.patlytics.ai/customer-stories/asahi-kasei"
+                  domain="patlytics.ai"
+                  title="Asahi Kasei customer story"
+                  description="Public Patlytics customer story."
+                  placement="top"
+                />
+                )
+              </li>
+              <li>Large-scale portfolio reviews cut from <strong>100 hours → 20 hours</strong>, generating <strong>$38K margin improvement</strong> on a single project (Am Law 100)</li>
+              <li>
+                IP litigation firms save <strong>1–2 days per case review</strong> on infringement matters (
+                <InlineWidget
+                  text="RJLF"
+                  url="https://www.patlytics.ai/customer-stories/rjlf"
+                  domain="patlytics.ai"
+                  title="RJLF customer story"
+                  description="Public Patlytics customer story."
+                  placement="top"
+                />
+                )
+              </li>
+              <li>Prior art workflows save <strong>$5,000–$7,500 per patent application</strong> in outside counsel costs</li>
+              <li>
+                IP law firms report <strong>15–20% overall workload reduction</strong> (
+                <InlineWidget
+                  text="Young Basile"
+                  url="https://www.patlytics.ai/customer-stories/young-basile"
+                  domain="patlytics.ai"
+                  title="Young Basile customer story"
+                  description="Public Patlytics customer story."
+                  placement="top"
+                />
+                )
+              </li>
+              <li>Patlytics grew from <strong>$0 → $4.4M ARR</strong> during my tenure, with <strong>$14M Series A</strong> raised in 2026</li>
+            </ul>
           </section>
         </FadeIn>
 
@@ -134,58 +161,75 @@ export default function Patlytics() {
         {/* ── Block Quote 1 ── scroll-triggered */}
         <FadeIn>
           <blockquote className="block-quote">
-            <p className="block-quote-text">"In two years, we built an idea into a leading disrupter in the IP space."</p>
+            <p className="block-quote-text">
+              "It's not only one way to reach the target — sometimes from our additional information, other times from website information only."
+            </p>
+            <p className="block-quote-text" style={{ marginTop: '12px', fontSize: '0.95em' }}>
+              — Naoto Hori, General Manager of Strategic Licensing, Asahi Kasei ·{' '}
+              <a href="https://www.patlytics.ai/customer-stories/asahi-kasei" target="_blank" rel="noreferrer">
+                Customer story
+              </a>
+            </p>
           </blockquote>
         </FadeIn>
 
-        {/* ── Pain Points ── scroll-triggered */}
+        {/* ── Detection Report ── scroll-triggered */}
         <FadeIn>
           <section className="section">
-            <h2 className="section-heading">Pain Points</h2>
-            <CaseItems items={painPoints} />
+            <h2 className="section-heading">Detection Report</h2>
+            <CaseItems items={detectionReport} />
           </section>
         </FadeIn>
 
-        {/* ── Experimentation ── scroll-triggered */}
+        {/* ── Infringement Check ── scroll-triggered */}
         <FadeIn>
           <section className="section">
-            <h2 className="section-heading">Experimentation</h2>
-            <CaseItems items={experimentation} />
+            <h2 className="section-heading">Infringement Check</h2>
+            <CaseItems items={infringementCheck} />
           </section>
-        </FadeIn>
-
-        {/* ── Design process ── scroll-triggered */}
-        <FadeIn>
-          <img src="/assets/images/patlytics-ai-process.png" alt="Patlytics AI design process: Identify, Experiment, Iterate, Design Polish, Track" className="case-image" />
         </FadeIn>
 
         {/* ── Block Quote 2 ── scroll-triggered */}
         <FadeIn>
           <blockquote className="block-quote">
-            <p className="block-quote-text">"Get the user as quickly to the magic analysis moment as possible."</p>
+            <p className="block-quote-text">"It gives me a roadmap for research."</p>
+            <p className="block-quote-text" style={{ marginTop: '12px', fontSize: '0.95em' }}>
+              — Joy Wang, IP Litigation Associate, RJLF ·{' '}
+              <a href="https://www.patlytics.ai/customer-stories/rjlf" target="_blank" rel="noreferrer">
+                Customer story
+              </a>
+            </p>
           </blockquote>
         </FadeIn>
 
-        {/* ── Lessons ── scroll-triggered */}
+        {/* ── Prior Art & Invalidity ── scroll-triggered */}
         <FadeIn>
           <section className="section">
-            <h2 className="section-heading">Lessons</h2>
-            <CaseItems items={lessons} />
+            <h2 className="section-heading">Prior Art Search &amp; Invalidity Analysis</h2>
+            <CaseItems items={priorArtInvalidity} />
           </section>
         </FadeIn>
 
         {/* ── Block Quote 3 ── scroll-triggered */}
         <FadeIn>
           <blockquote className="block-quote">
-            <p className="block-quote-text">"Users don't mind spending a little more time during set up — to better understand what surfaces and to feel in control."</p>
+            <p className="block-quote-text">
+              "What surprised us most was how quickly the system grasped the core idea and gave us a solid legal structure to refine."
+            </p>
+            <p className="block-quote-text" style={{ marginTop: '12px', fontSize: '0.95em' }}>
+              — Rivian Legal ·{' '}
+              <a href="https://www.patlytics.ai/customer-stories/rivian" target="_blank" rel="noreferrer">
+                Customer story
+              </a>
+            </p>
           </blockquote>
         </FadeIn>
 
-        {/* ── Iteration ── scroll-triggered */}
+        {/* ── Patent Drafting & IDF ── scroll-triggered */}
         <FadeIn>
           <section className="section">
-            <h2 className="section-heading">Iteration</h2>
-            <CaseItems items={iteration} />
+            <h2 className="section-heading">Patent Drafting &amp; Invention Disclosure</h2>
+            <CaseItems items={patentDraftingIdf} />
           </section>
         </FadeIn>
 
@@ -221,11 +265,10 @@ export default function Patlytics() {
         {/* ── More Info ── scroll-triggered */}
         <FadeIn>
           <section className="section">
-            <h2 className="section-heading">More Info</h2>
+            <h2 className="section-heading">Reflection</h2>
             <p className="body-text">
-              "Lorem ipsum dolor sit amet consectetur. Laoreet nulla lacus sed faucibus ultrices. Egestas leo enim lacus viverra mauris leo nullam id. Scelerisque ac volutpat dui leo dolor at faucibus. Molestie lectus pellentesque commodo et arcu tristique aliquet et tincidunt."
+              Designing for AI-assisted legal workflows taught me how much "being AI-first" depends on understanding the human workflow it's replacing. Patent attorneys don't just want faster results — they want to maintain oversight, attribution, and professional accountability. Every design decision I made had to preserve that: the AI does the search, the attorney makes the call.
             </p>
-            <button className="cta-button" style={{ marginTop: '20px' }}>Contact Me for a Case Study</button>
           </section>
         </FadeIn>
 
