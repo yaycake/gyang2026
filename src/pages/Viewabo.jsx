@@ -11,29 +11,32 @@ const testimonials = [
   },
 ]
 
-const workingWithTeam = [
-  { heading: 'Support Agents & Team Leads', body: 'Needed fast, reliable context to resolve tickets and standardize quality across cases.' },
-  { heading: 'Field Technicians', body: 'Required clear remote guidance and a traceable record of work done.' },
-  { heading: 'End Customers', body: 'Wanted frictionless, private help on mobile — no app download, no friction.' },
-  { heading: 'Customer Success & Ops', body: 'Cared about CSAT, cost per ticket, and whether playbooks held up at scale.' },
+const videoRequestFlow = [
+  {
+    heading: 'Video Request',
+    body: "I designed Viewabo's Video Request workflow so support agents could trigger visual troubleshooting directly from Zendesk without breaking ticket context. Customers receive a secure link, share their rear-facing camera with no app download, and agents can diagnose issues in real time.\n\nThe design priority was operational speed: eliminate multi-message clarification loops and move agents from guesswork to evidence-based troubleshooting as quickly as possible.",
+  },
 ]
 
-const approach = [
-  { heading: 'One-tap video with consent guardrails', body: 'Prototyped invite → join → capture → annotate → summarize flows in Figma, optimised for mobile-first end users.' },
-  { heading: 'WebRTC feasibility spikes', body: 'Tested bandwidth adaptation, reconnect strategies, and fallbacks to guided photo capture to ensure reliability in low-signal environments.' },
-  { heading: 'Service blueprinting', body: 'Mapped touchpoints across Support, CS, and Ops to align tooling and escalation paths — then measured time-to-diagnosis and error rates.' },
+const streamAndAnnotation = [
+  {
+    heading: 'Stream, Pause, and Annotation',
+    body: 'I designed the live support controls that made remote guidance practical under pressure: pause frames, on-screen annotation, and orientation handling so agents could direct customers with precision in complex hardware scenarios.\n\nThis transformed video from a passive viewing tool into an active diagnostic interface teams could trust during high-friction cases.',
+  },
 ]
 
-const designDecisions = [
-  { heading: 'Async over live as the default', body: 'Agents trigger Video Request from the ticket; customers receive a secure link and complete a single guided capture flow. No scheduling, no friction.' },
-  { heading: 'Structured evidence', body: 'Clips, device metadata, and annotations auto-attach to the ticket and travel across teams — making handoffs faster and repeat issues easier to resolve.' },
-  { heading: 'Privacy visible, not buried', body: 'Explicit consent screens, visible recording status, and scoped data collection maintained customer trust while enabling efficient review.' },
+const recordingsAndKnowledge = [
+  {
+    heading: 'Recordings and Team Reuse',
+    body: 'I designed post-session recordings and evidence continuity so resolved sessions could become reusable operational assets. Support teams review interactions for QA, training, and cross-functional handoffs with manufacturing and packaging teams.\n\nThe result was compounding value: each solved case improved how the next case was handled.',
+  },
 ]
 
-const learnings = [
-  { heading: 'Scheduling is the real bottleneck', body: 'Async Video Request outperformed live sessions for most cases. Agents and customers rarely align in time and place.' },
-  { heading: 'One clean flow beats back-and-forth', body: 'Guided recording with auto-attach to the ticket reduced drop-off and eliminated the "send me a photo" loop.' },
-  { heading: 'Service design is product design', body: 'Onboarding and access flows determine perceived quality as much as the core feature.' },
+const privacyAndAdoption = [
+  {
+    heading: 'Privacy and Adoption by Design',
+    body: 'I designed for trust from the first interaction: explicit access prompts, minimal customer steps, and visible controls throughout the session. This was critical for adoption across less technical or time-constrained customers.\n\nThe no-download experience was a deliberate product decision that reduced friction at the exact moment support teams needed cooperation fastest.',
+  },
 ]
 
 function CaseItems({ items }) {
@@ -74,10 +77,10 @@ export default function Viewabo() {
         <FadeIn delay={200}>
           <section className="section case-intro">
             <p className="body-text">
-              Led end-to-end design for a real-time visual support platform and its Zendesk integration. I shaped product strategy, defined the service blueprint, and built reliable workflows for high-pressure support contexts.
+              I led end-to-end design for Viewabo's visual support experience and Zendesk integration, building the workflow that lets support teams see what customers see instantly, without app downloads or account setup.
             </p>
             <p className="body-text">
-              I partnered closely with engineering on WebRTC constraints and privacy-by-design, and worked with Sales and CS to tie UX decisions directly to resolution time, truck rolls, and CSAT.
+              My scope spanned product strategy, interaction design, and service design across support operations. I partnered with engineering on WebRTC constraints and with customer-facing teams to ensure UX decisions translated into faster diagnosis, fewer unnecessary escalations, and higher-confidence resolutions.
             </p>
           </section>
         </FadeIn>
@@ -85,9 +88,12 @@ export default function Viewabo() {
         {/* ── The Problem ── stagger 3 */}
         <FadeIn delay={300}>
           <section className="section">
-            <h2 className="section-heading">The Problem</h2>
+            <h2 className="section-heading">Problem / Context</h2>
             <p className="body-text">
-              Most support happens blind. Text tickets, screenshots, and long back-and-forths mean agents can't see the issue, and customers can't describe it. The result is slow resolution, unnecessary on-site visits, and frustrated customers — especially in hardware and field operations where context is everything.
+              Most support workflows start blind: text tickets, ambiguous screenshots, and repeated clarification loops before agents can even identify the root issue. In hardware-heavy support environments, that delay increases handle time, drives avoidable returns, and creates poor customer experiences.
+            </p>
+            <p className="body-text">
+              I designed Viewabo's core workflows to close that context gap quickly — turning live visual input into structured, actionable evidence support teams can use immediately.
             </p>
           </section>
         </FadeIn>
@@ -100,31 +106,41 @@ export default function Viewabo() {
         {/* ── Block Quote 1 ── scroll-triggered */}
         <FadeIn>
           <blockquote className="block-quote">
-            <p className="block-quote-text">"Most support happens blind. Agents can't see the issue, and customers can't describe it."</p>
+            <p className="block-quote-text">"The most valuable thing about Viewabo is how quick it is to connect with a customer. Since the customer doesn't need to download an app, they're more willing to use it."</p>
+            <p className="block-quote-text" style={{ marginTop: '12px', fontSize: '0.95em' }}>
+              — Lauren K., Director of Customer Service, NZXT
+            </p>
           </blockquote>
         </FadeIn>
 
-        {/* ── Working With the Team ── scroll-triggered */}
+        {/* ── Outcomes ── scroll-triggered */}
         <FadeIn>
           <section className="section">
-            <h2 className="section-heading">Working With the Team</h2>
-            <CaseItems items={workingWithTeam} />
+            <h2 className="section-heading">Outcomes</h2>
+            <p className="body-text">Customer-reported results from public Viewabo testimonials and the NZXT case study:</p>
+            <ul className="body-text" style={{ marginTop: '12px' }}>
+              <li>Support interactions that previously took 30 minutes were completed in seconds for cable and setup troubleshooting</li>
+              <li>Teams reported handle-time reductions from 40 minutes to 3-5 minutes on complex support cases</li>
+              <li>Faster issue visibility reduced back-and-forth communication and improved first-pass diagnosis confidence</li>
+              <li>No-download access increased customer willingness to join visual sessions during live support moments</li>
+              <li>Recorded sessions created reusable assets for training, QA, and cross-team issue prevention</li>
+            </ul>
           </section>
         </FadeIn>
 
-        {/* ── How We Approached It ── scroll-triggered */}
+        {/* ── Video Request ── scroll-triggered */}
         <FadeIn>
           <section className="section">
-            <h2 className="section-heading">How We Approached It</h2>
-            <CaseItems items={approach} />
+            <h2 className="section-heading">Video Request</h2>
+            <CaseItems items={videoRequestFlow} />
           </section>
         </FadeIn>
 
-        {/* ── Design Decisions ── scroll-triggered */}
+        {/* ── Stream and Annotation ── scroll-triggered */}
         <FadeIn>
           <section className="section">
-            <h2 className="section-heading">Design Decisions</h2>
-            <CaseItems items={designDecisions} />
+            <h2 className="section-heading">Stream, Pause, and Annotation</h2>
+            <CaseItems items={streamAndAnnotation} />
           </section>
         </FadeIn>
 
@@ -141,22 +157,28 @@ export default function Viewabo() {
         {/* ── Block Quote 2 ── scroll-triggered */}
         <FadeIn>
           <blockquote className="block-quote">
-            <p className="block-quote-text">"Async Video Request outperformed live sessions for most cases. Agents and customers rarely align in time and place."</p>
+            <p className="block-quote-text">"We could spend 30 minutes with a customer going over cables one by one to find the right one, but with Viewabo, it can be done in seconds."</p>
+            <p className="block-quote-text" style={{ marginTop: '12px', fontSize: '0.95em' }}>
+              — Lauren K., Director of Customer Service, NZXT
+            </p>
           </blockquote>
         </FadeIn>
 
-        {/* ── Learnings ── scroll-triggered */}
+        {/* ── Recordings and Knowledge ── scroll-triggered */}
         <FadeIn>
           <section className="section">
-            <h2 className="section-heading">Learnings</h2>
-            <CaseItems items={learnings} />
+            <h2 className="section-heading">Recordings and Knowledge Reuse</h2>
+            <CaseItems items={recordingsAndKnowledge} />
           </section>
         </FadeIn>
 
         {/* ── Block Quote 3 ── scroll-triggered */}
         <FadeIn>
           <blockquote className="block-quote">
-            <p className="block-quote-text">"Service design is product design. Onboarding and access flows determine perceived quality as much as the core feature."</p>
+            <p className="block-quote-text">"Support takes way less time now. Before using Viewabo, sometimes it would take 40 minutes, now it's 3-5 minutes."</p>
+            <p className="block-quote-text" style={{ marginTop: '12px', fontSize: '0.95em' }}>
+              — Tech Support Rep, Viewabo homepage testimonial
+            </p>
           </blockquote>
         </FadeIn>
 
@@ -188,7 +210,10 @@ export default function Viewabo() {
         <FadeIn>
           <section className="section">
             <p className="body-text">
-              Building Viewabo's visual support layer was a lesson in designing under real constraints — bandwidth, privacy law, field stress, and the very human moment of a customer who just needs help. I'd love to talk through the details.
+              Designing Viewabo reinforced a core lesson from AI- and automation-adjacent products: speed only matters when users trust the workflow. The most effective decisions were not just interface decisions — they were operational ones that balanced reliability, privacy, and adoption under real support pressure.
+            </p>
+            <p className="body-text">
+              This project sharpened how I design for measurable ownership: define the bottleneck, remove friction at the point of failure, and ensure outcomes are visible to the teams accountable for resolution quality.
             </p>
           </section>
         </FadeIn>
