@@ -6,6 +6,7 @@ import Viewabo from './pages/Viewabo'
 import Skyrock from './pages/Skyrock'
 import Ubisoft from './pages/Ubisoft'
 import ORM from './pages/ORM'
+import LeWagon from './pages/LeWagon'
 import Resume from './pages/Resume'
 import './App.css'
 
@@ -22,6 +23,7 @@ export default function App() {
           <Route path="/skyrock" element={<Skyrock />} />
           <Route path="/ubisoft" element={<Ubisoft />} />
           <Route path="/orm" element={<ORM />} />
+          <Route path="/lewagon" element={<LeWagon />} />
           <Route path="/resume" element={<Resume />} />
         </Routes>
       </div>

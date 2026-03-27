@@ -56,7 +56,7 @@ const workExperiences = [
   { role: 'Digital Director',     company: 'Skyrock',   period: '2020–2021',   logo: '/assets/logo-badges-skyrock-color.svg',    roleColor: '#34A7FF', url: null,                             detailPath: '/skyrock',  description: 'From service design to brand UX and digital ops, working cross functionally to pivot online and offline STEAM programs during COVID.' },
   { role: 'Design',               company: 'Ubisoft',   period: '2018',        logo: '/assets/logo-badges-ubisoft-white.svg',    roleColor: '#7042EF', url: 'https://ubisoft.com',            detailPath: '/ubisoft',  description: "Rally Ubisoft's global community around ChinaJoy through WeChat Mini Program design." },
   { role: 'Design & Development', company: 'ORM',       period: '2018–2019',   logo: '/assets/logo-badges-orm-color.svg',        roleColor: '#6C9988', url: 'https://ormgenomics.com/',       detailPath: '/orm',      description: "Design and development for ORM's China presence via their WeChat Mini Program." },
-  { role: 'Product Design',       company: 'Le Wagon',  period: '2016–2018',   logo: '/assets/logo-badges-lewagon-color.svg',    roleColor: '#E60F05', url: 'https://www.lewagon.com/',       description: 'Lead several batches in product design and helped teach high school students front-end design & development.' },
+  { role: 'Product Design',       company: 'Le Wagon',  period: '2016–2018',   logo: '/assets/logo-badges-lewagon-color.svg',    roleColor: '#E60F05', url: 'https://www.lewagon.com/',       detailPath: '/lewagon', description: 'Taught product design across five bootcamp batches and taught high school students in Chengdu product design and front-end development (HTML, CSS, JS).' },
 ]
 
 const projects = [

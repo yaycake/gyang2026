@@ -4,27 +4,27 @@ import { useNavTo } from '../context/nav'
 import SiteFooter from '../components/SiteFooter'
 
 const designedFor = [
-  { heading: 'Parents & Guardians', body: 'Needed clarity on curriculum, age fit, schedule, and price — plus a simple, confident enrollment flow.' },
-  { heading: 'Students', body: 'Needed a repeatable daily path to join class with no link confusion, materials ready at the right time.' },
-  { heading: 'Operations & Instructors', body: 'Needed predictable rosters, automated communications, and standardized lesson kits that held up across cohorts.' },
+  { heading: 'Parents & Guardians', body: 'Needed clear program differentiation, schedule transparency, and an enrollment flow they could complete confidently without support.' },
+  { heading: 'Students', body: 'Needed a consistent daily class-entry flow with predictable links, clear readiness expectations, and materials available at the right moment.' },
+  { heading: 'Operations & Instructors', body: 'Needed standardized cohort operations, predictable rosters, and repeatable communication playbooks that worked across large enrollments.' },
 ]
 
 const designProcess = [
-  { heading: 'Conversion-focused prototyping', body: 'A/B tested value props, program comparison layouts, and CTAs; instrumented the funnel with drop-off analysis to prioritize what to fix.' },
-  { heading: 'Service blueprinting', body: 'Mapped every touchpoint from sign-up to attendance — uncovering failure points around time zones, access links, and materials delivery.' },
-  { heading: 'Onboarding experiments', body: 'Automated email sequences, pre-class checklists, and calendar invites. Measured open rates, click-through, and actual attendance to iterate.' },
+  { heading: 'Enrollment Flow Design', body: 'I designed conversion-focused landing and program comparison flows so families could evaluate options quickly and move from interest to enrollment without ambiguity.' },
+  { heading: 'Service Blueprinting', body: 'I mapped the full journey from first visit to first class attendance, identifying failure points around access links, time zones, and pre-class readiness.' },
+  { heading: 'Onboarding Automation System', body: 'I designed automated onboarding sequences including reminders, calendar invites, readiness prompts, and materials guidance to reduce support dependency before class day.' },
 ]
 
 const learnings = [
-  { heading: 'Clarity converts', body: 'Program comparison and transparent schedules outperformed clever copy. Parents wanted to understand, not be persuaded.' },
-  { heading: 'Service design is product', body: 'Onboarding and access flows determined perceived quality as much as the curriculum itself.' },
-  { heading: 'Automations need empathy', body: 'Reminders and checklists should reduce anxiety, not add noise. Tone and timing matter as much as content.' },
+  { heading: 'Clarity Converts Better Than Persuasion', body: 'Transparent schedule and program framing outperformed marketing-heavy language. Families wanted confidence, not hype.' },
+  { heading: 'Service Design Is the Product', body: 'Perceived quality was shaped as much by onboarding and class access reliability as by curriculum content.' },
+  { heading: 'Automation Needs Human Tone', body: 'Reminder systems performed best when designed to reduce parent anxiety and decision fatigue, not just push task completion.' },
 ]
 
 const outcomes = [
-  { heading: 'Record early-bird sign-ups', body: 'The most early-bird enrollments in Skyrock history for summer camp.' },
-  { heading: 'Reduced support load', body: 'Fewer tickets related to access links, schedules, and materials.' },
-  { heading: 'Smooth remote operations', body: 'Automated onboarding and tech-readiness guidance reduced class-day errors across cohorts.' },
+  { heading: 'Record Early-Bird Enrollment', body: 'The redesigned enrollment funnel produced the highest early-bird summer camp sign-up volume in Skyrock history.' },
+  { heading: 'Lower Support Friction', body: 'Clarified enrollment and onboarding flows reduced recurring parent questions around links, schedules, and readiness.' },
+  { heading: 'Higher Operational Reliability', body: 'Standardized onboarding and instructor playbooks reduced class-day setup failures across remote cohorts.' },
 ]
 
 function CaseItems({ items }) {
@@ -64,10 +64,10 @@ export default function Skyrock() {
         <FadeIn delay={200}>
           <section className="section case-intro">
             <p className="body-text">
-              Led website architecture and end-to-end service design for a STEAM education program focused on conversion and smooth delivery. I owned the full funnel — from marketing and sales through onboarding and attendance.
+              I led website architecture and end-to-end service design for Skyrock's STEAM program, owning the full journey from first marketing touchpoint to class attendance.
             </p>
             <p className="body-text">
-              When COVID hit, I drove the pivot to a fully online summer camp — building cohort scheduling, content packaging, and operational playbooks so families could enroll and attend with confidence.
+              During the COVID pivot, I redesigned enrollment and onboarding systems for a fully online summer camp model — so families could register with confidence and operations could deliver consistently at scale.
             </p>
           </section>
         </FadeIn>
@@ -75,19 +75,12 @@ export default function Skyrock() {
         {/* ── The Challenge ── stagger 3 */}
         <FadeIn delay={300}>
           <section className="section">
-            <h2 className="section-heading">The Challenge</h2>
+            <h2 className="section-heading">Problem / Context</h2>
             <p className="body-text">
-              Families struggled to compare offerings, understand schedules, and complete enrollment across fragmented touchpoints. COVID introduced a second layer of friction: unclear tech setup, access links, and expectations. Without a cohesive funnel and service blueprint, conversion lagged, onboarding was error-prone, and attendance suffered.
+              Families were navigating fragmented touchpoints to evaluate programs, compare schedules, and complete enrollment. Once COVID forced a remote-first delivery model, friction increased: unclear class access paths, inconsistent readiness communication, and avoidable support load before day one.
             </p>
-          </section>
-        </FadeIn>
-
-        {/* ── The Hypothesis ── scroll-triggered */}
-        <FadeIn>
-          <section className="section">
-            <h2 className="section-heading">The Hypothesis</h2>
             <p className="body-text">
-              If we simplify decision-making on the site — clear program tiers, age and skill filters, transparent schedules — and design a coherent journey from checkout through class access, we'll increase conversion, reduce pre-class confusion, and improve attendance. Even in a fully remote format.
+              I focused on designing a single coherent system: clearer decision-making at enrollment, then operationally reliable onboarding through first class. The goal was measurable: increase early conversion while reducing pre-class confusion and attendance failures.
             </p>
           </section>
         </FadeIn>
@@ -100,22 +93,30 @@ export default function Skyrock() {
         {/* ── Block Quote 1 ── scroll-triggered */}
         <FadeIn>
           <blockquote className="block-quote">
-            <p className="block-quote-text">"If we simplify decision-making and design a coherent journey from checkout through class access, we'll increase conversion — even in a fully remote format."</p>
+            <p className="block-quote-text">"Program clarity and operational consistency were the real growth levers — not louder marketing."</p>
           </blockquote>
         </FadeIn>
 
-        {/* ── Who We Designed For ── scroll-triggered */}
+        {/* ── Outcomes ── scroll-triggered */}
         <FadeIn>
           <section className="section">
-            <h2 className="section-heading">Who We Designed For</h2>
+            <h2 className="section-heading">Outcomes</h2>
+            <CaseItems items={outcomes} />
+          </section>
+        </FadeIn>
+
+        {/* ── Stakeholders ── scroll-triggered */}
+        <FadeIn>
+          <section className="section">
+            <h2 className="section-heading">Who I Designed For</h2>
             <CaseItems items={designedFor} />
           </section>
         </FadeIn>
 
-        {/* ── Design & Process ── scroll-triggered */}
+        {/* ── Core Workstreams ── scroll-triggered */}
         <FadeIn>
           <section className="section">
-            <h2 className="section-heading">Design & Process</h2>
+            <h2 className="section-heading">Core Workstreams</h2>
             <CaseItems items={designProcess} />
           </section>
         </FadeIn>
@@ -128,16 +129,19 @@ export default function Skyrock() {
         {/* ── Block Quote 2 ── scroll-triggered */}
         <FadeIn>
           <blockquote className="block-quote">
-            <p className="block-quote-text">"Clarity converts. Parents wanted to understand, not be persuaded."</p>
+            <p className="block-quote-text">"Clarity converts. Families wanted to understand quickly and commit confidently."</p>
           </blockquote>
         </FadeIn>
 
         {/* ── What We Built ── scroll-triggered */}
         <FadeIn>
           <section className="section">
-            <h2 className="section-heading">What We Built</h2>
+            <h2 className="section-heading">What I Built</h2>
             <p className="body-text">
-              A conversion-first site paired with a robust service blueprint. Post-enrollment, families received a guided onboarding sequence — calendar invites, tech setup, access links, and materials. Cohorts were scheduled for maximum attendance. Instructors got standardized kits. The result: a coherent journey from discovery to attendance, with instrumentation at every step.
+              I built a conversion-first site architecture paired with an operational onboarding system. Post-enrollment, families moved through a guided sequence with calendar invites, tech-readiness prompts, access links, and materials prep. Instructors received standardized cohort kits and communication expectations.
+            </p>
+            <p className="body-text">
+              The outcome was a single end-to-end service flow from discovery to attendance, with fewer breakdown points between marketing, operations, and classroom delivery.
             </p>
           </section>
         </FadeIn>
@@ -155,14 +159,6 @@ export default function Skyrock() {
           </section>
         </FadeIn>
 
-        {/* ── Outcomes ── scroll-triggered */}
-        <FadeIn>
-          <section className="section">
-            <h2 className="section-heading">Outcomes</h2>
-            <CaseItems items={outcomes} />
-          </section>
-        </FadeIn>
-
         {/* ── Summer launch ── scroll-triggered */}
         <FadeIn>
           <img src="/assets/images/skyrock_summer_launch.webp" alt="Skyrock Summer Camps — we're back on campus" className="case-image" />
@@ -171,7 +167,7 @@ export default function Skyrock() {
         {/* ── Block Quote 3 ── scroll-triggered */}
         <FadeIn>
           <blockquote className="block-quote">
-            <p className="block-quote-text">"Automations need empathy. Reminders and checklists should reduce anxiety, not add noise. Tone and timing matter as much as content."</p>
+            <p className="block-quote-text">"Operational systems only work when they feel supportive to families. Tone, timing, and trust are product decisions."</p>
           </blockquote>
         </FadeIn>
 
@@ -179,7 +175,10 @@ export default function Skyrock() {
         <FadeIn>
           <section className="section">
             <p className="body-text">
-              Skyrock was a full-stack service design challenge — from the marketing site to the moment a kid logs into their first class. Happy to walk through the process.
+              Skyrock was a full-stack service design challenge spanning growth, operations, and delivery. The project reinforced how much business outcomes depend on designing the handoffs between teams, not just the front-end interface.
+            </p>
+            <p className="body-text">
+              I approached the work with the same principle I use across B2B and operational products: define the core bottleneck, design the system around it, and make ownership of outcomes explicit.
             </p>
           </section>
         </FadeIn>
