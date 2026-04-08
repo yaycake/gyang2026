@@ -60,7 +60,8 @@ const workExperiences = [
 ]
 
 const projects = [
-  { role: 'AI Builder',           name: 'Landmesh',        year: '2026', roleColor: '#7272F5', url: 'https://read-jog-40919901.figma.site', description: 'Innovation at scale: AI powered IP workflows for law firms and in-house R&D + counsel.' },
+  { role: 'Claude Cowork',        name: 'KanBanKit',       year: '2026', roleColor: '#7272F5', url: 'https://github.com/yaycake/kanbankit/tree/main', description: 'A free and simple project tracker built for convenient natural language inputs.' },
+  { role: 'AI Builder',           name: 'Landmesh',        year: '2026', roleColor: '#7272F5', url: 'https://read-jog-40919901.figma.site', description: 'a Figma Makethon particle project to landscape your inner world' },
   { role: 'Design & Development', name: 'APurePerson.com', year: '2019', roleColor: '#7272F5', url: 'https://apureperson.com/',               description: 'Digital listening room for collaborations with Taiwan new wave pop artist Lim Giong.' },
   { role: 'WeChat Mini Program',  name: 'Sticker Machine', year: '2018', roleColor: '#7272F5', url: 'https://www.youtube.com/watch?v=LnJNU5GrPpQ&pp=ygUVc3RpY2tlcm1hY2hpbmUgd2VjaGF0', description: 'WeChat Mini Program which gained up to 10,000 unique users.' },
 ]
