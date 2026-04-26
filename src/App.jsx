@@ -8,6 +8,8 @@ import Ubisoft from './pages/Ubisoft'
 import ORM from './pages/ORM'
 import LeWagon from './pages/LeWagon'
 import Resume from './pages/Resume'
+import ThoughtsIndex from './pages/ThoughtsIndex'
+import ThoughtPost from './pages/ThoughtPost'
 import './App.css'
 
 export default function App() {
@@ -25,6 +27,8 @@ export default function App() {
           <Route path="/orm" element={<ORM />} />
           <Route path="/lewagon" element={<LeWagon />} />
           <Route path="/resume" element={<Resume />} />
+          <Route path="/thoughts" element={<ThoughtsIndex />} />
+          <Route path="/thoughts/:slug" element={<ThoughtPost />} />
         </Routes>
       </div>
     </NavProvider>
