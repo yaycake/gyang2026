@@ -218,7 +218,7 @@ export default function Home() {
                     }}
                     onClick={() => {
                       if (isMobile()) {
-                        if (!isExpanded) setExpandedTile(i)
+                        setExpandedTile(isExpanded ? null : i)
                       } else {
                         if (exp.detailPath) navTo(exp.detailPath)
                         else if (exp.url) window.open(exp.url, '_blank', 'noreferrer')
