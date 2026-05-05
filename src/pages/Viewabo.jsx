@@ -80,7 +80,7 @@ export default function Viewabo() {
               I led end-to-end design for Viewabo's visual support experience and Zendesk integration, building the workflow that lets support teams see what customers see instantly, without app downloads or account setup.
             </p>
             <p className="body-text">
-              My scope spanned product strategy, interaction design, and service design across support operations. I partnered with engineering on WebRTC constraints and with customer-facing teams to ensure UX decisions translated into faster diagnosis, fewer unnecessary escalations, and higher-confidence resolutions.
+              I worked directly with the product lead and CEO to determine product strategy, interaction design, and service design across support operations. I partnered with engineering on WebRTC constraints and with customer-facing teams to ensure UX decisions translated into faster diagnosis, fewer unnecessary escalations, and higher-confidence resolutions.
             </p>
           </section>
         </FadeIn>
@@ -93,7 +93,7 @@ export default function Viewabo() {
               Most support workflows start blind: text tickets, ambiguous screenshots, and repeated clarification loops before agents can even identify the root issue. In hardware-heavy support environments, that delay increases handle time, drives avoidable returns, and creates poor customer experiences.
             </p>
             <p className="body-text">
-              I designed Viewabo's core workflows to close that context gap quickly — turning live visual input into structured, actionable evidence support teams can use immediately.
+              I designed Viewabo's core workflows to close that context gap quickly — turning live visual input into structured, actionable evidence support teams can use immediately. I worked with the founding CEO to shape our asynchrounous "Video Request" offering, which increased adoption of our tool by agents and end users. 
             </p>
           </section>
         </FadeIn>

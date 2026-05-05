@@ -51,10 +51,10 @@ const testimonials = [
 ]
 
 const workExperiences = [
-  { role: 'Founding Designer',    company: 'Patlytics', period: '2024–Present', logo: '/assets/logo-badges-patlytics-color.svg', roleColor: '#34C759', url: 'https://patlytics.ai', detailPath: '/patlytics', description: 'Innovation at scale: AI powered IP workflows for law firms and in-house R&D + counsel.' },
-  { role: 'Founding Designer',    company: 'Viewabo',   period: '2021–2023',   logo: '/assets/viewabo-color.svg',                roleColor: '#749CFC', url: 'https://viewabo.com',            detailPath: '/viewabo',  description: 'Next-gen b2b customer service live stream and async video tool.' },
+  { role: 'Founding Designer',    company: 'Patlytics', period: '2024–Present', logo: '/assets/logo-badges-patlytics-color.svg', roleColor: '#34C759', url: 'https://patlytics.ai', detailPath: '/patlytics', description: '0-1 product and system design for AI powered IP workflows for law firms and in-house R&D + counsel.' },
+  { role: 'Founding Designer',    company: 'Viewabo',   period: '2021–2023',   logo: '/assets/viewabo-color.svg',                roleColor: '#749CFC', url: 'https://viewabo.com',            detailPath: '/viewabo',  description: 'Solo UX/UI designer for next-gen b2b customer service across agent desktop, plugin, and end user mobile experiences.' },
   { role: 'Digital Director',     company: 'Skyrock',   period: '2020–2021',   logo: '/assets/logo-badges-skyrock-color.svg',    roleColor: '#34A7FF', url: null,                             detailPath: '/skyrock',  description: 'From service design to brand UX and digital ops, working cross functionally to pivot online and offline STEAM programs during COVID.' },
-  { role: 'Design',               company: 'Ubisoft',   period: '2018',        logo: '/assets/logo-badges-ubisoft-white.svg',    roleColor: '#7042EF', url: 'https://ubisoft.com',            detailPath: '/ubisoft',  description: "Rally Ubisoft's global community around ChinaJoy through WeChat Mini Program design." },
+  { role: 'Design',               company: 'Ubisoft',   period: '2018',        logo: '/assets/logo-badges-ubisoft-white.svg',    roleColor: '#7042EF', url: 'https://ubisoft.com',            detailPath: '/ubisoft',  description: "Technical consultant & mobile app design Rally Ubisoft's global community around ChinaJoy through WeChat Mini Program design." },
   { role: 'Design & Development', company: 'ORM',       period: '2018–2019',   logo: '/assets/logo-badges-orm-color.svg',        roleColor: '#6C9988', url: 'https://ormgenomics.com/',       detailPath: '/orm',      description: "Design and development for ORM's China presence via their WeChat Mini Program." },
   { role: 'Product Design',       company: 'Le Wagon',  period: '2016–2018',   logo: '/assets/logo-badges-lewagon-color.svg',    roleColor: '#E60F05', url: 'https://www.lewagon.com/',       detailPath: '/lewagon', description: 'Taught product design across five bootcamp batches and taught high school students in Chengdu product design and front-end development (HTML, CSS, JS).' },
 ]
@@ -187,16 +187,24 @@ export default function Home() {
                 title="Alumni Ventures Invests in Patlytics to Revolutionize Patent Protection with AI"
                 description="Patlytics is disrupting the patent landscape with cutting-edge AI technology designed to protect, enforce, and maximize the value of intellectual property."
               />{' '}
-              and{' '}
+              , {' '}
               <InlineWidget
                 placement="bottom"
-                text="14 million series A"
+                text="a 14 million series A"
                 url="https://techcrunch.com/2025/02/24/patlytics-raises-14m-series-a-funding-for-its-patent-analytics-platform/"
                 domain="techcrunch.com"
                 title="Patlytics raises $14M for its patent analytics platform"
                 description="For decades, patents have been a bone of contention in the technology world, seen by some as a way to protect intellectual property, but by critics as a tool for litigation."
               />
-              .
+              , and a {' '}
+              <InlineWidget
+                placement="bottom"
+                text="40 million series B"
+                url="https://www.businesswire.com/news/home/20260408770722/en/Patlytics-Raises-%2440-Million-Series-B-to-Expand-the-AI-Platform-Purpose-Built-for-IP-Work"
+                domain="businesswire.com"
+                title="Patlytics Raises $40 Million Series B to Expand the AI Platform Purpose-Built for IP Work"
+                description="SignalFire leads the round; Patlytics now serves over 40% of Am Law 100 IP practices."
+              />. 
             </p>
           </section>
         </FadeIn>

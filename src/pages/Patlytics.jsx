@@ -89,7 +89,10 @@ export default function Patlytics() {
         <FadeIn delay={200}>
           <section className="section case-intro">
             <p className="body-text">
-              I led design for the litigation intelligence suite at Patlytics — an AI-powered patent platform that grew from $0 to $4.4M ARR in its first two years, backed by $14M Series A funding. My work spanned infringement detection, invalidity analysis, prior art search, and Freedom to Operate — building the workflows that enterprise IP teams now use to compress months of attorney research into hours.
+              The first year, I led 0-1 design of an AI-powered patent platform that grew from $0 to $4.4M ARR in its first two years, backed by $4.5M seed and $14M Series A. The second year, I designed platform growth initiatives that delivered a <strong>5.5× increase in overall usage</strong> during 2025, including <strong>2–4× expansion across the core DR, INF, and INV modules</strong> and an <strong>MAU jump from 50 to over 585</strong>, rewarded with $40M Series B funding.
+              </p>
+              <p className="body-text">
+              While my work started with prompting, testing, and designing our flagship module Detection Report, today the product spans 90% of the patent lifecycle. Used by 40% of top American law firms, we offer workflows which compress months of attorney research into hours.
             </p>
             <p className="body-text">
               Patent litigation work is extraordinarily time-intensive. Before tools like Patlytics, IP attorneys spent days or months manually cross-referencing patents, products, and technical disclosures to build an infringement case. Invalidity searches required combing through prior art databases that returned incomplete results. Drafting structured legal documents meant hours of mechanical assembly before any strategic judgment could happen.
@@ -107,7 +110,7 @@ export default function Patlytics() {
           <section className="section">
             <h2 className="section-heading">Outcomes</h2>
             <p className="body-text">
-              Across the litigation suite I designed:
+              Direct outcomes of the modules I've designed:
             </p>
             <ul className="body-text" style={{ marginTop: '12px' }}>
               <li>
