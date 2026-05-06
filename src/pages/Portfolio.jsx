@@ -66,6 +66,7 @@ const slides = [
     title: 'Examples',
     description: '1. The detection report module, featuring product catalog and infringement mapping. 2. Latest claim chart view. Not only does the enterprise design have to be scalable and dense, it needs to be responsive against a collapsible AI chat panel.',
     canvas: 'examples',
+    canvasPadding: '40px',
   },
   {
     id: 9,
@@ -320,6 +321,7 @@ function Carousel() {
           />
         ))}
       </div>
+      <p className="portfolio-timestamp">last updated: Thursday, May 7</p>
     </div>
   )
 }
