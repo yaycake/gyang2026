@@ -10,6 +10,7 @@ import LeWagon from './pages/LeWagon'
 import Resume from './pages/Resume'
 import ThoughtsIndex from './pages/ThoughtsIndex'
 import ThoughtPost from './pages/ThoughtPost'
+import Portfolio from './pages/Portfolio'
 import './App.css'
 
 export default function App() {
@@ -29,6 +30,7 @@ export default function App() {
           <Route path="/resume" element={<Resume />} />
           <Route path="/thoughts" element={<ThoughtsIndex />} />
           <Route path="/thoughts/:slug" element={<ThoughtPost />} />
+          <Route path="/portfolio" element={<Portfolio />} />
         </Routes>
       </div>
     </NavProvider>
