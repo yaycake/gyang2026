@@ -184,13 +184,39 @@ function FlockCanvas() {
 }
 
 function LandmeshCanvas() {
+  const videoRef = useRef(null)
+
+  useEffect(() => {
+    const video = videoRef.current
+    if (!video) return
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          video.play()
+        } else {
+          video.pause()
+        }
+      },
+      { threshold: 0.5 }
+    )
+    observer.observe(video)
+    return () => observer.disconnect()
+  }, [])
+
   return (
     <div className="landmesh-canvas">
       <div className="landmesh-stack">
         <img src="/assets/landmesh-1.png" alt="Landmesh 1" className="landmesh-stack-img" />
         <img src="/assets/landmesh-2.png" alt="Landmesh 2" className="landmesh-stack-img" />
       </div>
-      <img src="/assets/landmesh-3.png" alt="Landmesh 3" className="landmesh-main-img" />
+      <video
+        ref={videoRef}
+        src="/assets/landmesh-vid.mp4"
+        className="landmesh-main-img"
+        loop
+        muted
+        playsInline
+      />
     </div>
   )
 }
