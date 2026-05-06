@@ -1362,7 +1362,7 @@
 }
 
 .portfolio-unlocked .portfolio-gate-title {
-  text-align: left;
+  text-align: center;
 }
 
 .portfolio-carousel-wrap {
@@ -1379,10 +1379,11 @@
   gap: 16px;
   overflow-x: auto;
   scroll-snap-type: x mandatory;
-  scroll-padding-left: 24px;
+  scroll-padding-left: 64px;
   -webkit-overflow-scrolling: touch;
   scrollbar-width: none;
-  padding: 0 24px;
+  padding: 0 24px 0 64px;
+  gap: 32px;
   /* make last card feel aligned */
   padding-right: calc(100vw - 900px - 24px);
 }
@@ -1398,14 +1399,278 @@
 }
 
 .portfolio-slide-canvas {
-  width: 900px;
+  width: 100%;
+  max-width: 900px;
   height: 500px;
+  max-height: 500px;
   background: rgba(255, 255, 255, 0.06);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.portfolio-slide-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+/* ── Flock canvas ── */
+.flock-canvas {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+}
+
+.flock-img {
+  height: 100%;
+  width: auto;
+  object-fit: contain;
+  border-radius: 8px;
+  display: block;
+}
+
+/* ── Landmesh canvas ── */
+.landmesh-canvas {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  gap: 16px;
+}
+
+.landmesh-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  flex: 0 0 auto;
+}
+
+.landmesh-stack-img {
+  flex: 1;
+  width: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+  display: block;
+  min-height: 0;
+}
+
+.landmesh-main-img {
+  flex: 1;
+  min-width: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+  display: block;
+}
+
+/* ── Mobile canvas ── */
+.mobile-canvas {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  padding: 40px;
+}
+
+.mobile-img {
+  height: 100%;
+  width: auto;
+  object-fit: contain;
+  border-radius: 8px;
+  display: block;
+}
+
+/* ── Examples canvas ── */
+.examples-canvas {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  padding: 24px;
+}
+
+.examples-img {
+  flex: 1;
+  height: 100%;
+  object-fit: contain;
+  object-position: top center;
+  min-width: 0;
+  border-radius: 8px;
+}
+
+/* ── Growth bento canvas ── */
+.growth-bento {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.growth-cell {
+  flex: 1;
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 16px;
+  background: #2C4F3D;
+}
+
+.growth-cell:first-child {
+  border-radius: 12px 12px 12px 12px;
+}
+
+.growth-cell:last-child {
+  border-radius: 12px 12px 12px 12px;
+}
+
+.growth-cell-heading {
+  font-family: var(--sans);
+  font-size: 14px;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1.4;
+}
+
+.growth-cell-body {
+  font-family: var(--sans);
+  font-size: 13px;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.75);
+  line-height: 1.6;
+}
+
+.growth-right {
+  display: flex;
+  align-items: flex-start;
+  padding: 28px;
   border-radius: 12px;
 }
 
+.growth-quote {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  animation: quoteFadeIn 0.6s ease forwards;
+}
+
+@keyframes quoteFadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.growth-quote-text {
+  font-family: var(--sans);
+  font-size: 14px;
+  font-weight: 300;
+  color: #ffffff;
+  line-height: 1.7;
+}
+
+.growth-quote-link {
+  font-family: var(--sans);
+  font-size: 13px;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.6);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: color 0.15s;
+}
+
+.growth-quote-link:hover {
+  color: #ffffff;
+}
+
+/* ── Patlytics canvas ── */
+.patlytics-canvas {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  padding: 16px;
+}
+
+.patlytics-img {
+  height: 292px;
+  width: auto;
+  object-fit: contain;
+  border-radius: 8px;
+  display: block;
+}
+
+/* ── B2B canvas ── */
+.b2b-canvas {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  padding: 16px;
+}
+
+.b2b-img {
+  height: 338px;
+  flex-shrink: 0;
+  border-radius: 8px;
+  display: block;
+}
+
+.b2b-img:first-child {
+  width: auto;
+  object-fit: contain;
+}
+
+.b2b-img:last-child {
+  width: 332px;
+  object-fit: cover;
+  object-position: top center;
+}
+
+/* ── Skills grid canvas ── */
+.skills-grid {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 140px);
+  justify-content: center;
+  align-content: center;
+  column-gap: 16px;
+  row-gap: 0px;
+}
+
+.skills-icon-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.skills-icon-img {
+  width: 140px;
+  height: 140px;
+  display: block;
+}
+
+.portfolio-slide-text {
+  height: 126px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 24px;
+}
+
 .portfolio-slide-title {
-  margin-top: 24px;
   font-family: var(--sans);
   font-size: 16px;
   font-weight: 700;
@@ -1426,7 +1691,7 @@
 .portfolio-progress {
   display: flex;
   gap: 4px;
-  padding: 0 24px;
+  padding: 0 24px 0 64px;
 }
 
 .portfolio-progress-seg {

@@ -10,58 +10,92 @@ const SUCCESS_DELAY_MS = 1500
 const slides = [
   {
     id: 0,
-    title: 'Lorem ipsum dolor sit amet',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+    title: 'Founding Designership',
+    description: 'As an experienced founding and solo designer, I\'m a tried and true super individual contributor. Clear and consistent communication, cross-functional collaboration, and reliable ownership are tools of this trade.',
+    image: '/assets/designership.png',
+    imageFit: 'cover',
   },
   {
     id: 1,
-    title: 'Consectetur adipiscing elit',
-    description: 'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat duis aute.',
+    title: 'Skills',
+    description: 'For personal projects, I\'ve been developing mobile web apps and static websites with Claude Cowork & Code, Cursor, using Gemini, Claude, and Codex tokens. At work, I\'ve done rapid prototyping with Figma Make, Claude Cowork /Code, wrapping up with hi-fidelity Figma files. Former front-end dev for WeChat Mini Programs, I\'ve programmed JS, HTML, CSS, React, RoR, and Vue.',
+    canvas: 'skills',
   },
   {
     id: 2,
-    title: 'Sed do eiusmod tempor',
-    description: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur excepteur sint occaecat.',
+    title: 'B2B Spaces and Enterprise Pain Points',
+    description: 'My early stage startup experiences lean heavily into creating scalable solutions for enterprise pain points. I have experience in communicating with customers concerned about their business constraints, mapping out their existing and potentially complex workflows, while also considering their end-user priorities. *Ft. Patlytics & Viewabo',
+    canvas: 'b2b',
   },
   {
     id: 3,
-    title: 'Incididunt ut labore',
-    description: 'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum sed perspiciatis.',
+    title: 'Finding Patlytics',
+    description: 'As third hire and solo designer for Patlytics, I thrived in building from 0 to 1 and loved the challenge of innovating with AI in a space plagued with arcane, fragmented workflows hampered by real human constraints. I designed their first flagship module for their AI powered patent platform, and have seen the product evolve up to our latest series B raise of $40 million.',
+    canvas: 'patlytics',
   },
   {
     id: 4,
-    title: 'Dolore magna aliqua enim',
-    description: 'Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione.',
+    title: 'Break-Neck Speed, Innovation from 0',
+    description: 'Learning about patent and IP workflow from 0 was a challenge, but I used my naiveté as an advantage to innovate. I learned, tested prompts, and reviewed prototypes with in-house counsel, practicing patent attorneys, IP advisors, and potential clients. I also surfaced constraints with our CTO. Through tight feedback loops and collaboration, experiments turned into a real product.',
+    image: '/assets/slide_5.svg',
+    canvasPadding: '40px',
   },
   {
     id: 5,
-    title: 'Quis nostrud exercitation',
-    description: 'At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos.',
+    title: 'Key Design Decision',
+    description: 'The report was designed to be a living workspace for users to explore strategy, easily add their own products and research, and be able to visualize and access different levels of context and relate them to each other coherently, from the portfolio to the product, to the targeted companies, down to the claims and their limitations.',
+    image: '/assets/slide 6.svg',
+    canvasPadding: '40px',
   },
   {
     id: 6,
-    title: 'Ullamco laboris nisi',
-    description: 'Nam libero tempore cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus.',
+    title: 'Feedback & Iterations',
+    description: 'Feedback from Detection Report helped grow the Patlytics platform and shape our additional modules. As the team grew, I eventually focused on improving the experience of the Litigation & Patent Monetization portion of the platform.',
+    image: '/assets/slide 7.svg',
+    canvasPadding: '40px',
   },
   {
     id: 7,
-    title: 'Aliquip ex ea commodo',
-    description: 'Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint molestiae.',
+    title: 'Growth & Success',
+    description: '3 years and three funding rounds later, the flagship module is still evolving and a valuable tool for all our customers. We\'ve managed to penetrate 40% of America\'s top law firms and break into software, automotive, digital solutions, and pharmaceuticals.',
+    canvas: 'growth',
+    canvasPadding: '40px',
   },
   {
     id: 8,
-    title: 'Reprehenderit in voluptate',
-    description: 'Itaque earum rerum hic tenetur a sapiente delectus ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus.',
+    title: 'Examples',
+    description: '1. The detection report module, featuring product catalog and infringement mapping. 2. Latest claim chart view. Not only does the enterprise design have to be scalable and dense, it needs to be responsive against a collapsible AI chat panel.',
+    canvas: 'examples',
   },
   {
     id: 9,
-    title: 'Velit esse cillum dolore',
-    description: 'Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur vel illum qui dolorem eum.',
+    title: 'Mobile Examples',
+    description: '3. Viewabo for mobile agents in the field. 4. ORM WeChat Mini Program front end design. 5. Sticker Machine, one of my first projects out of bootcamp. We routed the Giphy API through the Great Firewall so WeChat users could find and save stickers— before this, you\'d only find new stickers when friends shared them. Organically increased to 10,000 users before censorship.',
+    canvas: 'mobile',
   },
   {
     id: 10,
-    title: 'Fugiat nulla pariatur sint',
-    description: 'Ut enim ad minima veniam quis nostrum exercitationem ullam corporis suscipit laboriosam nisi ut aliquid ex ea commodi consequatur.',
+    title: 'Personal Project — Landmesh',
+    description: 'Landmesh was hatched during Contra\'s Figma Makethon 2026. I designed and vibe-coded a mobile game for users to sculpt landscapes with a particle engine; users can add trees, turn land to sea, add clouds, stars, and butterflies. My favorite part? Customizing the ambient and sound effects. The project is still live.',
+    canvas: 'landmesh',
+    canvasPadding: '40px',
+  },
+  {
+    id: 11,
+    title: 'Flock (WIP)',
+    description: 'Currently working on a mobile scavenger hunt game with a few twists. This is a collaboration with another software engineer; I designed the mascot/logo and game components. Release date TBD.',
+    canvas: 'flock',
+    canvasPadding: '40px',
+  },
+  {
+    id: 12,
+    title: 'Thanks!',
+    description: 'Feel free to contact me if you have any questions.',
+    image: '/assets/me.png',
+    imageFit: 'contain',
+    imageSize: '200px',
+    canvasCenter: true,
+    canvasPadding: '40px',
   },
 ]
 
@@ -72,16 +106,172 @@ const ReturnIcon = () => (
   </svg>
 )
 
+const skillIcons = [
+  { src: '/assets/js.svg',     alt: 'JavaScript' },
+  { src: '/assets/html.svg',   alt: 'HTML' },
+  { src: '/assets/css.svg',    alt: 'CSS' },
+  { src: '/assets/figma.svg',  alt: 'Figma' },
+  { src: '/assets/claude.svg', alt: 'Claude' },
+  { src: '/assets/openai.svg', alt: 'OpenAI' },
+  { src: '/assets/gemini.svg', alt: 'Gemini' },
+  { src: '/assets/cursor.svg', alt: 'Cursor' },
+  { src: '/assets/hermes.svg', alt: 'Hermes' },
+]
+
+const growthQuotes = [
+  {
+    quote: '"On average, the AI tools reduced my research time by one to two days," Wang said. This efficiency boost not only improved her ability to familiarize herself with new technologies and products but also helped RJLF deliver faster, more accurate results to clients.',
+    caseStudyTitle: '"How RJLF Accelerated Case Reviews with Patlytics"',
+    caseStudyUrl: 'https://cdn.prod.website-files.com/6799236636ce53b60c8d8ba8/6890f10b3d9bbca6632a7174_Patlytics%20Customer%20Case%20Study%20-%20Reichman%20Jorgensen%20Lehman%20Feldberg%20LLP.pdf',
+  },
+  {
+    quote: 'By leveraging Patlytics, this practice group head achieved an 80% reduction in project time, allowing attorneys to significantly increase their profitability for fixed-fee patent services.',
+    caseStudyTitle: '"How an Am Law 100 Practice Group Head Reduced IP Counseling Time 80% with Patlytics"',
+    caseStudyUrl: 'https://cdn.prod.website-files.com/6799236636ce53b60c8d8ba8/6890f10b2156eb06c9f52514_Patlytics%20Customer%20Case%20Study%20-%20Am%20Law%20100%20Practice%20Group%20Head.pdf',
+  },
+  {
+    quote: 'The company\'s earliest product gave patent professionals a dramatically faster, more accurate way to analyze infringement: mapping claim charts against accused products, surfacing relevant prior art, and producing the kind of structured output that used to take days. That initial wedge was deliberate. Infringement and prior-art work are both high-stakes and highly labor-intensive, which meant that early customers across top-tier law firms and major corporate IP teams felt the ROI immediately and deeply.',
+    caseStudyTitle: 'How Patlytics is automating the hardest workflows in intellectual property',
+    caseStudyUrl: 'https://www.signalfire.com/blog/patlytics-investor',
+  },
+]
+
+function GrowthCanvas() {
+  const [quoteIndex, setQuoteIndex] = useState(0)
+
+  useEffect(() => {
+    if (growthQuotes.length <= 1) return
+    const id = setInterval(() => {
+      setQuoteIndex(i => (i + 1) % growthQuotes.length)
+    }, 4000)
+    return () => clearInterval(id)
+  }, [])
+
+  const q = growthQuotes[quoteIndex]
+
+  return (
+    <div className="growth-bento">
+      <div className="growth-cell">
+        <p className="growth-cell-heading">Detection Report is #1 Litigation module, leading on ~60% on most days.</p>
+        <p className="growth-cell-body">Patlytics is also generating 500–900+ claim charts a day.</p>
+      </div>
+      <div className="growth-cell">
+        <div key={quoteIndex} className="growth-quote">
+          <p className="growth-quote-text">{q.quote}</p>
+          <a
+            href={q.caseStudyUrl}
+            target="_blank"
+            rel="noreferrer"
+            className="growth-quote-link"
+          >
+            {q.caseStudyTitle}
+          </a>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+function FlockCanvas() {
+  return (
+    <div className="flock-canvas">
+      <img src="/assets/flock1.png" alt="Flock 1" className="flock-img" />
+      <img src="/assets/flock2.png" alt="Flock 2" className="flock-img" />
+      <img src="/assets/flock3.png" alt="Flock 3" className="flock-img" />
+    </div>
+  )
+}
+
+function LandmeshCanvas() {
+  return (
+    <div className="landmesh-canvas">
+      <div className="landmesh-stack">
+        <img src="/assets/landmesh-1.png" alt="Landmesh 1" className="landmesh-stack-img" />
+        <img src="/assets/landmesh-2.png" alt="Landmesh 2" className="landmesh-stack-img" />
+      </div>
+      <img src="/assets/landmesh-3.png" alt="Landmesh 3" className="landmesh-main-img" />
+    </div>
+  )
+}
+
+function MobileCanvas() {
+  return (
+    <div className="mobile-canvas">
+      <img src="/assets/slide_10-1.png" alt="Viewabo mobile" className="mobile-img" />
+      <img src="/assets/slide_10-2.png" alt="ORM WeChat" className="mobile-img" />
+      <img src="/assets/slide_10-3.png" alt="Sticker Machine" className="mobile-img" />
+    </div>
+  )
+}
+
+function ExamplesCanvas() {
+  return (
+    <div className="examples-canvas">
+      <img src="/assets/slide_9-1.png" alt="Detection Report" className="examples-img" />
+      <img src="/assets/slide_9-2.png" alt="Claim Chart" className="examples-img" />
+    </div>
+  )
+}
+
+function PatlyticsCavas() {
+  return (
+    <div className="patlytics-canvas">
+      <img src="/assets/slide 4-1.png" alt="Patlytics product" className="patlytics-img" />
+      <img src="/assets/slide 4-2.png" alt="Patlytics case study" className="patlytics-img" />
+    </div>
+  )
+}
+
+function B2BCanvas() {
+  return (
+    <div className="b2b-canvas">
+      <img src="/assets/slide 3 patlyics.png" alt="Patlytics" className="b2b-img" />
+      <img src="/assets/slide 3 viewabo.png" alt="Viewabo" className="b2b-img" />
+    </div>
+  )
+}
+
+function SkillsCanvas() {
+  return (
+    <div className="skills-grid">
+      {skillIcons.map((icon) => (
+        <div key={icon.alt} className="skills-icon-wrap">
+          <img src={icon.src} alt={icon.alt} className="skills-icon-img" />
+        </div>
+      ))}
+    </div>
+  )
+}
+
 function Carousel() {
   const scrollRef = useRef(null)
   const [activeSlide, setActiveSlide] = useState(0)
+  const [opacities, setOpacities] = useState(() => slides.map((_, i) => i === 0 ? 1 : 0.3))
+
+  useEffect(() => {
+    const thresholds = Array.from({ length: 21 }, (_, i) => i / 20)
+    const observer = new IntersectionObserver((entries) => {
+      setOpacities(prev => {
+        const next = [...prev]
+        entries.forEach(entry => {
+          const idx = Number(entry.target.dataset.idx)
+          next[idx] = 0.3 + entry.intersectionRatio * 0.7
+        })
+        return next
+      })
+    }, { root: scrollRef.current, threshold: thresholds })
+
+    const nodes = scrollRef.current?.querySelectorAll('.portfolio-slide')
+    nodes?.forEach(node => observer.observe(node))
+    return () => observer.disconnect()
+  }, [])
 
   const handleScroll = useCallback(() => {
     const el = scrollRef.current
     if (!el) return
     const slide = el.querySelector('.portfolio-slide')
     if (!slide) return
-    const itemWidth = slide.offsetWidth + 16
+    const itemWidth = slide.offsetWidth + 32
     const index = Math.round(el.scrollLeft / itemWidth)
     setActiveSlide(Math.min(Math.max(index, 0), slides.length - 1))
   }, [])
@@ -89,11 +279,36 @@ function Carousel() {
   return (
     <div className="portfolio-carousel-wrap">
       <div className="portfolio-carousel" ref={scrollRef} onScroll={handleScroll}>
-        {slides.map((slide) => (
-          <div key={slide.id} className="portfolio-slide">
-            <div className="portfolio-slide-canvas" />
-            <p className="portfolio-slide-title">{slide.title}</p>
-            <p className="portfolio-slide-desc">{slide.description}</p>
+        {slides.map((slide, i) => (
+          <div key={slide.id} className="portfolio-slide" data-idx={i} style={{ opacity: opacities[i], transition: 'opacity 0.15s ease' }}>
+            <div className="portfolio-slide-text">
+              <p className="portfolio-slide-title">{slide.title}</p>
+              <p className="portfolio-slide-desc">{slide.description}</p>
+            </div>
+            <div className="portfolio-slide-canvas" style={{
+              ...(slide.canvasPadding ? { padding: slide.canvasPadding } : {}),
+              ...(slide.canvasCenter ? { display: 'flex', alignItems: 'center', justifyContent: 'center' } : {}),
+            }}>
+              {slide.canvas === 'flock' && <FlockCanvas />}
+              {slide.canvas === 'landmesh' && <LandmeshCanvas />}
+              {slide.canvas === 'mobile' && <MobileCanvas />}
+              {slide.canvas === 'examples' && <ExamplesCanvas />}
+              {slide.canvas === 'growth' && <GrowthCanvas />}
+              {slide.canvas === 'patlytics' && <PatlyticsCavas />}
+              {slide.canvas === 'b2b' && <B2BCanvas />}
+              {slide.canvas === 'skills' && <SkillsCanvas />}
+              {slide.image && (
+                <img
+                  src={slide.image}
+                  alt=""
+                  className="portfolio-slide-img"
+                  style={{
+                    ...(slide.imageFit ? { objectFit: slide.imageFit } : {}),
+                    ...(slide.imageSize ? { width: slide.imageSize, height: slide.imageSize } : {}),
+                  }}
+                />
+              )}
+            </div>
           </div>
         ))}
       </div>
@@ -140,7 +355,7 @@ export default function Portfolio() {
   }
 
   const gateTitle = phase === 'unlocked'
-    ? 'View Product Design Case Studies'
+    ? 'Portfolio Brief & Case Study'
     : 'Product Design Case Study'
 
   return (
