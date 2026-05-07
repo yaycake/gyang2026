@@ -1674,7 +1674,7 @@
 
 .skills-tooltip {
   position: absolute;
-  left: calc(100% + 12px);
+  left: calc(100% - 28px);
   top: 50%;
   transform: translateY(-50%);
   width: 220px;
@@ -1717,7 +1717,7 @@
 
 .skills-group-tooltip {
   position: absolute;
-  bottom: 165px;
+  bottom: 204px;
   left: 50%;
   transform: translateX(-50%);
   width: 380px;
