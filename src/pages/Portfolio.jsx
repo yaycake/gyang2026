@@ -31,13 +31,14 @@ const slides = [
     title: 'Skills',
     description: 'I move fast with Figma Make and Claude to prototype, then land in hi-fidelity Figma. For personal projects, I vibe-code with Cursor, pulling from Claude, Gemini, and Codex. Before designing full-time, I wrote production front-end code for real clients — WeChat Mini Programs, web apps, marketing sites — which is what lets me collaborate with engineering at the implementation level, not just the handoff.',
     canvas: 'skills',
-    thumbnail: '/assets/js.svg',
+    thumbnail: '/assets/js.png',
   },
   {
     id: 2,
     title: 'B2B Spaces and Enterprise Pain Points',
     description: 'I\'m drawn to dense, unfamiliar spaces — where learning the workflow is half the design problem. At Patlytics, that meant studying IP law from scratch; At Viewabo: measurable gains in CSAT and field dispatch efficiency.',
     canvas: 'b2b',
+    canvasPadding: '40px',
     thumbnail: '/assets/slide 3 patlyics.png',
   },
   {
@@ -132,7 +133,7 @@ const ReturnIcon = () => (
 
 const skillIcons = [
   {
-    src: '/assets/claude.svg', alt: 'Claude',
+    src: '/assets/claude.png', alt: 'Claude',
     title: 'Claude Cowork, Code',
     paras: [
       {
@@ -142,7 +143,7 @@ const skillIcons = [
     ],
   },
   {
-    src: '/assets/openai.svg', alt: 'OpenAI',
+    src: '/assets/openai.png', alt: 'OpenAI',
     title: 'OpenAI / ChatGPT / Codex',
     paras: [
       {
@@ -152,7 +153,7 @@ const skillIcons = [
     ],
   },
   {
-    src: '/assets/cursor.svg', alt: 'Cursor',
+    src: '/assets/cursor.png', alt: 'Cursor',
     title: 'Cursor',
     paras: [
       {
@@ -162,7 +163,7 @@ const skillIcons = [
     ],
   },
   {
-    src: '/assets/gemini.svg', alt: 'Gemini',
+    src: '/assets/gemini.png', alt: 'Gemini',
     title: 'Google Gemini',
     paras: [
       {
@@ -172,7 +173,7 @@ const skillIcons = [
     ],
   },
   {
-    src: '/assets/hermes.svg', alt: 'Hermes',
+    src: '/assets/hermes.png', alt: 'Hermes',
     title: 'Hermes Agent',
     paras: [
       {
@@ -182,7 +183,7 @@ const skillIcons = [
     ],
   },
   {
-    src: '/assets/figma.svg', alt: 'Figma',
+    src: '/assets/figma.png', alt: 'Figma',
     title: 'Figma',
     paras: [
       {
@@ -192,7 +193,7 @@ const skillIcons = [
     ],
   },
   {
-    src: '/assets/js.svg', alt: 'JavaScript',
+    src: '/assets/js.png', alt: 'JavaScript',
     title: 'JavaScript',
     paras: [
       {
@@ -202,7 +203,7 @@ const skillIcons = [
     ],
   },
   {
-    src: '/assets/html.svg', alt: 'HTML',
+    src: '/assets/html.png', alt: 'HTML',
     title: 'HTML',
     paras: [
       {
@@ -212,7 +213,7 @@ const skillIcons = [
     ],
   },
   {
-    src: '/assets/css.svg', alt: 'CSS',
+    src: '/assets/css.png', alt: 'CSS',
     title: 'CSS',
     paras: [
       {
@@ -238,7 +239,7 @@ const growthQuotes = [
     caseStudyUrl: 'https://cdn.prod.website-files.com/6799236636ce53b60c8d8ba8/6890f10b2156eb06c9f52514_Patlytics%20Customer%20Case%20Study%20-%20Am%20Law%20100%20Practice%20Group%20Head.pdf',
   },
   {
-    quote: 'The company\'s earliest product gave patent professionals a dramatically faster, more accurate way to analyze infringement: mapping claim charts against accused products, surfacing relevant prior art, and producing the kind of structured output that used to take days. That initial wedge was deliberate. Infringement and prior-art work are both high-stakes and highly labor-intensive, which meant that early customers across top-tier law firms and major corporate IP teams felt the ROI immediately and deeply.',
+    quote: 'The company\'s earliest product gave patent professionals a dramatically faster, more accurate way to analyze infringement: mapping claim charts against accused products, surfacing relevant prior art, and producing the kind of structured output that used to take days… early customers across top-tier law firms and major corporate IP teams felt the ROI immediately and deeply.',
     caseStudyTitle: 'How Patlytics is automating the hardest workflows in intellectual property',
     caseStudyUrl: 'https://www.signalfire.com/blog/patlytics-investor',
   },
@@ -357,6 +358,7 @@ function B2BCanvas({ onExpand }) {
   return (
     <div className="b2b-canvas">
       <img src="/assets/slide 3 patlyics.png" alt="Patlytics" className="b2b-img expandable" onClick={() => onExpand('/assets/slide 3 patlyics.png')} />
+      <img src="/assets/slide 3 viewabo.png" alt="Viewabo" className="b2b-img b2b-img--desktop expandable" onClick={() => onExpand('/assets/slide 3 viewabo.png')} />
     </div>
   )
 }

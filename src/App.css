@@ -1495,7 +1495,7 @@
   width: 100%;
   height: 100%;
   display: flex;
-  gap: 4px;
+  gap: 16px;
 }
 
 .mobile-img {
@@ -1512,7 +1512,7 @@
   width: 100%;
   height: 100%;
   display: flex;
-  gap: 4px;
+  gap: 16px;
 }
 
 .examples-img {
@@ -1540,7 +1540,6 @@
   flex-direction: column;
   justify-content: center;
   gap: 16px;
-  background: #2C4F3D;
 }
 
 .growth-cell:first-child {
@@ -1615,6 +1614,7 @@
 .patlytics-canvas {
   width: 100%;
   height: 100%;
+  padding: 40px;
 }
 
 .patlytics-img {
@@ -1623,20 +1623,25 @@
   object-fit: cover;
   object-position: top right;
   display: block;
+  border-radius: 8px;
 }
 
 /* ── B2B canvas ── */
 .b2b-canvas {
   width: 100%;
   height: 100%;
+  display: flex;
+  gap: 16px;
 }
 
 .b2b-img {
-  width: 100%;
+  flex: 1;
+  min-width: 0;
   height: 100%;
   object-fit: cover;
-  object-position: top right;
+  object-position: top;
   display: block;
+  border-radius: 8px;
 }
 
 /* ── Skills canvas ── */
@@ -2082,5 +2087,27 @@
 
   .portfolio-slide-canvas--padded {
     padding: 16px !important;
+  }
+
+  .b2b-img--desktop {
+    display: none;
+  }
+
+  .b2b-img {
+    object-fit: cover;
+    object-position: top right;
+  }
+
+  .patlytics-canvas {
+    padding: 0;
+  }
+
+  .patlytics-img {
+    border-radius: 0;
+  }
+
+  .examples-canvas,
+  .mobile-canvas {
+    gap: 4px;
   }
 }
