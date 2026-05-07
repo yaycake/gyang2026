@@ -14,24 +14,28 @@ const slides = [
     description: 'As an experienced founding and solo designer, I\'m a tried and true super individual contributor. Clear and consistent communication, cross-functional collaboration, and reliable ownership are tools of this trade.',
     image: '/assets/designership.png',
     imageFit: 'cover',
+    thumbnail: '/assets/designership.png',
   },
   {
     id: 1,
     title: 'Skills',
     description: 'For personal projects, I\'ve been developing mobile web apps and static websites with Claude Cowork & Code, Cursor, using Gemini, Claude, and Codex tokens. At work, I\'ve done rapid prototyping with Figma Make, Claude Cowork /Code, wrapping up with hi-fidelity Figma files. Former front-end dev for WeChat Mini Programs, I\'ve programmed JS, HTML, CSS, React, RoR, and Vue.',
     canvas: 'skills',
+    thumbnail: '/assets/js.svg',
   },
   {
     id: 2,
     title: 'B2B Spaces and Enterprise Pain Points',
     description: 'My early stage startup experiences lean heavily into creating scalable solutions for enterprise pain points. I have experience in communicating with customers concerned about their business constraints, mapping out their existing and potentially complex workflows, while also considering their end-user priorities. *Ft. Patlytics & Viewabo',
     canvas: 'b2b',
+    thumbnail: '/assets/slide 3 patlyics.png',
   },
   {
     id: 3,
     title: 'Finding Patlytics',
     description: 'As third hire and solo designer for Patlytics, I thrived in building from 0 to 1 and loved the challenge of innovating with AI in a space plagued with arcane, fragmented workflows hampered by real human constraints. I designed their first flagship module for their AI powered patent platform, and have seen the product evolve up to our latest series B raise of $40 million.',
     canvas: 'patlytics',
+    thumbnail: '/assets/slide 4-1.png',
   },
   {
     id: 4,
@@ -39,6 +43,7 @@ const slides = [
     description: 'Learning about patent and IP workflow from 0 was a challenge, but I used my naiveté as an advantage to innovate. I learned, tested prompts, and reviewed prototypes with in-house counsel, practicing patent attorneys, IP advisors, and potential clients. I also surfaced constraints with our CTO. Through tight feedback loops and collaboration, experiments turned into a real product.',
     image: '/assets/slide_5.svg',
     canvasPadding: '40px',
+    thumbnail: '/assets/slide_5.svg',
   },
   {
     id: 5,
@@ -46,6 +51,7 @@ const slides = [
     description: 'The report was designed to be a living workspace for users to explore strategy, easily add their own products and research, and be able to visualize and access different levels of context and relate them to each other coherently, from the portfolio to the product, to the targeted companies, down to the claims and their limitations.',
     image: '/assets/slide 6.svg',
     canvasPadding: '40px',
+    thumbnail: '/assets/slide 6.svg',
   },
   {
     id: 6,
@@ -53,6 +59,7 @@ const slides = [
     description: 'Feedback from Detection Report helped grow the Patlytics platform and shape our additional modules. As the team grew, I eventually focused on improving the experience of the Litigation & Patent Monetization portion of the platform.',
     image: '/assets/slide 7.svg',
     canvasPadding: '40px',
+    thumbnail: '/assets/slide 7.svg',
   },
   {
     id: 7,
@@ -60,6 +67,7 @@ const slides = [
     description: '3 years and three funding rounds later, the flagship module is still evolving and a valuable tool for all our customers. We\'ve managed to penetrate 40% of America\'s top law firms and break into software, automotive, digital solutions, and pharmaceuticals.',
     canvas: 'growth',
     canvasPadding: '40px',
+    thumbnail: '/assets/logo-badges-patlytics-color.svg',
   },
   {
     id: 8,
@@ -67,12 +75,14 @@ const slides = [
     description: '1. The detection report module, featuring product catalog and infringement mapping. 2. Latest claim chart view. Not only does the enterprise design have to be scalable and dense, it needs to be responsive against a collapsible AI chat panel.',
     canvas: 'examples',
     canvasPadding: '40px',
+    thumbnail: '/assets/slide_9-1.png',
   },
   {
     id: 9,
     title: 'Mobile Examples',
     description: '3. Viewabo for mobile agents in the field. 4. ORM WeChat Mini Program front end design. 5. Sticker Machine, one of my first projects out of bootcamp. We routed the Giphy API through the Great Firewall so WeChat users could find and save stickers— before this, you\'d only find new stickers when friends shared them. Organically increased to 10,000 users before censorship.',
     canvas: 'mobile',
+    thumbnail: '/assets/slide_10-1.png',
   },
   {
     id: 10,
@@ -80,6 +90,7 @@ const slides = [
     description: 'Landmesh was hatched during Contra\'s Figma Makethon 2026. I designed and vibe-coded a mobile game for users to sculpt landscapes with a particle engine; users can add trees, turn land to sea, add clouds, stars, and butterflies. My favorite part? Customizing the ambient and sound effects. The project is still live.',
     canvas: 'landmesh',
     canvasPadding: '40px',
+    thumbnail: '/assets/landmesh-1.png',
   },
   {
     id: 11,
@@ -87,6 +98,7 @@ const slides = [
     description: 'Currently working on a mobile scavenger hunt game with a few twists. This is a collaboration with another software engineer; I designed the mascot/logo and game components. Release date TBD.',
     canvas: 'flock',
     canvasPadding: '40px',
+    thumbnail: '/assets/flock1.png',
   },
   {
     id: 12,
@@ -97,6 +109,7 @@ const slides = [
     imageSize: '200px',
     canvasCenter: true,
     canvasPadding: '40px',
+    thumbnail: '/assets/me.png',
   },
 ]
 
@@ -108,15 +121,15 @@ const ReturnIcon = () => (
 )
 
 const skillIcons = [
+  { src: '/assets/claude.svg', alt: 'Claude' },
+  { src: '/assets/openai.svg', alt: 'OpenAI' },
+  { src: '/assets/cursor.svg', alt: 'Cursor' },
+  { src: '/assets/gemini.svg', alt: 'Gemini' },
+  { src: '/assets/hermes.svg', alt: 'Hermes' },
+  { src: '/assets/figma.svg',  alt: 'Figma' },
   { src: '/assets/js.svg',     alt: 'JavaScript' },
   { src: '/assets/html.svg',   alt: 'HTML' },
   { src: '/assets/css.svg',    alt: 'CSS' },
-  { src: '/assets/figma.svg',  alt: 'Figma' },
-  { src: '/assets/claude.svg', alt: 'Claude' },
-  { src: '/assets/openai.svg', alt: 'OpenAI' },
-  { src: '/assets/gemini.svg', alt: 'Gemini' },
-  { src: '/assets/cursor.svg', alt: 'Cursor' },
-  { src: '/assets/hermes.svg', alt: 'Hermes' },
 ]
 
 const growthQuotes = [
@@ -244,7 +257,9 @@ function PatlyticsCavas() {
   return (
     <div className="patlytics-canvas">
       <img src="/assets/slide 4-1.png" alt="Patlytics product" className="patlytics-img" />
-      <img src="/assets/slide 4-2.png" alt="Patlytics case study" className="patlytics-img" />
+      <a href="https://cdn.prod.website-files.com/6799236636ce53b60c8d8ba8/6890f10b2156eb06c9f52514_Patlytics%20Customer%20Case%20Study%20-%20Am%20Law%20100%20Practice%20Group%20Head.pdf" target="_blank" rel="noreferrer" style={{ cursor: 'pointer', display: 'contents' }}>
+        <img src="/assets/slide 4-2.png" alt="Patlytics case study" className="patlytics-img" style={{ cursor: 'pointer' }} />
+      </a>
     </div>
   )
 }
@@ -340,11 +355,20 @@ function Carousel() {
         ))}
       </div>
       <div className="portfolio-progress">
-        {slides.map((_, i) => (
+        {slides.map((slide, i) => (
           <div
             key={i}
             className={`portfolio-progress-seg${i === activeSlide ? ' active' : ''}`}
-          />
+            onClick={() => {
+              const el = scrollRef.current?.querySelectorAll('.portfolio-slide')[i]
+              if (el) el.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' })
+            }}
+          >
+            <div className="portfolio-progress-tooltip">
+              <img src={slide.thumbnail} alt={slide.title} className="portfolio-progress-tooltip-thumb" />
+              <span className="portfolio-progress-tooltip-label">{i + 1}. {slide.title}</span>
+            </div>
+          </div>
         ))}
       </div>
       <p className="portfolio-timestamp">last updated: Thursday, May 7</p>
