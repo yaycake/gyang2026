@@ -121,15 +121,96 @@ const ReturnIcon = () => (
 )
 
 const skillIcons = [
-  { src: '/assets/claude.svg', alt: 'Claude' },
-  { src: '/assets/openai.svg', alt: 'OpenAI' },
-  { src: '/assets/cursor.svg', alt: 'Cursor' },
-  { src: '/assets/gemini.svg', alt: 'Gemini' },
-  { src: '/assets/hermes.svg', alt: 'Hermes' },
-  { src: '/assets/figma.svg',  alt: 'Figma' },
-  { src: '/assets/js.svg',     alt: 'JavaScript' },
-  { src: '/assets/html.svg',   alt: 'HTML' },
-  { src: '/assets/css.svg',    alt: 'CSS' },
+  {
+    src: '/assets/claude.svg', alt: 'Claude',
+    title: 'Claude Cowork, Code',
+    paras: [
+      {
+        text: 'I use Claude Cowork for exploration, prototype, stress testing. Also for checking Figma for consistency and typos. I move into Code for focused technical work when the scope is well defined',
+        bullets: [],
+      },
+    ],
+  },
+  {
+    src: '/assets/openai.svg', alt: 'OpenAI',
+    title: 'OpenAI / ChatGPT / Codex',
+    paras: [
+      {
+        text: 'Worked with ChatGPT via Humanloop to craft and generate prompts for the Patlytics platform. Today, I use an API for my agentic coding assistant.',
+        bullets: [],
+      },
+    ],
+  },
+  {
+    src: '/assets/cursor.svg', alt: 'Cursor',
+    title: 'Cursor',
+    paras: [
+      {
+        text: 'My primary IDE for writing and editing code',
+        bullets: ['Tab completion for boilerplate and repetitive patterns', 'Inline edits with natural language', 'Multi-file context for larger refactors'],
+      },
+    ],
+  },
+  {
+    src: '/assets/gemini.svg', alt: 'Gemini',
+    title: 'Google Gemini',
+    paras: [
+      {
+        text: 'My default model for agentic code bot. Gemini is way better at triaging Openclaw than Claude is-- for some reason, Claude often refuses to acknowledge the existence of Openclaw.',
+        bullets: [],
+      },
+    ],
+  },
+  {
+    src: '/assets/hermes.svg', alt: 'Hermes',
+    title: 'Hermes Agent',
+    paras: [
+      {
+        text: 'Replaced my Openclaw setup, "Alphie" helps me draft and publish content, do research, and push code. Part of the fun is learning how to interface with AI through a single Telegram chat, and become a better communicator because of it.',
+        bullets: [],
+      },
+    ],
+  },
+  {
+    src: '/assets/figma.svg', alt: 'Figma',
+    title: 'Figma',
+    paras: [
+      {
+        text: 'Figma Make is an amazing tool for non-technical vibe coders out there. I still use Figma for a lot of content design; it\'s a reliable tool for improvising variants on scope which requires more drag and drop and less self-reflection for communicating with AI.',
+        bullets: [],
+      },
+    ],
+  },
+  {
+    src: '/assets/js.svg', alt: 'JavaScript',
+    title: 'JavaScript',
+    paras: [
+      {
+        text: 'My core language for frontend and full-stack development',
+        bullets: ['React and Next.js applications', 'Interactive UI components and animations', 'Node.js scripts and build tooling'],
+      },
+    ],
+  },
+  {
+    src: '/assets/html.svg', alt: 'HTML',
+    title: 'HTML',
+    paras: [
+      {
+        text: 'Semantic markup for accessible, well-structured pages',
+        bullets: ['Accessibility-first component structure', 'SEO-friendly document semantics', 'Custom elements and templates'],
+      },
+    ],
+  },
+  {
+    src: '/assets/css.svg', alt: 'CSS',
+    title: 'CSS',
+    paras: [
+      {
+        text: 'Styling and layout without relying on utility frameworks',
+        bullets: ['CSS custom properties and design tokens', 'Grid and flexbox for responsive layouts', 'Animations, transitions, and micro-interactions'],
+      },
+    ],
+  },
 ]
 
 const growthQuotes = [
@@ -274,13 +355,56 @@ function B2BCanvas() {
 }
 
 function SkillsCanvas() {
+  const [hoveredIdx, setHoveredIdx] = useState(null)
+  const GROUP = [6, 7, 8]
+  const isGroupHover = hoveredIdx !== null && GROUP.includes(hoveredIdx)
+
+  const getOpacity = (i) => {
+    if (hoveredIdx === null) return 1
+    if (isGroupHover) return GROUP.includes(i) ? 1 : 0.2
+    return i === hoveredIdx ? 1 : 0.2
+  }
+
   return (
-    <div className="skills-grid">
-      {skillIcons.map((icon) => (
-        <div key={icon.alt} className="skills-icon-wrap">
-          <img src={icon.src} alt={icon.alt} className="skills-icon-img" />
+    <div className="skills-canvas">
+      <div className="skills-grid">
+        {skillIcons.map((icon, i) => (
+          <div
+            key={icon.alt}
+            className="skills-icon-wrap"
+            onMouseEnter={() => setHoveredIdx(i)}
+            onMouseLeave={() => setHoveredIdx(null)}
+            style={{ opacity: getOpacity(i) }}
+          >
+            <img src={icon.src} alt={icon.alt} className="skills-icon-img" />
+            {hoveredIdx === i && !isGroupHover && (
+              <div className="skills-tooltip" style={
+                Math.floor(i / 3) === 0 ? { top: 0, transform: 'none' } :
+                Math.floor(i / 3) === 2 ? { bottom: 0, top: 'auto', transform: 'none' } :
+                {}
+              }>
+                <p className="skills-tooltip-title">{icon.title}</p>
+                {icon.paras.map((para, p) => (
+                  <div key={p}>
+                    <p className="skills-tooltip-para">{para.text}</p>
+                    {para.bullets.length > 0 && (
+                      <ul className="skills-tooltip-bullets">
+                        {para.bullets.map(b => <li key={b}>{b}</li>)}
+                      </ul>
+                    )}
+                  </div>
+                ))}
+              </div>
+            )}
+          </div>
+        ))}
+      </div>
+      {isGroupHover && (
+        <div className="skills-group-tooltip">
+          <p className="skills-tooltip-title">Classic Hits: JS, HTML, CSS</p>
+          <p className="skills-tooltip-para">Understanding the fundamentals of development give me a solid foundation to collaborate with engineering. Designing and developing Mini Programs and websites also empower me with an intuition to debug vibed code.</p>
         </div>
-      ))}
+      )}
     </div>
   )
 }
