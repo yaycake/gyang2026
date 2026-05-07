@@ -46,8 +46,8 @@ export default function Resume() {
 
         {/* ── Summary ── */}
         <p className="resume-summary">
-          Twice a founding designer at venture-backed startups — most recently from seed to $40M+ Series B. I build and ship with AI across the full model stack — Claude, OpenAI, Gemini, Codex in my own agentic tooling; I build and design rapid prototypes with AI in my professional product work.
-        </p>
+          Twice a founding designer at venture-backed startups — most recently sole designer from seed to $40M+ Series B. I work upstream in product strategy and downstream in hi-fidelity craft, with the technical literacy to collaborate directly with engineering on implementation. I've shipped production prompts via Humanloop, prototyped in Figma Make and Claude, and built and deployed my own agentic workflows across Claude, OpenAI, and Gemini.
+</p>
 
         <div className="resume-rule-light" />
 
@@ -58,7 +58,7 @@ export default function Resume() {
           <div className="resume-entry">
             <div className="resume-entry-header">
               <div><span className="resume-company">Founding Designer</span><span className="resume-role"> at Patlytics</span></div>
-              <span className="resume-period">2024 – Present</span>
+              <span className="resume-period">2023 – Present</span>
             </div>
             <ul className="resume-bullets">
               <li>Founding designer across three funding rounds — seed to <strong>$40M+ Series B</strong>, Business Insider top 30 unicorn candidate.</li>
@@ -73,7 +73,7 @@ export default function Resume() {
               <span className="resume-period">2021 – 2023</span>
             </div>
             <ul className="resume-bullets">
-              <li>Led design for a B2B visual support platform (live video, async capture, Zendesk integration) — shipped a full design system, mapped the end-to-end service blueprint, and <strong>tied UX decisions directly to CSAT and truck roll reduction.</strong></li>
+              <li>Led design for a B2B visual support platform (live video, async capture, Zendesk integration) — shipped a full design system, mapped the end-to-end service blueprint, and <strong>tied UX decisions directly to CSAT and field dispatch efficiency.</strong></li>
             </ul>
           </div>
 
@@ -125,7 +125,7 @@ export default function Resume() {
         <section className="resume-section">
           <h2 className="resume-section-heading">Skills</h2>
           <div className="resume-skill-lines">
-            <p className="resume-skill-line"><span className="resume-skill-cat">AI & Tools</span>Claude · Claude Code · OpenAI / ChatGPT / Codex · Google Gemini · Cursor · Humanloop · Figma · Figma Make · agentic workflows</p>
+            <p className="resume-skill-line"><span className="resume-skill-cat">AI & Tools</span>Claude · Claude Code · ChatGPT + Codex · Google Gemini · Cursor · Humanloop · Figma/Make · agentic workflows</p>
             <p className="resume-skill-line"><span className="resume-skill-cat">Design</span>Product design · Design systems · Service blueprinting · UX research · Prototyping · Conversion optimization</p>
             <p className="resume-skill-line"><span className="resume-skill-cat">Engineering</span>React · HTML/CSS/JS · WeChat Mini Programs (WXML/WXSS/JS) · Front-end implementation</p>
           </div>
@@ -135,12 +135,12 @@ export default function Resume() {
 
         {/* ── Projects ── */}
         <section className="resume-section">
-          <h2 className="resume-section-heading">Projects</h2>
+          <h2 className="resume-section-heading">Personal Projects</h2>
           <div className="resume-skill-lines">
-            <p className="resume-skill-line"><span className="resume-skill-cat">Alphie</span>Personal agentic coding assistant — <a href="https://hermes-agent.nousresearch.com/" target="_blank" rel="noreferrer" className="resume-link">Hermes agent</a> to research, draft content, and build product.</p>
-            <p className="resume-skill-line"><span className="resume-skill-cat">Landmesh</span>AI-generated meditative land-sculpting experience — <a href="https://read-jog-40919901.figma.site" target="_blank" rel="noreferrer" className="resume-link">Figma Make</a>, 2026</p>
-            <p className="resume-skill-line"><span className="resume-skill-cat"><a href="https://apureperson.com/" target="_blank" rel="noreferrer" className="resume-link">APurePerson.com</a></span>Digital listening room for Taiwan artist Lim Giong — Design & Dev, 2019</p>
-            <p className="resume-skill-line"><span className="resume-skill-cat">Sticker Machine</span>WeChat Mini Program — up to 10,000 unique users, 2018</p>
+            <p className="resume-skill-line"><span className="resume-skill-cat">Alphie</span>Personal agentic coding assistant — <a href="https://hermes-agent.nousresearch.com/" target="_blank" rel="noreferrer" className="resume-link">Hermes agent</a> to research, draft content, and build product. 2026 <span className="resume-stack">Telegram · OpenAI API · Gemini</span></p>
+            <p className="resume-skill-line"><span className="resume-skill-cat"><a href="https://read-jog-40919901.figma.site" target="_blank" rel="noreferrer" className="resume-link">Landmesh</a></span>Meditative land-sculpting game for a vibe-code hackathon. Mobile friendly. 2026 <span className="resume-stack">Figma Make · Web Audio API · WebGL · React</span></p>
+            <p className="resume-skill-line"><span className="resume-skill-cat"><a href="https://apureperson.com/" target="_blank" rel="noreferrer" className="resume-link">APurePerson.com</a></span>Digital listening room for Taiwan artist Lim Giong — Design & Dev, 2019 <span className="resume-stack">React</span></p>
+            <p className="resume-skill-line"><span className="resume-skill-cat"><a href="https://youtu.be/LnJNU5GrPpQ" target="_blank" rel="noreferrer" className="resume-link">Sticker Machine</a></span>WeChat Mini Program — organic growth up to 10,000 unique users in 2018 before censorship <span className="resume-stack">WXML · WXSS · JS</span></p>
           </div>
         </section>
 

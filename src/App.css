@@ -726,6 +726,13 @@
   margin-right: 10px;
 }
 
+.resume-stack {
+  display: block;
+  font-size: 11px;
+  color: #888;
+  margin-top: 2px;
+}
+
 @media print {
   .resume-actions { display: none; }
   .resume-page { padding: 18px 28px; }
