@@ -4,9 +4,18 @@ import SiteFooter from '../components/SiteFooter'
 import ContactModal from '../components/ContactModal'
 import { useNavTo } from '../context/nav'
 
-const CORRECT_PASSWORD = 'yaycake'
+const VALID_HASHES = new Set([
+  'e45af5831daee56711f91701283682cebf54c9e773c35b658026425b8a024523', // hired
+  '7a758800a3b077aa45f60908c081831d51ef4368e980094ffbaa092a2e956bae', // yaycake
+])
 const ERROR_RESET_MS = 3000
 const SUCCESS_DELAY_MS = 1500
+
+async function hashPassword(value) {
+  const data = new TextEncoder().encode(value)
+  const buf = await crypto.subtle.digest('SHA-256', data)
+  return Array.from(new Uint8Array(buf)).map(b => b.toString(16).padStart(2, '0')).join('')
+}
 
 const slides = [
   {
@@ -567,9 +576,10 @@ export default function Portfolio() {
     return () => clearTimeout(timer.current)
   }, [phase])
 
-  function handleSubmit(e) {
+  async function handleSubmit(e) {
     e.preventDefault()
-    if (password === CORRECT_PASSWORD) {
+    const hash = await hashPassword(password)
+    if (VALID_HASHES.has(hash)) {
       setPhase('success')
     } else {
       setPhase('error')
