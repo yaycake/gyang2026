@@ -4,9 +4,18 @@ import SiteFooter from '../components/SiteFooter'
 import ContactModal from '../components/ContactModal'
 import { useNavTo } from '../context/nav'
 
-const CORRECT_PASSWORD = 'yaycake'
+const VALID_HASHES = new Set([
+  'e45af5831daee56711f91701283682cebf54c9e773c35b658026425b8a024523', // hired
+  '7a758800a3b077aa45f60908c081831d51ef4368e980094ffbaa092a2e956bae', // yaycake
+])
 const ERROR_RESET_MS = 3000
 const SUCCESS_DELAY_MS = 1500
+
+async function hashPassword(value) {
+  const data = new TextEncoder().encode(value)
+  const buf = await crypto.subtle.digest('SHA-256', data)
+  return Array.from(new Uint8Array(buf)).map(b => b.toString(16).padStart(2, '0')).join('')
+}
 
 const slides = [
   {
@@ -27,7 +36,7 @@ const slides = [
   {
     id: 2,
     title: 'B2B Spaces and Enterprise Pain Points',
-    description: 'I\'m drawn to dense, unfamiliar spaces — where learning the workflow is half the design problem. At Patlytics, that meant studying IP law from scratch; at Viewabo, mapping customer service workflows that varied dramatically by vertical. What keeps me engaged in B2B is that pain points are rarely siloed — solve them well and the impact compounds across an entire organization. At Patlytics: 40% of America\'s top law firms, 80% reduction in IP counseling time. At Viewabo: measurable gains in CSAT and field dispatch efficiency.',
+    description: 'I\'m drawn to dense, unfamiliar spaces — where learning the workflow is half the design problem. At Patlytics, that meant studying IP law from scratch; At Viewabo: measurable gains in CSAT and field dispatch efficiency.',
     canvas: 'b2b',
     thumbnail: '/assets/slide 3 patlyics.png',
   },
@@ -49,7 +58,7 @@ const slides = [
   {
     id: 5,
     title: 'Key Design Decision',
-    description: 'Patent strategy used to mean waiting — for research to trickle in, for context to accumulate, for the puzzle to slowly assemble across tools, conversations, and documents. The Detection Report collapses all of that into a single living workbench. Profiles on target companies and products are immediately accessible and intuitively organized; users can explore strategy, surface insights, and when a product shows a promising read, lock in and drill down with a detailed claim chart.',
+    description: 'Patent strategy used to mean waiting for research, for context to accumulate, for the puzzle to slowly assemble across tools, conversations, and documents. Detection Report collapses that into a single living workbench. Profiles on target companies and products are immediately accessible and intuitively organized; users can explore strategy, surface insights, and when a product shows a promising read, drill down with a detailed claim chart.',
     image: '/assets/slide 6.svg',
     canvasPadding: '40px',
     thumbnail: '/assets/slide 6.svg',
@@ -73,7 +82,7 @@ const slides = [
   {
     id: 8,
     title: 'Examples',
-    description: 'Designing enterprise data views that stay readable and functional against a collapsible AI chat panel is a constraint most design tools don\'t account for. The detection report (1) pairs a product catalog with infringement mapping across a dense, layered surface; the claim chart (2) drills into granular evidence. Both have to hold at full width and compressed — without losing hierarchy or usability, and considering the agentic chat panel docked on the right.',
+    description: 'Designing enterprise data views that stay legible and functional with a collapsible AI chat panel is a ubiquitous challenge. The detection report (1) pairs a product catalog with infringement mapping across a dense, layered surface; the claim chart (2) drills into granular evidence. ',
     canvas: 'examples',
     canvasPadding: '40px',
     thumbnail: '/assets/slide_9-1.png',
@@ -81,7 +90,7 @@ const slides = [
   {
     id: 9,
     title: 'Mobile Examples',
-    description: '3. Technicians needed a tool like Viewabo to consult internal support while in the field. 4. ORM moved to meet patients where they were with a WeChat Mini Program. 5. Sticker Machine routed the Giphy API through the Firewall so WeChat users could find and save stickers; organically, increased to 10,000 users before censorship.',
+    description: 'Viewabo for mobile agents in the field (3). ORM WeChat Mini Program front end design (4). Sticker Machine, one of my first projects out of bootcamp. We routed the Giphy API through the Great Firewall so WeChat users could find and save stickers-- before this, you\'d only find new stickers when friends shared them. Organically increased to 10,000 users before it censored (5)',
     canvas: 'mobile',
     thumbnail: '/assets/slide_10-1.png',
   },
@@ -216,6 +225,9 @@ const skillIcons = [
 
 const growthQuotes = [
   {
+    quote: 'Detection Report is #1 Litigation module, leading on ~60% on most days. Patlytics is also generating 500–900+ claim charts a day.',
+  },
+  {
     quote: '"On average, the AI tools reduced my research time by one to two days," Wang said. This efficiency boost not only improved her ability to familiarize herself with new technologies and products but also helped RJLF deliver faster, more accurate results to clients.',
     caseStudyTitle: '"How RJLF Accelerated Case Reviews with Patlytics"',
     caseStudyUrl: 'https://cdn.prod.website-files.com/6799236636ce53b60c8d8ba8/6890f10b3d9bbca6632a7174_Patlytics%20Customer%20Case%20Study%20-%20Reichman%20Jorgensen%20Lehman%20Feldberg%20LLP.pdf',
@@ -246,14 +258,10 @@ function GrowthCanvas() {
   const q = growthQuotes[quoteIndex]
 
   return (
-    <div className="growth-bento">
-      <div className="growth-cell">
-        <p className="growth-cell-heading">Detection Report is #1 Litigation module, leading on ~60% on most days.</p>
-        <p className="growth-cell-body">Patlytics is also generating 500–900+ claim charts a day.</p>
-      </div>
-      <div className="growth-cell">
-        <div key={quoteIndex} className="growth-quote">
-          <p className="growth-quote-text">{q.quote}</p>
+    <div className="growth-cell" style={{ width: '100%', height: '100%', borderRadius: '12px' }}>
+      <div key={quoteIndex} className="growth-quote">
+        <p className="growth-quote-text">{q.quote}</p>
+        {q.caseStudyUrl && (
           <a
             href={q.caseStudyUrl}
             target="_blank"
@@ -262,23 +270,23 @@ function GrowthCanvas() {
           >
             {q.caseStudyTitle}
           </a>
-        </div>
+        )}
       </div>
     </div>
   )
 }
 
-function FlockCanvas() {
+function FlockCanvas({ onExpand }) {
   return (
     <div className="flock-canvas">
-      <img src="/assets/flock1.png" alt="Flock 1" className="flock-img" />
-      <img src="/assets/flock2.png" alt="Flock 2" className="flock-img" />
-      <img src="/assets/flock3.png" alt="Flock 3" className="flock-img" />
+      <img src="/assets/flock1.png" alt="Flock 1" className="flock-img expandable" onClick={() => onExpand('/assets/flock1.png')} />
+      <img src="/assets/flock2.png" alt="Flock 2" className="flock-img expandable" onClick={() => onExpand('/assets/flock2.png')} />
+      <img src="/assets/flock3.png" alt="Flock 3" className="flock-img expandable" onClick={() => onExpand('/assets/flock3.png')} />
     </div>
   )
 }
 
-function LandmeshCanvas() {
+function LandmeshCanvas({ onExpand }) {
   const videoRef = useRef(null)
 
   useEffect(() => {
@@ -301,8 +309,8 @@ function LandmeshCanvas() {
   return (
     <div className="landmesh-canvas">
       <div className="landmesh-stack">
-        <img src="/assets/landmesh-1.png" alt="Landmesh 1" className="landmesh-stack-img" />
-        <img src="/assets/landmesh-2.png" alt="Landmesh 2" className="landmesh-stack-img" />
+        <img src="/assets/landmesh-1.png" alt="Landmesh 1" className="landmesh-stack-img expandable" onClick={() => onExpand('/assets/landmesh-1.png')} />
+        <img src="/assets/landmesh-2.png" alt="Landmesh 2" className="landmesh-stack-img expandable" onClick={() => onExpand('/assets/landmesh-2.png')} />
       </div>
       <video
         ref={videoRef}
@@ -316,21 +324,21 @@ function LandmeshCanvas() {
   )
 }
 
-function MobileCanvas() {
+function MobileCanvas({ onExpand }) {
   return (
     <div className="mobile-canvas">
-      <img src="/assets/slide_10-1.png" alt="Viewabo mobile" className="mobile-img" />
-      <img src="/assets/slide_10-2.png" alt="ORM WeChat" className="mobile-img" />
-      <img src="/assets/slide_10-3.png" alt="Sticker Machine" className="mobile-img" />
+      <img src="/assets/slide_10-1.png" alt="Viewabo mobile" className="mobile-img expandable" onClick={() => onExpand('/assets/slide_10-1.png')} />
+      <img src="/assets/slide_10-2.png" alt="ORM WeChat" className="mobile-img expandable" onClick={() => onExpand('/assets/slide_10-2.png')} />
+      <img src="/assets/slide_10-3.png" alt="Sticker Machine" className="mobile-img expandable" onClick={() => onExpand('/assets/slide_10-3.png')} />
     </div>
   )
 }
 
-function ExamplesCanvas() {
+function ExamplesCanvas({ onExpand }) {
   return (
     <div className="examples-canvas">
-      <img src="/assets/slide_9-1.png" alt="Detection Report" className="examples-img" />
-      <img src="/assets/slide_9-2.png" alt="Claim Chart" className="examples-img" />
+      <img src="/assets/slide_9-1.png" alt="Detection Report" className="examples-img expandable" onClick={() => onExpand('/assets/slide_9-1.png')} />
+      <img src="/assets/slide_9-2.png" alt="Claim Chart" className="examples-img expandable" onClick={() => onExpand('/assets/slide_9-2.png')} />
     </div>
   )
 }
@@ -338,19 +346,17 @@ function ExamplesCanvas() {
 function PatlyticsCavas() {
   return (
     <div className="patlytics-canvas">
-      <img src="/assets/slide 4-1.png" alt="Patlytics product" className="patlytics-img" />
       <a href="https://cdn.prod.website-files.com/6799236636ce53b60c8d8ba8/6890f10b2156eb06c9f52514_Patlytics%20Customer%20Case%20Study%20-%20Am%20Law%20100%20Practice%20Group%20Head.pdf" target="_blank" rel="noreferrer" style={{ cursor: 'pointer', display: 'contents' }}>
-        <img src="/assets/slide 4-2.png" alt="Patlytics case study" className="patlytics-img" style={{ cursor: 'pointer' }} />
+        <img src="/assets/slide 4-2.png" alt="Patlytics case study" className="patlytics-img" />
       </a>
     </div>
   )
 }
 
-function B2BCanvas() {
+function B2BCanvas({ onExpand }) {
   return (
     <div className="b2b-canvas">
-      <img src="/assets/slide 3 patlyics.png" alt="Patlytics" className="b2b-img" />
-      <img src="/assets/slide 3 viewabo.png" alt="Viewabo" className="b2b-img" />
+      <img src="/assets/slide 3 patlyics.png" alt="Patlytics" className="b2b-img expandable" onClick={() => onExpand('/assets/slide 3 patlyics.png')} />
     </div>
   )
 }
@@ -410,10 +416,26 @@ function SkillsCanvas() {
   )
 }
 
+function Lightbox({ src, onClose }) {
+  useEffect(() => {
+    const onKey = (e) => { if (e.key === 'Escape') onClose() }
+    document.addEventListener('keydown', onKey)
+    return () => document.removeEventListener('keydown', onKey)
+  }, [onClose])
+
+  return (
+    <div className="lightbox-backdrop" onClick={onClose}>
+      <button className="lightbox-close" onClick={e => { e.stopPropagation(); onClose() }} aria-label="Close">✕</button>
+      <img src={src} alt="" className="lightbox-img" onClick={e => e.stopPropagation()} />
+    </div>
+  )
+}
+
 function Carousel() {
   const scrollRef = useRef(null)
   const [activeSlide, setActiveSlide] = useState(0)
   const [opacities, setOpacities] = useState(() => slides.map((_, i) => i === 0 ? 1 : 0.3))
+  const [lightboxSrc, setLightboxSrc] = useState(null)
 
   useEffect(() => {
     const thresholds = Array.from({ length: 21 }, (_, i) => i / 20)
@@ -443,6 +465,12 @@ function Carousel() {
     setActiveSlide(Math.min(Math.max(index, 0), slides.length - 1))
   }, [])
 
+  const scrollToSlide = useCallback((index) => {
+    const clamped = Math.min(Math.max(index, 0), slides.length - 1)
+    const el = scrollRef.current?.querySelectorAll('.portfolio-slide')[clamped]
+    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' })
+  }, [])
+
   return (
     <div className="portfolio-carousel-wrap">
       <div className="portfolio-carousel" ref={scrollRef} onScroll={handleScroll}>
@@ -452,23 +480,24 @@ function Carousel() {
               <p className="portfolio-slide-title">{slide.title}</p>
               <p className="portfolio-slide-desc">{slide.description}</p>
             </div>
-            <div className="portfolio-slide-canvas" style={{
+            <div className={`portfolio-slide-canvas${slide.canvasPadding ? ' portfolio-slide-canvas--padded' : ''}`} style={{
               ...(slide.canvasPadding ? { padding: slide.canvasPadding } : {}),
               ...(slide.canvasCenter ? { display: 'flex', alignItems: 'center', justifyContent: 'center' } : {}),
             }}>
-              {slide.canvas === 'flock' && <FlockCanvas />}
-              {slide.canvas === 'landmesh' && <LandmeshCanvas />}
-              {slide.canvas === 'mobile' && <MobileCanvas />}
-              {slide.canvas === 'examples' && <ExamplesCanvas />}
+              {slide.canvas === 'flock' && <FlockCanvas onExpand={setLightboxSrc} />}
+              {slide.canvas === 'landmesh' && <LandmeshCanvas onExpand={setLightboxSrc} />}
+              {slide.canvas === 'mobile' && <MobileCanvas onExpand={setLightboxSrc} />}
+              {slide.canvas === 'examples' && <ExamplesCanvas onExpand={setLightboxSrc} />}
               {slide.canvas === 'growth' && <GrowthCanvas />}
               {slide.canvas === 'patlytics' && <PatlyticsCavas />}
-              {slide.canvas === 'b2b' && <B2BCanvas />}
+              {slide.canvas === 'b2b' && <B2BCanvas onExpand={setLightboxSrc} />}
               {slide.canvas === 'skills' && <SkillsCanvas />}
               {slide.image && (
                 <img
                   src={slide.image}
                   alt=""
-                  className="portfolio-slide-img"
+                  className={`portfolio-slide-img${[4, 5, 6].includes(slide.id) ? ' expandable' : ''}`}
+                  onClick={[4, 5, 6].includes(slide.id) ? () => setLightboxSrc(slide.image) : undefined}
                   style={{
                     ...(slide.imageFit ? { objectFit: slide.imageFit } : {}),
                     ...(slide.imageSize ? { width: slide.imageSize, height: slide.imageSize } : {}),
@@ -482,20 +511,15 @@ function Carousel() {
       <div className="portfolio-progress-row">
         <button
           className="portfolio-nav-btn"
-          onClick={() => {
-            const el = scrollRef.current?.querySelectorAll('.portfolio-slide')[0]
-            if (el) el.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' })
-          }}
+          onClick={() => scrollToSlide(activeSlide - 1)}
+          disabled={activeSlide === 0}
         >‹</button>
         <div className="portfolio-progress">
           {slides.map((slide, i) => (
             <div
               key={i}
               className={`portfolio-progress-seg${i === activeSlide ? ' active' : ''}`}
-              onClick={() => {
-                const el = scrollRef.current?.querySelectorAll('.portfolio-slide')[i]
-                if (el) el.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' })
-              }}
+              onClick={() => scrollToSlide(i)}
             >
               <div className="portfolio-progress-tooltip">
                 <img src={slide.thumbnail} alt={slide.title} className="portfolio-progress-tooltip-thumb" />
@@ -506,13 +530,27 @@ function Carousel() {
         </div>
         <button
           className="portfolio-nav-btn"
-          onClick={() => {
-            const el = scrollRef.current?.querySelectorAll('.portfolio-slide')[slides.length - 1]
-            if (el) el.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' })
-          }}
+          onClick={() => scrollToSlide(activeSlide + 1)}
+          disabled={activeSlide === slides.length - 1}
         >›</button>
       </div>
       <p className="portfolio-timestamp">last updated: Thursday, May 7</p>
+      <div className="portfolio-mobile-nav">
+        <button
+          className="portfolio-mobile-nav-btn"
+          onClick={() => scrollToSlide(activeSlide - 1)}
+          disabled={activeSlide === 0}
+          aria-label="Previous slide"
+        >‹</button>
+        <span className="portfolio-mobile-nav-indicator">{activeSlide + 1} / {slides.length}</span>
+        <button
+          className="portfolio-mobile-nav-btn"
+          onClick={() => scrollToSlide(activeSlide + 1)}
+          disabled={activeSlide === slides.length - 1}
+          aria-label="Next slide"
+        >›</button>
+      </div>
+      {lightboxSrc && <Lightbox src={lightboxSrc} onClose={() => setLightboxSrc(null)} />}
     </div>
   )
 }
@@ -538,9 +576,10 @@ export default function Portfolio() {
     return () => clearTimeout(timer.current)
   }, [phase])
 
-  function handleSubmit(e) {
+  async function handleSubmit(e) {
     e.preventDefault()
-    if (password === CORRECT_PASSWORD) {
+    const hash = await hashPassword(password)
+    if (VALID_HASHES.has(hash)) {
       setPhase('success')
     } else {
       setPhase('error')
