@@ -612,6 +612,15 @@
 
 .resume-contact-link:hover { color: #111; }
 
+.resume-link {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  transition: opacity 0.15s;
+}
+
+.resume-link:hover { opacity: 0.6; }
+
 .resume-rule {
   border: none;
   border-top: 1px solid #e8e8e8;

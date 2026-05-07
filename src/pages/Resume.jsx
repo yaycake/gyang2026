@@ -46,7 +46,7 @@ export default function Resume() {
 
         {/* ── Summary ── */}
         <p className="resume-summary">
-          Twice a founding designer at venture-backed startups — most recently from seed to $40M+ Series B. End-to-end across research, systems, and front-end. I'm an AI-builder who designs human-centered products with innovative agentic workflows.
+          Twice a founding designer at venture-backed startups — most recently from seed to $40M+ Series B. I build and ship with AI across the full model stack — Claude, OpenAI, Gemini, Codex in my own agentic tooling; I build and design rapid prototypes with AI in my professional product work.
         </p>
 
         <div className="resume-rule-light" />
@@ -61,8 +61,9 @@ export default function Resume() {
               <span className="resume-period">2024 – Present</span>
             </div>
             <ul className="resume-bullets">
-              <li>Sole designer from zero to <strong>$40M+ funding trajectory</strong> (seed → Series A → Series B); <strong>Business Insider top 30 unicorn candidates.</strong> Scaled team from 4 to a full EPD org.</li>
-              <li>Designed AI-powered patent workflows for law firms and in-house R&D — collapsing fragmented multi-vendor processes into a single platform and <strong>cutting time-to-analysis by 50%.</strong></li>
+              <li>Founding designer across three funding rounds — seed to <strong>$40M+ Series B</strong>, Business Insider top 30 unicorn candidate.</li>
+              <li>Shipped AI workflows that <strong>cut time-to-analysis by 50%</strong> and <strong>reduced IP counseling time by 80%</strong> for Am Law 100 firms.</li>
+              <li>Worked directly with engineers on prompt design via Humanloop/ChatGPT, translating unpredictable model output into structured, trustworthy enterprise UX.</li>
             </ul>
           </div>
 
@@ -124,9 +125,9 @@ export default function Resume() {
         <section className="resume-section">
           <h2 className="resume-section-heading">Skills</h2>
           <div className="resume-skill-lines">
+            <p className="resume-skill-line"><span className="resume-skill-cat">AI & Tools</span>Claude · Claude Code · OpenAI / ChatGPT / Codex · Google Gemini · Cursor · Humanloop · Figma · Figma Make · agentic workflows</p>
             <p className="resume-skill-line"><span className="resume-skill-cat">Design</span>Product design · Design systems · Service blueprinting · UX research · Prototyping · Conversion optimization</p>
             <p className="resume-skill-line"><span className="resume-skill-cat">Engineering</span>React · HTML/CSS/JS · WeChat Mini Programs (WXML/WXSS/JS) · Front-end implementation</p>
-            <p className="resume-skill-line"><span className="resume-skill-cat">AI & Tools</span>Claude Code · Cursor · Figma · Figma Make · AI-assisted prototyping</p>
           </div>
         </section>
 
@@ -136,8 +137,9 @@ export default function Resume() {
         <section className="resume-section">
           <h2 className="resume-section-heading">Projects</h2>
           <div className="resume-skill-lines">
-            <p className="resume-skill-line"><span className="resume-skill-cat">Landmesh</span>AI-generated meditative land-sculpting experience — Figma Make, 2026</p>
-            <p className="resume-skill-line"><span className="resume-skill-cat">APurePerson.com</span>Digital listening room for Taiwan artist Lim Giong — Design & Dev, 2019</p>
+            <p className="resume-skill-line"><span className="resume-skill-cat">Alphie</span>Personal agentic coding assistant — <a href="https://hermes-agent.nousresearch.com/" target="_blank" rel="noreferrer" className="resume-link">Hermes agent</a> to research, draft content, and build product.</p>
+            <p className="resume-skill-line"><span className="resume-skill-cat">Landmesh</span>AI-generated meditative land-sculpting experience — <a href="https://read-jog-40919901.figma.site" target="_blank" rel="noreferrer" className="resume-link">Figma Make</a>, 2026</p>
+            <p className="resume-skill-line"><span className="resume-skill-cat"><a href="https://apureperson.com/" target="_blank" rel="noreferrer" className="resume-link">APurePerson.com</a></span>Digital listening room for Taiwan artist Lim Giong — Design & Dev, 2019</p>
             <p className="resume-skill-line"><span className="resume-skill-cat">Sticker Machine</span>WeChat Mini Program — up to 10,000 unique users, 2018</p>
           </div>
         </section>
