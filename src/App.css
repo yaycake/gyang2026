@@ -1765,6 +1765,10 @@
   line-height: 22px;
 }
 
+.portfolio-slide-desc strong {
+  font-weight: 800;
+}
+
 /* progress bar */
 .portfolio-progress-row {
   display: flex;

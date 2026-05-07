@@ -21,7 +21,11 @@ const slides = [
   {
     id: 0,
     title: 'Founding Designership',
-    description: 'Founding design means making consequential calls before there\'s data to back them up — and owning the outcome. I\'ve done it twice: most recently as the third hire at Patlytics, growing the product through three funding rounds, building a platform now used by 40% of America\'s top law firms. The best part of this work is the proximity to everything: strategy, engineering, customers, and craft.',
+    descriptionParts: [
+      { text: 'Founding design means making consequential calls before there\'s data to back them up — and owning the outcome. I\'ve done it twice: most recently as the third hire at Patlytics, growing the product through three funding rounds, building a platform now used by 40% of America\'s top law firms. ' },
+      { text: 'The best part of this work is the proximity to everything: strategy, engineering, customers, and craft', bold: true },
+      { text: '.' },
+    ],
     image: '/assets/designership.png',
     imageFit: 'cover',
     thumbnail: '/assets/designership.png',
@@ -29,14 +33,21 @@ const slides = [
   {
     id: 1,
     title: 'Skills',
-    description: 'I move fast with Figma Make and Claude to prototype, then land in hi-fidelity Figma. For personal projects, I vibe-code with Cursor, pulling from Claude, Gemini, and Codex. Before designing full-time, I wrote production front-end code for real clients — WeChat Mini Programs, web apps, marketing sites — which is what lets me collaborate with engineering at the implementation level, not just the handoff.',
+    descriptionParts: [
+      { text: 'I move fast with Figma Make and Claude to prototype, then land in hi-fidelity Figma. For personal projects, I vibe-code with Cursor, pulling from Claude, Gemini, and Codex. Before designing full-time, I wrote production front-end code for real clients — WeChat Mini Programs, web apps, marketing sites — ' },
+      { text: 'which allows me to collaborate with engineering at the implementation level, not just the handoff', bold: true },
+      { text: '.' },
+    ],
     canvas: 'skills',
     thumbnail: '/assets/js.png',
   },
   {
     id: 2,
     title: 'B2B Spaces and Enterprise Pain Points',
-    description: 'I\'m drawn to dense, unfamiliar spaces — where learning the workflow is half the design problem. At Patlytics, that meant studying IP law from scratch; At Viewabo: measurable gains in CSAT and field dispatch efficiency.',
+    descriptionParts: [
+      { text: 'I\'m drawn to dense, unfamiliar spaces — where learning the workflow is half the design problem.', bold: true },
+      { text: ' At Patlytics, that meant studying IP law from scratch; At Viewabo: speaking with different types and sizes of customer service teams to map out different support workflows for different types of customers. ' },
+    ],
     canvas: 'b2b',
     canvasPadding: '40px',
     thumbnail: '/assets/slide 3 patlyics.png',
@@ -44,14 +55,20 @@ const slides = [
   {
     id: 3,
     title: 'Finding Patlytics',
-    description: 'As third hire and solo designer for Patlytics, I thrived in building from 0 to 1 and loved the challenge of innovating with AI in a space plagued with arcane, fragmented workflows hampered by real human constraints. I designed their first flagship module for their AI powered patent platform, and have seen the product evolve through our Series B raise of $40M.',
+    descriptionParts: [
+      { text: 'As third hire and solo designer for Patlytics, I thrived in building from 0 to 1 ', bold: true },
+      { text: 'and loved innovating with AI in a space plagued with arcane, fragmented workflows hampered by real human constraints. I designed their first flagship module for their AI powered patent platform, and have seen the product evolve through our Series B raise of $40M.' },
+    ],
     canvas: 'patlytics',
     thumbnail: '/assets/slide 4-1.png',
   },
   {
     id: 4,
     title: 'Break-Neck Speed, Innovation from 0',
-    description: 'Learning about patent and IP workflow from 0 was a challenge, but I used my naiveté as an advantage to innovate. I learned, tested prompts, and reviewed prototypes with in-house counsel, practicing patent attorneys, IP advisors, and potential clients. I also surfaced constraints with our CTO. Experiments turned into a real product.',
+    descriptionParts: [
+      { text: 'Learning about patent and IP workflow from 0 was a challenge, but I used my naiveté as an advantage to innovate. I learned, tested prompts, and reviewed prototypes with in-house counsel, practicing patent attorneys, IP advisors, and potential clients. I also surfaced constraints with our CTO. ' },
+      { text: 'Experiments turned into a real product.', bold: true },
+    ],
     image: '/assets/slide_5.svg',
     canvasPadding: '40px',
     thumbnail: '/assets/slide_5.svg',
@@ -59,7 +76,11 @@ const slides = [
   {
     id: 5,
     title: 'Key Design Decision',
-    description: 'Patent strategy used to mean waiting for research, for context to accumulate, for the puzzle to slowly assemble across tools, conversations, and documents. Detection Report collapses that into a single living workbench. Profiles on target companies and products are immediately accessible and intuitively organized; users can explore strategy, surface insights, and when a product shows a promising read, drill down with a detailed claim chart.',
+    descriptionParts: [
+      { text: 'Patent strategy used to mean waiting for research, for context to accumulate, for the puzzle to slowly assemble across tools, conversations, and documents. ' },
+      { text: 'Detection Report collapses that into a single living workbench.', bold: true },
+      { text: ' Profiles on target companies and products are immediately accessible and intuitively organized; users can explore strategy, surface insights, and when a product shows a promising read, drill down with a detailed claim chart.' },
+    ],
     image: '/assets/slide 6.svg',
     canvasPadding: '40px',
     thumbnail: '/assets/slide 6.svg',
@@ -67,7 +88,11 @@ const slides = [
   {
     id: 6,
     title: 'Feedback & Iterations',
-    description: 'Feedback from paying clients, power users, and different ICPs validated a core hypothesis: the magic moment every persona looked for was the ability to stress test strategy at scale — from 5,000 patents, down to specific product features, down to a handful showing a clear infringement read. As the models matured, we could reliably craft and deliver it.',
+    descriptionParts: [
+      { text: 'Feedback from paying clients, power users, and different ICPs validated a core hypothesis: ' },
+      { text: 'the magic moment every persona looked for was the ability to stress test strategy at scale', bold: true },
+      { text: ' — from 5,000 patents, down to specific product features, down to a handful showing a clear infringement read. As the models matured, we could reliably craft and deliver it.' },
+    ],
     image: '/assets/slide 7.svg',
     canvasPadding: '40px',
     thumbnail: '/assets/slide 7.svg',
@@ -75,7 +100,10 @@ const slides = [
   {
     id: 7,
     title: 'Growth & Success',
-    description: 'Three years, three funding rounds, and a platform now embedded in 40% of America\'s top law firms. What started as a single module has expanded beyond legal into software, automotive, digital solutions, and pharmaceuticals — and earned a spot on Business Insider\'s top 30 unicorn candidates.',
+    descriptionParts: [
+      { text: 'Three years, three funding rounds, and a platform now embedded in 40% of America\'s top law firms. What started as a single module has expanded beyond legal into software, automotive, digital solutions, and pharmaceuticals — and ' },
+      { text: 'earned a spot on Business Insider\'s top 30 unicorn candidates.', bold: true },
+    ],
     canvas: 'growth',
     canvasPadding: '40px',
     thumbnail: '/assets/logo-badges-patlytics-color.svg',
@@ -480,7 +508,13 @@ function Carousel() {
           <div key={slide.id} className="portfolio-slide" data-idx={i} style={{ opacity: opacities[i], transition: 'opacity 0.15s ease' }}>
             <div className="portfolio-slide-text">
               <p className="portfolio-slide-title">{slide.title}</p>
-              <p className="portfolio-slide-desc">{slide.description}</p>
+              <p className="portfolio-slide-desc">
+                {slide.descriptionParts
+                  ? slide.descriptionParts.map((part, i) =>
+                      part.bold ? <strong key={i}>{part.text}</strong> : part.text
+                    )
+                  : slide.description}
+              </p>
             </div>
             <div className={`portfolio-slide-canvas${slide.canvasPadding ? ' portfolio-slide-canvas--padded' : ''}`} style={{
               ...(slide.canvasPadding ? { padding: slide.canvasPadding } : {}),
