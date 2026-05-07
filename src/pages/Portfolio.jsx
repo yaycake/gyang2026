@@ -27,7 +27,7 @@ const slides = [
   {
     id: 2,
     title: 'B2B Spaces and Enterprise Pain Points',
-    description: 'I\'m drawn to dense, unfamiliar spaces — where learning the workflow is half the design problem. At Patlytics, that meant studying IP law from scratch; at Viewabo, mapping customer service workflows that varied dramatically by vertical. What keeps me engaged in B2B is that pain points are rarely siloed — solve them well and the impact compounds across an entire organization. At Patlytics: 40% of America\'s top law firms, 80% reduction in IP counseling time. At Viewabo: measurable gains in CSAT and field dispatch efficiency.',
+    description: 'I\'m drawn to dense, unfamiliar spaces — where learning the workflow is half the design problem. At Patlytics, that meant studying IP law from scratch; At Viewabo: measurable gains in CSAT and field dispatch efficiency.',
     canvas: 'b2b',
     thumbnail: '/assets/slide 3 patlyics.png',
   },
@@ -49,7 +49,7 @@ const slides = [
   {
     id: 5,
     title: 'Key Design Decision',
-    description: 'Patent strategy used to mean waiting — for research to trickle in, for context to accumulate, for the puzzle to slowly assemble across tools, conversations, and documents. The Detection Report collapses all of that into a single living workbench. Profiles on target companies and products are immediately accessible and intuitively organized; users can explore strategy, surface insights, and when a product shows a promising read, lock in and drill down with a detailed claim chart.',
+    description: 'Patent strategy used to mean waiting for research, for context to accumulate, for the puzzle to slowly assemble across tools, conversations, and documents. Detection Report collapses that into a single living workbench. Profiles on target companies and products are immediately accessible and intuitively organized; users can explore strategy, surface insights, and when a product shows a promising read, drill down with a detailed claim chart.',
     image: '/assets/slide 6.svg',
     canvasPadding: '40px',
     thumbnail: '/assets/slide 6.svg',
@@ -73,7 +73,7 @@ const slides = [
   {
     id: 8,
     title: 'Examples',
-    description: 'Designing enterprise data views that stay readable and functional against a collapsible AI chat panel is a constraint most design tools don\'t account for. The detection report (1) pairs a product catalog with infringement mapping across a dense, layered surface; the claim chart (2) drills into granular evidence. Both have to hold at full width and compressed — without losing hierarchy or usability, and considering the agentic chat panel docked on the right.',
+    description: 'Designing enterprise data views that stay legible and functional with a collapsible AI chat panel is a ubiquitous challenge. The detection report (1) pairs a product catalog with infringement mapping across a dense, layered surface; the claim chart (2) drills into granular evidence. ',
     canvas: 'examples',
     canvasPadding: '40px',
     thumbnail: '/assets/slide_9-1.png',
@@ -81,7 +81,7 @@ const slides = [
   {
     id: 9,
     title: 'Mobile Examples',
-    description: '3. Technicians needed a tool like Viewabo to consult internal support while in the field. 4. ORM moved to meet patients where they were with a WeChat Mini Program. 5. Sticker Machine routed the Giphy API through the Firewall so WeChat users could find and save stickers; organically, increased to 10,000 users before censorship.',
+    description: 'Viewabo for mobile agents in the field (3). ORM WeChat Mini Program front end design (4). Sticker Machine, one of my first projects out of bootcamp. We routed the Giphy API through the Great Firewall so WeChat users could find and save stickers-- before this, you\'d only find new stickers when friends shared them. Organically increased to 10,000 users before it censored (5)',
     canvas: 'mobile',
     thumbnail: '/assets/slide_10-1.png',
   },
