@@ -22,9 +22,8 @@ const slides = [
     id: 0,
     title: 'Founding Designership',
     descriptionParts: [
-      { text: 'Founding design means making consequential calls before there\'s data to back them up — and owning the outcome. I\'ve done it twice: most recently as the third hire at Patlytics, growing the product through three funding rounds, building a platform now used by 40% of America\'s top law firms. ' },
-      { text: 'The best part of this work is the proximity to everything: strategy, engineering, customers, and craft', bold: true },
-      { text: '.' },
+      { text: 'Twice a founding designer at venture-backed startups.', bold: true },
+      { text: ' I work upstream in product strategy and downstream in hi-fidelity craft, with the technical literacy to collaborate directly with engineering. I\'ve shipped production prompts, prototyped in Figma Make and Claude, and built and deployed my own agentic workflows across Claude, OpenAI, and Gemini.' },
     ],
     image: '/assets/designership.png',
     imageFit: 'cover',
@@ -46,7 +45,7 @@ const slides = [
     title: 'B2B Spaces and Enterprise Pain Points',
     descriptionParts: [
       { text: 'I\'m drawn to dense, unfamiliar spaces — where learning the workflow is half the design problem.', bold: true },
-      { text: ' At Patlytics, that meant studying IP law from scratch; At Viewabo: speaking with different types and sizes of customer service teams to map out different support workflows for different types of customers. ' },
+      { text: ' At Patlytics, that meant studying IP law and a patent\'s lifecycle from scratch. At Viewabo: speaking with various customer service teams to understand and map out divergent customer workflows.' },
     ],
     canvas: 'b2b',
     canvasPadding: '40px',
@@ -54,10 +53,10 @@ const slides = [
   },
   {
     id: 3,
-    title: 'Finding Patlytics',
+    title: 'Case Study: Finding Patlytics',
     descriptionParts: [
-      { text: 'As third hire and solo designer for Patlytics, I thrived in building from 0 to 1 ', bold: true },
-      { text: 'and loved innovating with AI in a space plagued with arcane, fragmented workflows hampered by real human constraints. I designed their first flagship module for their AI powered patent platform, and have seen the product evolve through our Series B raise of $40M.' },
+      { text: 'As third hire and solo designer for Patlytics, I took the fledgling product from from 0 to 1', bold: true },
+      { text: ' and loved innovating with AI in a space plagued with arcane, fragmented workflows. I ideated and designed their flagship module for AI-powered Detection Report. I\'ve continued to guide product design through our Series B raise of $40M.' },
     ],
     canvas: 'patlytics',
     thumbnail: '/assets/slide 4-1.png',
@@ -66,8 +65,9 @@ const slides = [
     id: 4,
     title: 'Break-Neck Speed, Innovation from 0',
     descriptionParts: [
-      { text: 'Learning about patent and IP workflow from 0 was a challenge, but I used my naiveté as an advantage to innovate. I learned, tested prompts, and reviewed prototypes with in-house counsel, practicing patent attorneys, IP advisors, and potential clients. I also surfaced constraints with our CTO. ' },
-      { text: 'Experiments turned into a real product.', bold: true },
+      { text: 'I learned directly from practicing patent attorneys, IP advisors, and potential clients. ' },
+      { text: 'Using my naiveté as an advantage to innovate', bold: true },
+      { text: ', I turned design experiments and prompting into products for those same experts to use.' },
     ],
     image: '/assets/slide_5.svg',
     canvasPadding: '40px',
@@ -77,8 +77,8 @@ const slides = [
     id: 5,
     title: 'Key Design Decision',
     descriptionParts: [
-      { text: 'Patent strategy used to mean waiting for research, for context to accumulate, for the puzzle to slowly assemble across tools, conversations, and documents. ' },
-      { text: 'Detection Report collapses that into a single living workbench.', bold: true },
+      { text: 'Patent strategy was fragmented by outsourced research, and slowly accumulating context. ' },
+      { text: 'Detection Report swiftly connects all the pieces into a single living workbench.', bold: true },
       { text: ' Profiles on target companies and products are immediately accessible and intuitively organized; users can explore strategy, surface insights, and when a product shows a promising read, drill down with a detailed claim chart.' },
     ],
     image: '/assets/slide 6.svg',
@@ -89,9 +89,9 @@ const slides = [
     id: 6,
     title: 'Feedback & Iterations',
     descriptionParts: [
-      { text: 'Feedback from paying clients, power users, and different ICPs validated a core hypothesis: ' },
-      { text: 'the magic moment every persona looked for was the ability to stress test strategy at scale', bold: true },
-      { text: ' — from 5,000 patents, down to specific product features, down to a handful showing a clear infringement read. As the models matured, we could reliably craft and deliver it.' },
+      { text: 'Feedback gathered from clients validated a core hypothesis: ' },
+      { text: 'the magic moment users were looking for was the ability to stress-test strategy at scale', bold: true },
+      { text: ', from 5,000 patents down to a handful of patent-product pairings they could drill into. As the models matured, we could reliably craft and deliver.' },
     ],
     image: '/assets/slide 7.svg',
     canvasPadding: '40px',
@@ -121,6 +121,7 @@ const slides = [
     title: 'Mobile Examples',
     description: 'Viewabo for mobile agents in the field (3). ORM WeChat Mini Program front end design (4). Sticker Machine, one of my first projects out of bootcamp. We routed the Giphy API through the Great Firewall so WeChat users could find and save stickers-- before this, you\'d only find new stickers when friends shared them. Organically increased to 10,000 users before it censored (5)',
     canvas: 'mobile',
+    canvasPadding: '40px',
     thumbnail: '/assets/slide_10-1.png',
   },
   {
