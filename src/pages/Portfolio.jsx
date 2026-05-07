@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef, useCallback } from 'react'
 import SiteHeader from '../components/SiteHeader'
+import SiteFooter from '../components/SiteFooter'
 import ContactModal from '../components/ContactModal'
 import { useNavTo } from '../context/nav'
 
@@ -11,7 +12,7 @@ const slides = [
   {
     id: 0,
     title: 'Founding Designership',
-    description: 'As an experienced founding and solo designer, I\'m a tried and true super individual contributor. Clear and consistent communication, cross-functional collaboration, and reliable ownership are tools of this trade.',
+    description: 'Founding design means making consequential calls before there\'s data to back them up — and owning the outcome. I\'ve done it twice: most recently as the third hire at Patlytics, growing the product through three funding rounds, building a platform now used by 40% of America\'s top law firms. The best part of this work is the proximity to everything: strategy, engineering, customers, and craft.',
     image: '/assets/designership.png',
     imageFit: 'cover',
     thumbnail: '/assets/designership.png',
@@ -19,28 +20,28 @@ const slides = [
   {
     id: 1,
     title: 'Skills',
-    description: 'For personal projects, I\'ve been developing mobile web apps and static websites with Claude Cowork & Code, Cursor, using Gemini, Claude, and Codex tokens. At work, I\'ve done rapid prototyping with Figma Make, Claude Cowork /Code, wrapping up with hi-fidelity Figma files. Former front-end dev for WeChat Mini Programs, I\'ve programmed JS, HTML, CSS, React, RoR, and Vue.',
+    description: 'I move fast with Figma Make and Claude to prototype, then land in hi-fidelity Figma. For personal projects, I vibe-code with Cursor, pulling from Claude, Gemini, and Codex. Before designing full-time, I wrote production front-end code for real clients — WeChat Mini Programs, web apps, marketing sites — which is what lets me collaborate with engineering at the implementation level, not just the handoff.',
     canvas: 'skills',
     thumbnail: '/assets/js.svg',
   },
   {
     id: 2,
     title: 'B2B Spaces and Enterprise Pain Points',
-    description: 'My early stage startup experiences lean heavily into creating scalable solutions for enterprise pain points. I have experience in communicating with customers concerned about their business constraints, mapping out their existing and potentially complex workflows, while also considering their end-user priorities. *Ft. Patlytics & Viewabo',
+    description: 'I\'m drawn to dense, unfamiliar spaces — where learning the workflow is half the design problem. At Patlytics, that meant studying IP law from scratch; at Viewabo, mapping customer service workflows that varied dramatically by vertical. What keeps me engaged in B2B is that pain points are rarely siloed — solve them well and the impact compounds across an entire organization. At Patlytics: 40% of America\'s top law firms, 80% reduction in IP counseling time. At Viewabo: measurable gains in CSAT and field dispatch efficiency.',
     canvas: 'b2b',
     thumbnail: '/assets/slide 3 patlyics.png',
   },
   {
     id: 3,
     title: 'Finding Patlytics',
-    description: 'As third hire and solo designer for Patlytics, I thrived in building from 0 to 1 and loved the challenge of innovating with AI in a space plagued with arcane, fragmented workflows hampered by real human constraints. I designed their first flagship module for their AI powered patent platform, and have seen the product evolve up to our latest series B raise of $40 million.',
+    description: 'As third hire and solo designer for Patlytics, I thrived in building from 0 to 1 and loved the challenge of innovating with AI in a space plagued with arcane, fragmented workflows hampered by real human constraints. I designed their first flagship module for their AI powered patent platform, and have seen the product evolve through our Series B raise of $40M.',
     canvas: 'patlytics',
     thumbnail: '/assets/slide 4-1.png',
   },
   {
     id: 4,
     title: 'Break-Neck Speed, Innovation from 0',
-    description: 'Learning about patent and IP workflow from 0 was a challenge, but I used my naiveté as an advantage to innovate. I learned, tested prompts, and reviewed prototypes with in-house counsel, practicing patent attorneys, IP advisors, and potential clients. I also surfaced constraints with our CTO. Through tight feedback loops and collaboration, experiments turned into a real product.',
+    description: 'Learning about patent and IP workflow from 0 was a challenge, but I used my naiveté as an advantage to innovate. I learned, tested prompts, and reviewed prototypes with in-house counsel, practicing patent attorneys, IP advisors, and potential clients. I also surfaced constraints with our CTO. Experiments turned into a real product.',
     image: '/assets/slide_5.svg',
     canvasPadding: '40px',
     thumbnail: '/assets/slide_5.svg',
@@ -48,7 +49,7 @@ const slides = [
   {
     id: 5,
     title: 'Key Design Decision',
-    description: 'The report was designed to be a living workspace for users to explore strategy, easily add their own products and research, and be able to visualize and access different levels of context and relate them to each other coherently, from the portfolio to the product, to the targeted companies, down to the claims and their limitations.',
+    description: 'Patent strategy used to mean waiting — for research to trickle in, for context to accumulate, for the puzzle to slowly assemble across tools, conversations, and documents. The Detection Report collapses all of that into a single living workbench. Profiles on target companies and products are immediately accessible and intuitively organized; users can explore strategy, surface insights, and when a product shows a promising read, lock in and drill down with a detailed claim chart.',
     image: '/assets/slide 6.svg',
     canvasPadding: '40px',
     thumbnail: '/assets/slide 6.svg',
@@ -56,7 +57,7 @@ const slides = [
   {
     id: 6,
     title: 'Feedback & Iterations',
-    description: 'Feedback from Detection Report helped grow the Patlytics platform and shape our additional modules. As the team grew, I eventually focused on improving the experience of the Litigation & Patent Monetization portion of the platform.',
+    description: 'Feedback from paying clients, power users, and different ICPs validated a core hypothesis: the magic moment every persona looked for was the ability to stress test strategy at scale — from 5,000 patents, down to specific product features, down to a handful showing a clear infringement read. As the models matured, we could reliably craft and deliver it.',
     image: '/assets/slide 7.svg',
     canvasPadding: '40px',
     thumbnail: '/assets/slide 7.svg',
@@ -64,7 +65,7 @@ const slides = [
   {
     id: 7,
     title: 'Growth & Success',
-    description: '3 years and three funding rounds later, the flagship module is still evolving and a valuable tool for all our customers. We\'ve managed to penetrate 40% of America\'s top law firms and break into software, automotive, digital solutions, and pharmaceuticals.',
+    description: 'Three years, three funding rounds, and a platform now embedded in 40% of America\'s top law firms. What started as a single module has expanded beyond legal into software, automotive, digital solutions, and pharmaceuticals — and earned a spot on Business Insider\'s top 30 unicorn candidates.',
     canvas: 'growth',
     canvasPadding: '40px',
     thumbnail: '/assets/logo-badges-patlytics-color.svg',
@@ -72,7 +73,7 @@ const slides = [
   {
     id: 8,
     title: 'Examples',
-    description: '1. The detection report module, featuring product catalog and infringement mapping. 2. Latest claim chart view. Not only does the enterprise design have to be scalable and dense, it needs to be responsive against a collapsible AI chat panel.',
+    description: 'Designing enterprise data views that stay readable and functional against a collapsible AI chat panel is a constraint most design tools don\'t account for. The detection report (1) pairs a product catalog with infringement mapping across a dense, layered surface; the claim chart (2) drills into granular evidence. Both have to hold at full width and compressed — without losing hierarchy or usability, and considering the agentic chat panel docked on the right.',
     canvas: 'examples',
     canvasPadding: '40px',
     thumbnail: '/assets/slide_9-1.png',
@@ -80,14 +81,14 @@ const slides = [
   {
     id: 9,
     title: 'Mobile Examples',
-    description: '3. Viewabo for mobile agents in the field. 4. ORM WeChat Mini Program front end design. 5. Sticker Machine, one of my first projects out of bootcamp. We routed the Giphy API through the Great Firewall so WeChat users could find and save stickers— before this, you\'d only find new stickers when friends shared them. Organically increased to 10,000 users before censorship.',
+    description: '3. Technicians needed a tool like Viewabo to consult internal support while in the field. 4. ORM moved to meet patients where they were with a WeChat Mini Program. 5. Sticker Machine routed the Giphy API through the Firewall so WeChat users could find and save stickers; organically, increased to 10,000 users before censorship.',
     canvas: 'mobile',
     thumbnail: '/assets/slide_10-1.png',
   },
   {
     id: 10,
     title: 'Personal Project — Landmesh',
-    description: 'Landmesh was hatched during Contra\'s Figma Makethon 2026. I designed and vibe-coded a mobile game for users to sculpt landscapes with a particle engine; users can add trees, turn land to sea, add clouds, stars, and butterflies. My favorite part? Customizing the ambient and sound effects. The project is still live.',
+    description: 'Landmesh was hatched during Contra\'s Figma Makethon 2026. I designed and vibe-coded a mobile game for users to sculpt landscapes with a particle engine; users can add trees, turn land to sea, add clouds, stars, and butterflies. My favorite part? Customizing the ambient and sound effects. The project is still live, and uses WebGL, Web Audio API, and React through Figma Make.',
     canvas: 'landmesh',
     canvasPadding: '40px',
     thumbnail: '/assets/landmesh-1.png',
@@ -95,7 +96,7 @@ const slides = [
   {
     id: 11,
     title: 'Flock (WIP)',
-    description: 'Currently working on a mobile scavenger hunt game with a few twists. This is a collaboration with another software engineer; I designed the mascot/logo and game components. Release date TBD.',
+    description: 'Flock is a mobile scavenger hunt where teams accomplish goals to build a shared photo map — goals are geofenced to real locations, and can be designed as progressive multi-part challenges. On deck: the ability to freeze or stun opposing teams. Built in collaboration with a software engineer; we\'re using React, NestJS, Cloudflare Durable Objects.',
     canvas: 'flock',
     canvasPadding: '40px',
     thumbnail: '/assets/flock1.png',
@@ -478,22 +479,38 @@ function Carousel() {
           </div>
         ))}
       </div>
-      <div className="portfolio-progress">
-        {slides.map((slide, i) => (
-          <div
-            key={i}
-            className={`portfolio-progress-seg${i === activeSlide ? ' active' : ''}`}
-            onClick={() => {
-              const el = scrollRef.current?.querySelectorAll('.portfolio-slide')[i]
-              if (el) el.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' })
-            }}
-          >
-            <div className="portfolio-progress-tooltip">
-              <img src={slide.thumbnail} alt={slide.title} className="portfolio-progress-tooltip-thumb" />
-              <span className="portfolio-progress-tooltip-label">{i + 1}. {slide.title}</span>
+      <div className="portfolio-progress-row">
+        <button
+          className="portfolio-nav-btn"
+          onClick={() => {
+            const el = scrollRef.current?.querySelectorAll('.portfolio-slide')[0]
+            if (el) el.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' })
+          }}
+        >‹</button>
+        <div className="portfolio-progress">
+          {slides.map((slide, i) => (
+            <div
+              key={i}
+              className={`portfolio-progress-seg${i === activeSlide ? ' active' : ''}`}
+              onClick={() => {
+                const el = scrollRef.current?.querySelectorAll('.portfolio-slide')[i]
+                if (el) el.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' })
+              }}
+            >
+              <div className="portfolio-progress-tooltip">
+                <img src={slide.thumbnail} alt={slide.title} className="portfolio-progress-tooltip-thumb" />
+                <span className="portfolio-progress-tooltip-label">{i + 1}. {slide.title}</span>
+              </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
+        <button
+          className="portfolio-nav-btn"
+          onClick={() => {
+            const el = scrollRef.current?.querySelectorAll('.portfolio-slide')[slides.length - 1]
+            if (el) el.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' })
+          }}
+        >›</button>
       </div>
       <p className="portfolio-timestamp">last updated: Thursday, May 7</p>
     </div>
@@ -597,6 +614,7 @@ export default function Portfolio() {
       )}
 
       {contactOpen && <ContactModal onClose={() => setContactOpen(false)} />}
+      <SiteFooter />
     </div>
   )
 }

@@ -1388,6 +1388,7 @@
   /* break out of .page's 540px container to go full-width */
   width: 100vw;
   margin-left: calc(-50vw + 50%);
+  margin-top: 32px;
 }
 
 .portfolio-carousel {
@@ -1754,8 +1755,7 @@
 }
 
 .portfolio-slide-text {
-  height: 126px;
-  overflow: hidden;
+  min-height: 126px;
   display: flex;
   flex-direction: column;
   margin-bottom: 24px;
@@ -1779,10 +1779,33 @@
 }
 
 /* progress bar */
+.portfolio-progress-row {
+  display: flex;
+  align-items: center;
+  padding: 0 24px 0 64px;
+  gap: 12px;
+}
+
+.portfolio-nav-btn {
+  background: none;
+  border: none;
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 18px;
+  line-height: 1;
+  cursor: pointer;
+  padding: 0 2px;
+  flex-shrink: 0;
+  transition: color 0.15s;
+}
+
+.portfolio-nav-btn:hover {
+  color: rgba(255, 255, 255, 0.9);
+}
+
 .portfolio-progress {
   display: flex;
+  flex: 1;
   gap: 4px;
-  padding: 0 24px 0 64px;
 }
 
 .portfolio-progress-seg {
