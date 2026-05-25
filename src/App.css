@@ -235,6 +235,12 @@
   margin-top: 9px;
 }
 
+/* When a tile is expanded, suppress hover-based description on all others */
+.entry-list:has(.entry-item--expanded) .entry-item:not(.entry-item--expanded):hover .entry-description {
+  grid-template-rows: 0fr;
+  margin-top: 0;
+}
+
 .entry-row {
   display: flex;
   align-items: center;
@@ -762,6 +768,7 @@
 .entry-item--linked {
   cursor: pointer;
   user-select: none;
+  touch-action: manipulation;
 }
 
 .entry-item--linked * {
@@ -788,7 +795,7 @@
 
 @media (hover: none) and (pointer: coarse) {
   .entry-cta-mobile {
-    display: inline-block;
+    display: none;
     margin-top: 14px;
     padding: 7px 18px;
     background: transparent;
@@ -800,6 +807,16 @@
     letter-spacing: 0.3px;
     cursor: pointer;
     transition: opacity 0.2s ease;
+  }
+
+  .entry-item:hover .entry-cta-mobile,
+  .entry-item--expanded .entry-cta-mobile {
+    display: inline-block;
+  }
+
+  /* When a tile is expanded, suppress hover-based button on all others */
+  .entry-list:has(.entry-item--expanded) .entry-item:not(.entry-item--expanded):hover .entry-cta-mobile {
+    display: none;
   }
 
   .entry-cta-mobile:active {

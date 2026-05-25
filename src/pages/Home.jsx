@@ -249,7 +249,7 @@ export default function Home() {
                     <div className="entry-description">
                       <p className="entry-description-inner">{exp.description}</p>
                     </div>
-                    {isExpanded && (exp.detailPath || exp.url) && (
+                    {(exp.detailPath || exp.url) && (
                       <button
                         className="entry-cta-mobile"
                         onClick={e => {
