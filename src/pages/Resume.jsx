@@ -36,7 +36,7 @@ export default function Resume() {
             <p className="resume-title">Founding Product Designer · AI-Native Builder</p>
           </div>
           <div className="resume-header-right">
-            <a href="mailto:im@thegraceyang.com" className="resume-contact-link">im@thegraceyang.com</a>
+            <a href="mailto:im@graceyang.ai" className="resume-contact-link">im@graceyang.ai</a>
             <a href="https://linkedin.com/in/ygrace/" target="_blank" rel="noreferrer" className="resume-contact-link">linkedin.com/in/ygrace</a>
             <a href="https://thegraceyang.com" target="_blank" rel="noreferrer" className="resume-contact-link">thegraceyang.com</a>
           </div>

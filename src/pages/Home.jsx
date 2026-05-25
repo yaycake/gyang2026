@@ -282,7 +282,7 @@ export default function Home() {
                     style={{ '--role-color': proj.roleColor }}
                     onClick={() => {
                       if (isMobile()) {
-                        if (!isProjExpanded) setExpandedProject(i)
+                        setExpandedProject(isProjExpanded ? null : i)
                       } else {
                         window.open(proj.url, '_blank', 'noreferrer')
                       }
@@ -301,14 +301,12 @@ export default function Home() {
                     <div className="entry-description">
                       <p className="entry-description-inner">{proj.description}</p>
                     </div>
-                    {isProjExpanded && (
-                      <button
-                        className="entry-cta-mobile"
-                        onClick={e => { e.stopPropagation(); window.open(proj.url, '_blank', 'noreferrer') }}
-                      >
-                        View project →
-                      </button>
-                    )}
+                    <button
+                      className="entry-cta-mobile"
+                      onClick={e => { e.stopPropagation(); window.open(proj.url, '_blank', 'noreferrer') }}
+                    >
+                      Visit site →
+                    </button>
                   </li>
                 )
               })}
