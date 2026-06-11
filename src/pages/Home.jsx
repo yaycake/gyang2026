@@ -48,6 +48,18 @@ const testimonials = [
     quote: "Grace is a true creative spirit with strong ties to her community, friends and colleagues. Her dynamic personality and strong passion for her work have made her a strong asset.",
     attribution: 'Kim, Marketing Director @Brooklyn Boulders',
   },
+  {
+    quote: "She also has a very natural builder's instinct. She's the kind of person who gets curious, starts playing with an idea, and keeps things moving without overcomplicating them.",
+    attribution: 'Alvin Chiang, Backend Engineer @Patlytics',
+  },
+  {
+    quote: "I've worked with Grace at two companies now-- first at Viewabo, and again at Patlytics... she knows when to push on a decision and when to adapt. Across two very different products and spaces, that consistency never wavered.",
+    attribution: 'David Su, Full-Stack Engineer @Viewabo & @Patlytics',
+  },
+  {
+    quote: "From day one, it was clear Grace operates at a level that's rare to find. She pairs sharp design instincts with genuine care for the people she works with.",
+    attribution: 'Min, Designer @Patlytics',
+  },
 ]
 
 const workExperiences = [
