@@ -1394,6 +1394,20 @@
   justify-content: center;
 }
 
+.portfolio-gate-redirect-msg {
+  font-size: 14px;
+  font-weight: 300;
+  color: var(--text-secondary);
+  text-align: center;
+}
+
+.portfolio-gate-countdown {
+  display: inline-block;
+  font-variant-numeric: tabular-nums;
+  min-width: 1ch;
+  transition: opacity 0.2s ease;
+}
+
 /* ── Portfolio Unlocked / Carousel ── */
 .portfolio-unlocked {
   display: flex;
