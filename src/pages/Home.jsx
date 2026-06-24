@@ -393,7 +393,7 @@ export default function Home() {
         <FadeIn>
           <section className="section">
             <h2 className="section-heading">Contact Me</h2>
-            <p className="body-text">If you think we would have a great time collaborating, send me a message.</p>
+            <p className="body-text">If you think we would have a great time collaborating, send me a message. If you'd like to see a <button className="portfolio-gate-contact" onClick={() => navTo('/portfolio')}>portfolio walkthrough</button> or in-depth case studies, contact me.</p>
             <button className="cta-button" onClick={() => setContactOpen(true)}>Say Hello</button>
           </section>
         </FadeIn>
