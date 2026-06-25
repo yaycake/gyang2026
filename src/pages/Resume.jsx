@@ -64,6 +64,7 @@ export default function Resume() {
               <li>Founding designer across three funding rounds — seed to <strong>$40M+ Series B</strong>, Business Insider top 30 unicorn candidate.</li>
               <li>Shipped AI workflows that <strong>cut time-to-analysis by 50%</strong> and <strong>reduced IP counseling time by 80%</strong> for Am Law 100 firms.</li>
               <li>Worked directly with engineers on prompt design via Humanloop/ChatGPT, translating unpredictable model output into structured, trustworthy enterprise UX.</li>
+              <li>Designed, built, deployed, and rolled out a <strong>Claude Code–powered AI design prototyping tool</strong> utilizing the front-end repository, live staging API, and design system.</li>
             </ul>
           </div>
 
@@ -99,7 +100,7 @@ export default function Resume() {
 
           <div className="resume-entry">
             <div className="resume-entry-header">
-              <div><span className="resume-company">Product Designer</span><span className="resume-role"> at Ubisoft Shanghai</span></div>
+              <div><span className="resume-company">Product Design</span><span className="resume-role"> for Ubisoft Shanghai</span></div>
               <span className="resume-period">2018</span>
             </div>
             <ul className="resume-bullets">
