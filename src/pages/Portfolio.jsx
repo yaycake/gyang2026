@@ -52,7 +52,6 @@ export default function Portfolio() {
         setCountdown(count)
         if (count <= 0) {
           clearInterval(id)
-          window.open(FIGMA_URL, '_blank')
           setPhase('idle')
           setPassword('')
           setCountdown(COUNTDOWN_START)
@@ -66,6 +65,7 @@ export default function Portfolio() {
     e.preventDefault()
     const hash = await hashPassword(password)
     if (VALID_HASHES.has(hash)) {
+      window.open(FIGMA_URL, '_blank')
       setPhase('success')
     } else {
       setPhase('error')
