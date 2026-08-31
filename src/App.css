@@ -1108,6 +1108,23 @@
   color: rgba(255, 255, 255, 0.9);
 }
 
+.modal-sent-home {
+  background: none;
+  border: none;
+  padding: 0;
+  margin-top: 16px;
+  font-family: var(--sans);
+  font-size: 13px;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  transition: color 0.15s;
+}
+
+.modal-sent-home:hover {
+  color: rgba(255, 255, 255, 0.9);
+}
+
 @keyframes fadeIn {
   from { opacity: 0; }
   to   { opacity: 1; }

@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from 'react'
 import { createPortal } from 'react-dom'
+import { useNavTo } from '../context/nav'
 
 const CONFETTI_COLORS = [
   '#FF3B30', '#FF9500', '#FFCC00', '#34C759',
@@ -96,6 +97,7 @@ export default function ContactModal({ onClose }) {
   const backdropRef = useRef(null)
   const cardRef     = useRef(null)
 
+  const navTo = useNavTo()
   const emailError = emailTouched && email && !isValidEmail(email)
   const isSuccess  = status === 'filling' || status === 'sent'
 
@@ -154,10 +156,16 @@ export default function ContactModal({ onClose }) {
           <>
             <div className="modal-fill-wave" />
             {status === 'sent' && (
-              <div className="modal-sent" onClick={onClose} style={{ cursor: 'pointer' }}>
+              <div className="modal-sent">
                 <span className="modal-sent-mark">✓</span>
                 <p className="modal-sent-msg">Sent.</p>
                 <p className="modal-sent-sub">Thanks! I'll get back to you at <span className="modal-sent-email">{email}</span></p>
+                <button
+                  className="modal-sent-home"
+                  onClick={() => { onClose(); navTo('/') }}
+                >
+                  Return to home page
+                </button>
               </div>
             )}
           </>
