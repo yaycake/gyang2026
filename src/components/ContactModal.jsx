@@ -162,7 +162,7 @@ export default function ContactModal({ onClose }) {
                 <p className="modal-sent-sub">Thanks! I'll get back to you at <span className="modal-sent-email">{email}</span></p>
                 <button
                   className="modal-sent-home"
-                  onClick={() => { onClose(); navTo('/') }}
+                  onClick={() => { onClose(); if (window.location.pathname !== '/') navTo('/') }}
                 >
                   Return to home page
                 </button>
