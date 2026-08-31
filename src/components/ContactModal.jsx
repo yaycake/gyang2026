@@ -65,7 +65,7 @@ export default function ContactModal({ onClose }) {
             </div>
 
             <form className="modal-form" onSubmit={handleSubmit} noValidate>
-              <div className="modal-field">
+              <div className="modal-field" style={{ animation: 'fieldIn 0.38s cubic-bezier(0.22, 1, 0.36, 1) 0.32s both' }}>
                 <input
                   id="modal-email"
                   type="email"
@@ -82,7 +82,7 @@ export default function ContactModal({ onClose }) {
                 {emailError && <span className="modal-field-error">enter a valid email address</span>}
               </div>
 
-              <div className="modal-field">
+              <div className="modal-field" style={{ animation: 'fieldIn 0.38s cubic-bezier(0.22, 1, 0.36, 1) 0.46s both' }}>
                 <textarea
                   id="modal-message"
                   name="message"
@@ -101,13 +101,13 @@ export default function ContactModal({ onClose }) {
                 <p className="modal-error">Something went wrong — please try again.</p>
               )}
 
-              <div className="modal-footer">
+              <div className="modal-footer" style={{ animation: 'fieldIn 0.38s cubic-bezier(0.22, 1, 0.36, 1) 0.58s both' }}>
                 <button
                   type="submit"
                   className="modal-submit"
                   disabled={status === 'sending'}
                 >
-                  {status === 'sending' ? 'Sending…' : 'Send →'}
+                  {status === 'sending' ? 'Sending…' : 'Send'}
                 </button>
               </div>
             </form>
