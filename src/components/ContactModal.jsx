@@ -114,7 +114,7 @@ export default function ContactModal({ onClose }) {
   useEffect(() => {
     if (status !== 'filling') return
     const t1 = setTimeout(() => setStatus('sent'), 1600)
-    const t2 = setTimeout(onClose, 3400)
+    const t2 = setTimeout(onClose, 5000)
     return () => { clearTimeout(t1); clearTimeout(t2) }
   }, [status, onClose])
 
@@ -154,9 +154,10 @@ export default function ContactModal({ onClose }) {
           <>
             <div className="modal-fill-wave" />
             {status === 'sent' && (
-              <div className="modal-sent">
+              <div className="modal-sent" onClick={onClose} style={{ cursor: 'pointer' }}>
                 <span className="modal-sent-mark">✓</span>
                 <p className="modal-sent-msg">Sent.</p>
+                <p className="modal-sent-sub">Thanks! I'll get back to you at <span className="modal-sent-email">{email}</span></p>
               </div>
             )}
           </>
