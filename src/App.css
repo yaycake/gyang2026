@@ -1061,14 +1061,13 @@
   inset: 0;
   background: var(--link-color);
   border-radius: inherit;
-  transform: translateY(100%);
-  animation: fillRise 0.9s cubic-bezier(0.3, 0, 0.15, 1) forwards;
+  animation: circleReveal 0.75s cubic-bezier(0.4, 0, 0.2, 1) forwards;
   z-index: 1;
 }
 
-@keyframes fillRise {
-  from { transform: translateY(100%); }
-  to   { transform: translateY(0); }
+@keyframes circleReveal {
+  from { clip-path: circle(0% at 50% 92%); }
+  to   { clip-path: circle(150% at 50% 92%); }
 }
 
 .modal-sent {
