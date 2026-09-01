@@ -1079,7 +1079,6 @@
   justify-content: center;
   gap: 10px;
   z-index: 2;
-  animation: fadeIn 0.5s ease forwards;
 }
 
 .modal-sent-mark {

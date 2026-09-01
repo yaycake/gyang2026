@@ -115,7 +115,7 @@ export default function ContactModal({ onClose }) {
 
   useEffect(() => {
     if (status !== 'filling') return
-    const t1 = setTimeout(() => setStatus('sent'), 1600)
+    const t1 = setTimeout(() => setStatus('sent'), 1150)
     const t2 = setTimeout(onClose, 5000)
     return () => { clearTimeout(t1); clearTimeout(t2) }
   }, [status, onClose])
@@ -157,11 +157,12 @@ export default function ContactModal({ onClose }) {
             <div className="modal-fill-wave" />
             {status === 'sent' && (
               <div className="modal-sent">
-                <span className="modal-sent-mark">✓</span>
-                <p className="modal-sent-msg">Sent.</p>
-                <p className="modal-sent-sub">Thanks! I'll get back to you at <span className="modal-sent-email">{email}</span></p>
+                <span className="modal-sent-mark" style={{ animation: 'fieldIn 0.4s cubic-bezier(0.22, 1, 0.36, 1) 0s both' }}>✓</span>
+                <p className="modal-sent-msg"    style={{ animation: 'fieldIn 0.4s cubic-bezier(0.22, 1, 0.36, 1) 0.1s both' }}>Sent.</p>
+                <p className="modal-sent-sub"    style={{ animation: 'fieldIn 0.38s cubic-bezier(0.22, 1, 0.36, 1) 0.22s both' }}>Thanks! I'll get back to you at <span className="modal-sent-email">{email}</span></p>
                 <button
                   className="modal-sent-home"
+                  style={{ animation: 'fieldIn 0.38s cubic-bezier(0.22, 1, 0.36, 1) 0.34s both' }}
                   onClick={() => { onClose(); if (window.location.pathname !== '/') navTo('/') }}
                 >
                   Return to home page
