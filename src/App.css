@@ -1052,10 +1052,6 @@
 }
 
 /* Success state — fill + confetti + sent */
-.modal-card--success {
-  min-height: 220px;
-}
-
 .modal-fill-wave {
   position: absolute;
   inset: 0;

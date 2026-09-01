@@ -147,85 +147,83 @@ export default function ContactModal({ onClose }) {
       {isSuccess && <ConfettiCanvas cardRef={cardRef} />}
 
       <div
-        className={`modal-card${isSuccess ? ' modal-card--success' : ''}`}
+        className="modal-card"
         ref={cardRef}
         role="dialog"
         aria-modal="true"
       >
-        {isSuccess ? (
-          <>
-            <div className="modal-fill-wave" />
-            {status === 'sent' && (
-              <div className="modal-sent">
-                <span className="modal-sent-mark" style={{ animation: 'fieldIn 0.4s cubic-bezier(0.22, 1, 0.36, 1) 0s both' }}>✓</span>
-                <p className="modal-sent-msg"    style={{ animation: 'fieldIn 0.4s cubic-bezier(0.22, 1, 0.36, 1) 0.1s both' }}>Sent.</p>
-                <p className="modal-sent-sub"    style={{ animation: 'fieldIn 0.38s cubic-bezier(0.22, 1, 0.36, 1) 0.22s both' }}>Thanks! I'll get back to you at <span className="modal-sent-email">{email}</span></p>
-                <button
-                  className="modal-sent-home"
-                  style={{ animation: 'fieldIn 0.38s cubic-bezier(0.22, 1, 0.36, 1) 0.34s both' }}
-                  onClick={() => { onClose(); if (window.location.pathname !== '/') navTo('/') }}
-                >
-                  Return to home page
-                </button>
-              </div>
-            )}
-          </>
-        ) : (
-          <>
-            <button className="modal-close" onClick={onClose} aria-label="Close">✕</button>
+        {/* Form always stays rendered to hold the card's height stable */}
+        <div aria-hidden={isSuccess || undefined} style={{ visibility: isSuccess ? 'hidden' : 'visible' }}>
+          <button className="modal-close" onClick={onClose} aria-label="Close">✕</button>
 
-            <div className="modal-header">
-              <h2 className="modal-title">Say hello.</h2>
+          <div className="modal-header">
+            <h2 className="modal-title">Say hello.</h2>
+          </div>
+
+          <form className="modal-form" onSubmit={handleSubmit} noValidate>
+            <div className="modal-field" style={{ animation: 'fieldIn 0.38s cubic-bezier(0.22, 1, 0.36, 1) 0.32s both' }}>
+              <input
+                id="modal-email"
+                type="email"
+                name="email"
+                value={email}
+                onChange={e => { setEmail(e.target.value); setEmailTouched(false) }}
+                onBlur={() => { if (email) setEmailTouched(true) }}
+                placeholder=" "
+                className={`modal-input${emailError ? ' modal-input--error' : ''}`}
+                autoComplete="email"
+              />
+              <label htmlFor="modal-email" className="modal-label">your email</label>
+              <span className={`modal-line${emailError ? ' modal-line--error' : ''}`} />
+              {emailError && <span className="modal-field-error">enter a valid email address</span>}
             </div>
 
-            <form className="modal-form" onSubmit={handleSubmit} noValidate>
-              <div className="modal-field" style={{ animation: 'fieldIn 0.38s cubic-bezier(0.22, 1, 0.36, 1) 0.32s both' }}>
-                <input
-                  id="modal-email"
-                  type="email"
-                  name="email"
-                  value={email}
-                  onChange={e => { setEmail(e.target.value); setEmailTouched(false) }}
-                  onBlur={() => { if (email) setEmailTouched(true) }}
-                  placeholder=" "
-                  className={`modal-input${emailError ? ' modal-input--error' : ''}`}
-                  autoComplete="email"
-                />
-                <label htmlFor="modal-email" className="modal-label">your email</label>
-                <span className={`modal-line${emailError ? ' modal-line--error' : ''}`} />
-                {emailError && <span className="modal-field-error">enter a valid email address</span>}
-              </div>
+            <div className="modal-field" style={{ animation: 'fieldIn 0.38s cubic-bezier(0.22, 1, 0.36, 1) 0.46s both' }}>
+              <textarea
+                id="modal-message"
+                name="message"
+                value={message}
+                onChange={e => setMessage(e.target.value)}
+                placeholder=" "
+                required
+                className="modal-input modal-textarea"
+                rows={4}
+              />
+              <label htmlFor="modal-message" className="modal-label">what's on your mind?</label>
+              <span className="modal-line" />
+            </div>
 
-              <div className="modal-field" style={{ animation: 'fieldIn 0.38s cubic-bezier(0.22, 1, 0.36, 1) 0.46s both' }}>
-                <textarea
-                  id="modal-message"
-                  name="message"
-                  value={message}
-                  onChange={e => setMessage(e.target.value)}
-                  placeholder=" "
-                  required
-                  className="modal-input modal-textarea"
-                  rows={4}
-                />
-                <label htmlFor="modal-message" className="modal-label">what's on your mind?</label>
-                <span className="modal-line" />
-              </div>
+            {status === 'error' && (
+              <p className="modal-error">Something went wrong — please try again.</p>
+            )}
 
-              {status === 'error' && (
-                <p className="modal-error">Something went wrong — please try again.</p>
-              )}
+            <div className="modal-footer" style={{ animation: 'fieldIn 0.38s cubic-bezier(0.22, 1, 0.36, 1) 0.58s both' }}>
+              <button
+                type="submit"
+                className="modal-submit"
+                disabled={status === 'sending'}
+              >
+                {status === 'sending' ? 'Sending…' : 'Send'}
+              </button>
+            </div>
+          </form>
+        </div>
 
-              <div className="modal-footer" style={{ animation: 'fieldIn 0.38s cubic-bezier(0.22, 1, 0.36, 1) 0.58s both' }}>
-                <button
-                  type="submit"
-                  className="modal-submit"
-                  disabled={status === 'sending'}
-                >
-                  {status === 'sending' ? 'Sending…' : 'Send'}
-                </button>
-              </div>
-            </form>
-          </>
+        {/* Fill wave and sent state overlay on top without displacing the form */}
+        {isSuccess && <div className="modal-fill-wave" />}
+        {status === 'sent' && (
+          <div className="modal-sent">
+            <span className="modal-sent-mark" style={{ animation: 'fieldIn 0.4s cubic-bezier(0.22, 1, 0.36, 1) 0s both' }}>✓</span>
+            <p className="modal-sent-msg"    style={{ animation: 'fieldIn 0.4s cubic-bezier(0.22, 1, 0.36, 1) 0.1s both' }}>Sent.</p>
+            <p className="modal-sent-sub"    style={{ animation: 'fieldIn 0.38s cubic-bezier(0.22, 1, 0.36, 1) 0.22s both' }}>Thanks! I'll get back to you at <span className="modal-sent-email">{email}</span></p>
+            <button
+              className="modal-sent-home"
+              style={{ animation: 'fieldIn 0.38s cubic-bezier(0.22, 1, 0.36, 1) 0.34s both' }}
+              onClick={() => { onClose(); if (window.location.pathname !== '/') navTo('/') }}
+            >
+              Return to home page
+            </button>
+          </div>
         )}
       </div>
     </div>,
